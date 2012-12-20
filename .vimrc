@@ -2,7 +2,7 @@
 set nocompatible
 set autoindent
 filetype plugin on
-filetype plugin indent off
+filetype plugin indent on
 syntax on
 set hidden
 
@@ -29,10 +29,10 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
 
 " Turn off inserting comments just cuz the line before was one
 set formatoptions-=or
