@@ -24,7 +24,6 @@ endif
 "End lines at 120 columns
 set textwidth=120
 
-
 "Make sure I ain't cheating with those arrow keys!
 inoremap <up> <nop>
 inoremap <down> <nop>
@@ -40,7 +39,10 @@ set formatoptions-=or
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
-map Y y$
+noremap Y y$
+
+"Map 5 to for fast movement in visual mode
+noremap f 5
 
 "Press enter for a newline
 nnoremap <silent> <CR> :put=''<CR>
@@ -49,6 +51,7 @@ inoremap ;; :
 "Map semicolon to end of line
 noremap ;<Space> $
 noremap ;; ^
+
 "Remap jj to escape, so we can move in and out of visual mode
 inoremap jj <Esc> 
 
