@@ -6,6 +6,25 @@ filetype plugin indent off
 syntax on
 set hidden
 
+
+if has("gui_running")
+  " GUI is running or is about to start.
+  "Set the gvim settings
+  set lines=200 columns=120
+else
+  " This is console Vim.
+  if exists("+lines")
+    set lines=50
+  endif
+  if exists("+columns")
+    set columns=120
+  endif
+endif
+
+"End lines at 120 columns
+set textwidth=120
+
+
 "Make sure I ain't cheating with those arrow keys!
 inoremap <up> <nop>
 inoremap <down> <nop>
@@ -70,6 +89,7 @@ set novisualbell
 " Enable use of the mouse for all modes
 set mouse=a
 
+
 " Set the command window height to 2 lines, to avoid many cases of having to
 " "press <Enter> to continue"
 set cmdheight=2
@@ -117,3 +137,5 @@ vmap <C-c> "+y
 vmap <C-x> "+x
 " CTRL-X to cut (visual mode)
 vmap <C-v> <esc>"+gP
+
+
