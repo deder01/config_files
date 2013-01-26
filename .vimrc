@@ -6,6 +6,8 @@ filetype plugin indent on
 syntax on
 set hidden
 
+"Turn on syntax for haml
+au BufRead,BufNewFile *.hamlpy set ft=haml 
 
 if has("gui_running")
   " GUI is running or is about to start.
