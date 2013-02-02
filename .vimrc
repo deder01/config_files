@@ -51,8 +51,8 @@ nnoremap <silent> <CR> :put=''<CR>
 
 inoremap ;; :
 "Map semicolon to end of line
-noremap ;<Space> $
-noremap ;; ^
+noremap ;<Space> ^
+noremap ;; $
 
 "Remap jj to escape, so we can move in and out of visual mode
 inoremap jj <Esc> 
