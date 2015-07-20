@@ -1,30 +1,53 @@
 "The essentials
 set nocompatible
 set autoindent
-filetype plugin on
-filetype plugin indent on
 syntax on
 set hidden
+colorscheme desert
 
-"Turn on syntax for haml
-au BufRead,BufNewFile *.hamlpy set ft=haml 
+" Set up vundle
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+filetype on
+filetype plugin on
+filetype plugin indent on
 
-if has("gui_running")
-  " GUI is running or is about to start.
-  "Set the gvim settings
-  set lines=200 columns=120
-else
-  " This is console Vim.
-  if exists("+lines")
-    set lines=50
-  endif
-  if exists("+columns")
-    set columns=120
-  endif
-endif
 
-"End lines at 120 columns
-set textwidth=120
+Bundle 'gmarik/vundle'
+Bundle 'tomasr/molokai'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'jgdavey/tslime.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'DirDiff.vim'
+Bundle 'spell'
+Bundle 'tpope/vim-markdown'
+Bundle 'JavaScript-Indent'
+Bundle 'vimwiki'
+Bundle 'moll/vim-bbye'
+
+"Tagbar settings
+let g:tagbar_compact = 1
+noremap <silent> <C-e> :TagbarToggle<CR>
+
+"Nerdtree settings
+noremap <silent> <C-o> :NERDTreeToggle<CR>
+
+"Show tabs as '>.' and make them dark grey
+set list
+set listchars=tab:\>.
+hi SpecialKey ctermfg=DarkGrey guifg=DarkGrey
+hi NonText ctermfg=DarkGrey guifg=DarkGrey
+
+"Turn on syntax for hamlp
+au BufRead,BufNewFile *.hamlpy set ft=haml
+
+"End lines at 920 columns
+set textwidth=920
+
+"Set the map leader to a comman
+let mapleader=","
 
 "Make sure I ain't cheating with those arrow keys!
 inoremap <up> <nop>
@@ -43,19 +66,22 @@ set formatoptions-=or
 " which is the default
 noremap Y y$
 
-"Map 5 to for fast movement in visual mode
-noremap f 5
+"Map space to for fast movement in visual mode
+noremap <Space> 5
 
 "Press enter for a newline
 nnoremap <silent> <CR> :put=''<CR>
 
 inoremap ;; :
 "Map semicolon to end of line
-noremap ;<Space> ^
+noremap ;a ^
 noremap ;; $
+noremap % K
+noremap K %
 
 "Remap jj to escape, so we can move in and out of visual mode
-inoremap jj <Esc> 
+inoremap jj <Esc>
+noremap ff <Esc>
 
 "And make sure I aint' cheating with no escape key!
 imap <Esc> <nop>
@@ -116,15 +142,17 @@ set pastetoggle=<F11>
 
 " Indentation settings for using 2 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
-set shiftwidth=2
 "set softtabstop=2
-set expandtab
+"set expandtab
 
 " Indentation settings for using hard tabs for indent. Display tabs as
 " two characters wide.
-"set shiftwidth=2
-set tabstop=2
-colorscheme desert
+"set expandtab
+
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 
 "------------------------------------------------------------
@@ -137,10 +165,31 @@ colorscheme desert
 nnoremap <C-L> :nohl<CR><C-L>
 
 " CTRL-C to copy (visual mode)
-vmap <C-c> "+y 
+vmap <C-c> "+y
 " CTRL-X to cut (visual mode)
 vmap <C-x> "+x
 " CTRL-X to cut (visual mode)
 vmap <C-v> <esc>"+gP
 
 
+function! MarkWindowSwap()
+	let g:markedWinNum = winnr()
+endfunction
+
+function! DoWindowSwap()
+	"Mark destination
+	let curNum = winnr()
+	let curBuf = bufnr( "%" )
+	exe g:markedWinNum . "wincmd w"
+	"Switch to source and shuffle dest->source
+	let markedBuf = bufnr( "%" )
+	"Hide and open so that we aren't prompted and keep history
+	exe 'hide buf' curBuf
+	"Switch to dest and shuffle source->dest
+	exe curNum . "wincmd w"
+	"Hide and open so that we aren't prompted and keep history
+	exe 'hide buf' markedBuf
+endfunction
+
+noremap <silent> <leader>mw :call MarkWindowSwap()<CR>
+noremap <silent> <leader>pw :call DoWindowSwap()<CR>
