@@ -1,4 +1,4 @@
-vim
+Config files
 ===
 
-Vim file (and possibly stuff in the future)  that is not work approved
+vim and bash files for work use
