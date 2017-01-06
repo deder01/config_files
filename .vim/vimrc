@@ -7,25 +7,13 @@ colorscheme desert
 
 " Set up vundle
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
 filetype on
 filetype plugin on
 filetype plugin indent on
 
 
-Bundle 'gmarik/vundle'
-Bundle 'tomasr/molokai'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'jgdavey/tslime.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'DirDiff.vim'
-Bundle 'spell'
-Bundle 'tpope/vim-markdown'
-Bundle 'JavaScript-Indent'
-Bundle 'vimwiki'
-Bundle 'moll/vim-bbye'
 
 "Tagbar settings
 let g:tagbar_compact = 1
