@@ -1,6 +1,7 @@
 "The essentials
 set nocompatible
 set autoindent
+set smartindent
 syntax on
 set hidden
 colorscheme desert
@@ -138,10 +139,10 @@ set pastetoggle=<F11>
 " set expandtab
 set expandtab
 
-set shiftwidth=4
 set tabstop=4
-set softtabstop=4
+set softtabstop=0
 set shiftwidth=4
+set smarttab
 
 
 "------------------------------------------------------------
