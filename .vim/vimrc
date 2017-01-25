@@ -48,6 +48,10 @@ noremap <down> <nop>
 noremap <left> <nop>
 noremap <right> <nop>
 
+"Split buffer below
+set splitbelow
+
+
 " Turn off inserting comments just cuz the line before was one
 set formatoptions-=or
 
