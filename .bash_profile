@@ -2,12 +2,26 @@
 # General settings
 ###############################################
 export EDITOR=vim
-source ~/.bashrc
+export LD_LIBRARY_PATH="/usr/X11R6/lib:"$LD_LIBRARY_PATH
 
-# virtualenv stuff
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-
+###############################################
+# Optional settings
+###############################################
+# Automatically highlight matches with grep
+export GREP_OPTIONS=--color=auto
+# Format the bash command prompt
+export PS1='\[\e[1;31m\]\u@\h:\[\e[1;34m\]\w\[\e[1;26m\]\$\[\e[0;1m\] '
+# Override the default ls colors
+export CLICOLOR=1
+export LSCOLORS=bxfxbxdxcxegedabagacad
+##############################################
+# Quickly source bash profile
+##############################################
 alias bp='source ~/.bash_profile'
-alias bower='sudo bower --allow-root'
-alias freezereqs='pip freeze | grep -v "pkg-resources" > requirements.txt'
+
+##############################################
+# Use the vim version installed by brew
+##############################################
+alias vim='/usr/local/bin/vim'
+
+source ~/.bashrc
