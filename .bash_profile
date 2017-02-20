@@ -30,5 +30,4 @@ alias ls="gls --color=auto"
 alias ll="gll --color=auto"
 alias la="gls --color=auto -a"
 
-
 source ~/.bashrc
