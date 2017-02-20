@@ -25,9 +25,5 @@ alias vim='/usr/local/bin/vim'
 ##############################################
 # Use GNU version of ls
 ##############################################
-eval 'gdircolors ~/.dir_colors'
-alias ls="gls --color=auto"
-alias ll="gll --color=auto"
-alias la="gls --color=auto -a"
 
 source ~/.zshrc
