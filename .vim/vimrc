@@ -187,3 +187,7 @@ endfunction
 
 noremap <silent> <leader>mw :call MarkWindowSwap()<CR>
 noremap <silent> <leader>pw :call DoWindowSwap()<CR>
+
+" Handlebar syntax
+au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
+

@@ -1,6 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/david/Coding/not_google_plus/static/javascripts/utils'
-let g:netrw_dirhist_2='/home/david/Coding/not_google_plus/static/javascripts/utils/services'
-let g:netrw_dirhist_3='/home/david/Coding/not_google_plus/static/templates/posts'
-let g:netrw_dirhist_4='/home/david/Coding/not_google_plus/static/javascripts/posts/controllers'
+let g:netrw_dirhist_cnt =0
