@@ -17,6 +17,9 @@ Plugin 'VundleVim/Vundle.vim'
 " nerdtree
 Plugin 'scrooloose/nerdtree'
 
+" fugitive git plugin
+Plugin 'tpope/vim-fugitive'
+
 " end of plugins
 call vundle#end()
 filetype plugin indent on
@@ -67,9 +70,6 @@ noremap Y y$
 
 "Map space to for fast movement in visual mode
 noremap <Space> 5
-
-"Press enter for a newline
-nnoremap <silent> <CR> :put=''<CR>
 
 inoremap ;; :
 "Map semicolon to end of line
@@ -197,3 +197,6 @@ noremap <silent> <leader>pw :call DoWindowSwap()<CR>
 " Handlebar syntax
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 
+" Commands "
+" Keep current file open and show Ggrep results in quickfix list
+command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
