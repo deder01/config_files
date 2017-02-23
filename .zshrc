@@ -12,6 +12,9 @@ ulimit -n 65536
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
 
+# Set custom folder to something we can actually track
+ZSH_CUSTOM=".zsh_custom"
+
 # sqrrl env
 # locale
 export LC_ALL=en_US.UTF-8
