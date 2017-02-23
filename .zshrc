@@ -12,6 +12,38 @@ ulimit -n 65536
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
 
+# sqrrl env
+# locale
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+# zookeeper
+export ZOOKEEPER_HOME=/usr/local/lib/zookeeper-3.4.9
+export ZOO_LOG_DIR=/var/log/zookeeper/
+
+# java
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+
+# hadoop
+export HADOOP_PREFIX=/usr/local/lib/hadoop-2.7.2
+export HADOOP_HOME=/usr/local/lib/hadoop-2.7.2
+export HADOOP_MAPRED_HOME=$HADOOP_PREFIX
+export HADOOP_COMMON_HOME=$HADOOP_PREFIX
+export HADOOP_HDFS_HOME=$HADOOP_PREFIX
+export YARN_HOME=$HADOOP_PREFIX
+export YARN_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
+export HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
+
+export SQRRL_SRC_ROOT=$HOME/Work/sqrrl
+export SQRRL_HOME=$SQRRL_SRC_ROOT/analytics
+
+export PATH=$HADOOP_PREFIX/sbin:$HADOOP_PREFIX/bin:$ZOOKEEPER_HOME/bin:$SQRRL_HOME/bin:$PATH
+export ASSERTIONS_FLAG="-ea"
+
+export MAVEN_OPTS="-Xms512m -Xmx2g -XX:MaxPermSize=256m"
+# end sqrrl env
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
