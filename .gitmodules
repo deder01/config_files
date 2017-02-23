@@ -1,9 +1,6 @@
 [submodule "/Users/deder/.oh-my-zsh"]
 	path = /Users/deder/.oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git
-[submodule ".zsh_custom/_plugins/plugins/zsh-autosuggestions"]
-	path = .zsh_custom/_plugins/plugins/zsh-autosuggestions
-	url = git://github.com/zsh-users/zsh-autosuggestions
 [submodule ".zsh_custom/plugins/zsh-autosuggestions"]
 	path = .zsh_custom/plugins/zsh-autosuggestions
 	url = git://github.com/zsh-users/zsh-autosuggestions
