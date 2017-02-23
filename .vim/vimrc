@@ -8,12 +8,18 @@ colorscheme desert
 
 " Set up vundle
 filetype off
-"set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
-filetype on
-filetype plugin on
-filetype plugin indent on
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
+" let Vundle manage Vundle
+Plugin 'VundleVim/Vundle.vim'
+
+" nerdtree
+Plugin 'scrooloose/nerdtree'
+
+" end of plugins
+call vundle#end()
+filetype plugin indent on
 
 
 "Tagbar settings
@@ -143,9 +149,9 @@ set pastetoggle=<F11>
 " set expandtab
 set expandtab
 
-set tabstop=4
+set tabstop=2
 set softtabstop=0
-set shiftwidth=4
+set shiftwidth=2
 set smarttab
 
 
