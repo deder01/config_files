@@ -163,19 +163,16 @@ let g:syntastic_check_on_wq = 0
 
 " vim-fugitive
 " Keep current file open and show Ggrep results in quickfix list
-command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
+command -nargs=+ S execute ':sp | silent Ggrep!' <q-args> | cw | redraw!
+command -nargs=+ Si execute ':sp | silent Ggrep! -i' <q-args> | cw | redraw!
+map <silent> <C-k> :S
 
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
 
-" Ctr-; to execute a search of sqrrl ui directory
-map <silent> <C-j> :Files<CR>
-map <silent> <C-k> :CtrlPFunky<CR>
-
-"------------------------------------------------------------
-
-" Commands "
-
+" FZF
+map <silent> <C-j> :sp\|:FZF<CR>
+"map <silent> <C-k> :CtrlPFunky<CR>
 
 "------------------------------------------------------------
 " Indentation options {{{1
@@ -236,5 +233,3 @@ endfunction
 
 noremap <silent> <leader>mw :call MarkWindowSwap()<CR>
 noremap <silent> <leader>pw :call DoWindowSwap()<CR>
-
-
