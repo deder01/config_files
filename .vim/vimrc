@@ -17,11 +17,14 @@ Plugin 'VundleVim/Vundle.vim'
 " nerdtree
 Plugin 'scrooloose/nerdtree'
 
-" fugitive git plugin
+" fugitive (git) 
 Plugin 'tpope/vim-fugitive'
 
-" syntastic plugin
+" syntastic 
 Plugin 'vim-syntastic/syntastic'
+
+" easymotion
+Plugin 'easymotion/vim-easymotion'
 
 " end of plugins
 call vundle#end()
@@ -48,7 +51,7 @@ au BufRead,BufNewFile *.hamlpy set ft=haml
 set textwidth=920
 
 "Set the map leader to a comman
-let mapleader=","
+" let mapleader=","
 
 "Make sure I ain't cheating with those arrow keys!
 inoremap <up> <nop>
@@ -150,6 +153,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" easymotion
+map <Leader> <Plug>(easymotion-prefix)
 
 "------------------------------------------------------------
 
