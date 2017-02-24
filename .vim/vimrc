@@ -20,6 +20,9 @@ Plugin 'scrooloose/nerdtree'
 " fugitive git plugin
 Plugin 'tpope/vim-fugitive'
 
+" syntastic plugin
+Plugin 'vim-syntastic/syntastic'
+
 " end of plugins
 call vundle#end()
 filetype plugin indent on
@@ -133,6 +136,27 @@ set notimeout ttimeout ttimeoutlen=200
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
+"------------------------------------------------------------
+" Plugins and syntax settings
+" Handlebar syntax
+au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"------------------------------------------------------------
+
+" Commands "
+" Keep current file open and show Ggrep results in quickfix list
+command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
+
 
 "------------------------------------------------------------
 " Indentation options {{{1
@@ -194,9 +218,4 @@ endfunction
 noremap <silent> <leader>mw :call MarkWindowSwap()<CR>
 noremap <silent> <leader>pw :call DoWindowSwap()<CR>
 
-" Handlebar syntax
-au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 
-" Commands "
-" Keep current file open and show Ggrep results in quickfix list
-command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
