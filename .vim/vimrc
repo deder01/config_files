@@ -26,14 +26,15 @@ Plugin 'vim-syntastic/syntastic'
 " easymotion
 Plugin 'easymotion/vim-easymotion'
 
+" ctrlp
+Plugin 'ctrlpvim/ctrlp.vim'
+"ctrlp-funky
+Plugin 'tacahiroy/ctrlp-funky'
+
 " end of plugins
 call vundle#end()
 filetype plugin indent on
 
-
-"Tagbar settings
-let g:tagbar_compact = 1
-noremap <silent> <C-e> :TagbarToggle<CR>
 
 "Nerdtree settings
 noremap <silent> <C-o> :NERDTreeToggle<CR>
@@ -154,14 +155,24 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" vim-fugitive
+" Keep current file open and show Ggrep results in quickfix list
+command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
+
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
+
+" ctrlp
+let g:ctrlp_max_files=50000
+command Goto execute "CtrlP $UI_HOME"
+
+" Ctr-; to execute a search of sqrrl ui directory
+map <silent> <C-j> :Goto<CR>
+map <silent> <C-k> :CtrlPFunky<CR>
 
 "------------------------------------------------------------
 
 " Commands "
-" Keep current file open and show Ggrep results in quickfix list
-command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
 
 
 "------------------------------------------------------------
