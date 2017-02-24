@@ -26,10 +26,13 @@ Plugin 'vim-syntastic/syntastic'
 " easymotion
 Plugin 'easymotion/vim-easymotion'
 
-" ctrlp
-Plugin 'ctrlpvim/ctrlp.vim'
-"ctrlp-funky
+"ctrlp
+Plugin 'kien/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
+
+" fzf
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " end of plugins
 call vundle#end()
@@ -88,6 +91,9 @@ noremap K %
 "Remap jj to escape, so we can move in and out of visual mode
 inoremap jj <Esc>
 noremap ff <Esc>
+
+"Remap lc to close lwindow
+:cmap lc lclose
 
 "And make sure I aint' cheating with no escape key!
 imap <Esc> <nop>
@@ -162,12 +168,8 @@ command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
 
-" ctrlp
-let g:ctrlp_max_files=50000
-command Goto execute "CtrlP $UI_HOME"
-
 " Ctr-; to execute a search of sqrrl ui directory
-map <silent> <C-j> :Goto<CR>
+map <silent> <C-j> :Files<CR>
 map <silent> <C-k> :CtrlPFunky<CR>
 
 "------------------------------------------------------------

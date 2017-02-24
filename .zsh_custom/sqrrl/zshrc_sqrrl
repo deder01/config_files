@@ -1,4 +1,9 @@
 # sqrrl env
+export SQRRL_HOME=~/repos/sqrrl/
+export UI_HOME=~/repos/sqrrl/web/ui/src/main/
+alias gosqrrl="cd $SQRRL_HOME" 
+alias goui="cd $UI_HOME" 
+
 # locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
