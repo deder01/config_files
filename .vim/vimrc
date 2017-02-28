@@ -162,15 +162,31 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'passive' }
 
 command SC execute 'SyntasticCheck'
+nmap <F7> :SC
 
 " vim-fugitive
 " Keep current file open and show Ggrep results in quickfix list
 command! -nargs=+ S execute ':sp | silent Ggrep!' <q-args> | cw | redraw!
 command! -nargs=+ Si execute ':sp | silent Ggrep! -i' <q-args> | cw | redraw!
-map <silent> <C-k> :S
+map <silent> <C-k> :Si
 
 " easymotion
-map <Leader> <Plug>(easymotion-prefix)
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap si <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 " FZF
 map <silent> <C-j> :sp\|:FZF<CR>
