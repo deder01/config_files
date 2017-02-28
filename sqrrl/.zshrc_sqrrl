@@ -1,8 +1,8 @@
-# sqrrl env
+###### env ######
+# basics
 export SQRRL_HOME=~/repos/sqrrl/
 export UI_HOME=~/repos/sqrrl/web/ui/src/main/
-alias gosqrrl="cd $SQRRL_HOME" 
-alias goui="cd $UI_HOME" 
+export SQRRL_CONFIG=~/sqrrl/
 
 # locale
 export LC_ALL=en_US.UTF-8
@@ -33,5 +33,14 @@ export PATH=$HADOOP_PREFIX/sbin:$HADOOP_PREFIX/bin:$ZOOKEEPER_HOME/bin:$SQRRL_HO
 export ASSERTIONS_FLAG="-ea"
 
 export MAVEN_OPTS="-Xms512m -Xmx2g -XX:MaxPermSize=256m"
-# end sqrrl env
+###### end env ######
 
+###### aliases ######
+# navigation
+alias gosqrrl="cd $SQRRL_HOME" 
+alias goui="cd $UI_HOME" 
+
+# server
+alias setup-server "$SQRRL_CONFIG/start-server.sh"
+alias add-data-small "mvn verify -Dlocal -DdoDetectorGen -Dootb.data.size=SMALL"
+###### end aliases ######
