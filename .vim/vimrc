@@ -116,11 +116,6 @@ set smartcase
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
 
-
-" Display the cursor position on the last line of the screen or in the status
-" line of a window
-set ruler
-
 " Instead of failing a command because of unsaved changes, instead raise a
 " dialogue asking if you wish to save changed files.
 set confirm
@@ -137,6 +132,10 @@ set mouse=a
 " "press <Enter> to continue"
 set cmdheight=2
 
+" Show file and column in statusline
+set statusline=
+set ruler
+
 " Display line numbers on the left
 set number
 
@@ -152,19 +151,22 @@ set pastetoggle=<F5>
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = { 'mode': 'passive' }
+
+command SC execute 'SyntasticCheck'
 
 " vim-fugitive
 " Keep current file open and show Ggrep results in quickfix list
-command -nargs=+ S execute ':sp | silent Ggrep!' <q-args> | cw | redraw!
-command -nargs=+ Si execute ':sp | silent Ggrep! -i' <q-args> | cw | redraw!
+command! -nargs=+ S execute ':sp | silent Ggrep!' <q-args> | cw | redraw!
+command! -nargs=+ Si execute ':sp | silent Ggrep! -i' <q-args> | cw | redraw!
 map <silent> <C-k> :S
 
 " easymotion
