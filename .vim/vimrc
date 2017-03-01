@@ -29,6 +29,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'crusoexia/vim-javascript-lib'
 Plugin 'pangloss/vim-javascript'
+Plugin 'othree/yajs.vim'
 
 " end of plugins
 call vundle#end()
@@ -45,6 +46,12 @@ filetype plugin indent on
 syntax on
 set t_Co=256  " vim-monokai now only support 256 colours in terminal.
 colorscheme monokai
+"
+"Turn on syntax for hamlp
+au BufRead,BufNewFile *.hamlpy set ft=haml
+"
+" Handlebar syntax
+au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 
 
 "Nerdtree settings
@@ -56,8 +63,6 @@ set listchars=tab:\>.
 hi SpecialKey ctermfg=DarkGrey guifg=DarkGrey
 hi NonText ctermfg=DarkGrey guifg=DarkGrey
 
-"Turn on syntax for hamlp
-au BufRead,BufNewFile *.hamlpy set ft=haml
 
 "End lines at 920 columns
 set textwidth=920
@@ -155,10 +160,7 @@ set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F5>
 
 "------------------------------------------------------------
-" Plugins and syntax settings
-" Handlebar syntax
-syntax enable
-au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
+" Plugins settings
 
 " syntastic
 "set statusline+=%#warningmsg#
