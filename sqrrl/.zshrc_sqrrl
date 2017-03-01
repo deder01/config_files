@@ -1,8 +1,10 @@
 ###### env ######
 # basics
-export SQRRL_HOME=~/repos/sqrrl/
-export UI_HOME=~/repos/sqrrl/web/ui/src/main/
-export SQRRL_CONFIG=~/sqrrl/
+export REPOS=$HOME/repos
+export SQRRL_HOME=$REPOS/sqrrl/
+export UI_HOME=$REPOS/sqrrl/web/ui/src/main/
+export WEB_HOME=$REPOS/sqrrl/web/
+export SQRRL_CONFIG=$REPOS/sqrrl/
 
 # locale
 export LC_ALL=en_US.UTF-8
@@ -26,9 +28,6 @@ export YARN_HOME=$HADOOP_PREFIX
 export YARN_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 export HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 
-export SQRRL_SRC_ROOT=$HOME/Work/sqrrl
-export SQRRL_HOME=$SQRRL_SRC_ROOT/analytics
-
 export PATH=$HADOOP_PREFIX/sbin:$HADOOP_PREFIX/bin:$ZOOKEEPER_HOME/bin:$SQRRL_HOME/bin:$PATH
 export ASSERTIONS_FLAG="-ea"
 
@@ -39,8 +38,9 @@ export MAVEN_OPTS="-Xms512m -Xmx2g -XX:MaxPermSize=256m"
 # navigation
 alias gosqrrl="cd $SQRRL_HOME" 
 alias goui="cd $UI_HOME" 
+alias goweb="cd $WEB_HOME" 
 
 # server
-alias setup-server "$SQRRL_CONFIG/start-server.sh"
-alias add-data-small "mvn verify -Dlocal -DdoDetectorGen -Dootb.data.size=SMALL"
+alias setup-server="sudo bash $SQRRL_CONFIG/setup-server.sh"
+alias add-data="cd $SQRRL_HOME/systemtest && mvn verify -Dlocal -DdoDetectorGen"
 ###### end aliases ######

@@ -20,12 +20,17 @@ alias f='vim $(fzf-tmux)'
 
 
 # Set up sqrrl environment if at work
-if [[ -f sqrrl/.zshrc_sqrrl ]]; then
-  source sqrrl/.zshrc_sqrrl
+if [[ -f $HOME/sqrrl/.zshrc_sqrrl ]]; then
+  source $HOME/sqrrl/.zshrc_sqrrl
 fi
 # Begin oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+# Use brew version of ctags
+alias ctags="`brew --prefix`/bin/ctags"
+
+# Quick case-insensitive search
+alias agi="ag -i"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
