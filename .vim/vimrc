@@ -18,29 +18,25 @@ Plugin 'vim-syntastic/syntastic'
 " easymotion
 Plugin 'easymotion/vim-easymotion'
 
-"ctrlp
-Plugin 'kien/ctrlp.vim'
-
 " fzf
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
 " js syntax
 Plugin 'crusoexia/vim-monokai'
-Plugin 'crusoexia/vim-javascript-lib'
-Plugin 'pangloss/vim-javascript'
-Plugin 'othree/yajs.vim'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'othree/javascript-libraries-syntax.vim'
 
 " end of plugins
 call vundle#end()
 
 "The essentials
+filetype plugin indent on
 set nocompatible
 set autoindent
 set smartindent
 set hidden
 
-filetype plugin indent on
 
 " Syntax
 syntax on
@@ -49,7 +45,6 @@ colorscheme monokai
 "
 "Turn on syntax for hamlp
 au BufRead,BufNewFile *.hamlpy set ft=haml
-"
 " Handlebar syntax
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 
