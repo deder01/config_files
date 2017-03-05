@@ -1,3 +1,6 @@
+" Remap leader to comma
+let mapleader = ","
+
 " Set up vundle
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -176,7 +179,7 @@ set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F5>
 
 "------------------------------------------------------------
-" Plugins settings
+" Plugin settings
 
 " syntastic
 "set statusline+=%#warningmsg#
@@ -202,6 +205,13 @@ map <silent> <C-k> :Sisp
 
 " easymotion
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" map <leader>i to move to tab i for 0-9
+let i = 1
+while i<=9
+  exec "nnoremap <Leader>".i." ".i."gt"
+  let i+=1
+endwhile
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
@@ -247,6 +257,7 @@ set smarttab
 " Mappings {{{1
 "
 " Useful mappings
+"
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
