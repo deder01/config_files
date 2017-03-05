@@ -27,6 +27,12 @@ Plugin 'crusoexia/vim-monokai'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 
+" CSS syntax and SCSS
+Plugin 'cakebaker/scss-syntax.vim'
+
+" status bar
+Plugin 'itchyny/lightline.vim'
+
 " end of plugins
 call vundle#end()
 
@@ -42,7 +48,19 @@ set hidden
 syntax on
 set t_Co=256  " vim-monokai now only support 256 colours in terminal.
 colorscheme monokai
-"
+"Highlighting for folded lines 
+:hi folded ctermfg=blue
+
+"Set  statusbar theme
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"⭤":""}',
+      \ },
+      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+      \ }
+
 "Turn on syntax for hamlp
 au BufRead,BufNewFile *.hamlpy set ft=haml
 " Handlebar syntax
@@ -61,9 +79,6 @@ hi NonText ctermfg=DarkGrey guifg=DarkGrey
 
 "End lines at 920 columns
 set textwidth=920
-
-"Set the map leader to a comman
-" let mapleader=","
 
 "Make sure I ain't cheating with those arrow keys!
 inoremap <up> <nop>
@@ -86,7 +101,7 @@ set formatoptions-=or
 " which is the default
 noremap Y y$
 
-"Map space to for fast movement in visual mode
+" Map space to for fast movement in visual mode
 noremap <Space> 5
 
 inoremap ;; :
@@ -116,7 +131,13 @@ set showcmd
 " Highlight searches (use <C-L> to temporarily turn off highlighting; see the
 " mapping of <C-L> below)
 set hlsearch
-"
+
+" Set g for search and replace
+set gdefault
+
+" Jump to search as I type
+set incsearch
+
 " Case Stuff
 set ignorecase
 set smartcase
@@ -198,8 +219,8 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 " FZF
-map <silent> <C-j> :FZF<CR>
-map <silent> <C-h> :sp\|:FZF<CR>
+map <silent> <C-h> :FZF<CR>
+map <silent> <C-j> :sp\|:FZF<CR>
 
 "------------------------------------------------------------
 " Indentation options {{{1
