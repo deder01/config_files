@@ -1,6 +1,10 @@
 " Remap leader to comma
 let mapleader = ","
 
+" Encoding for lightline
+set encoding=utf-8
+scriptencoding utf-8
+
 " Set up vundle
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -59,17 +63,6 @@ colorscheme monokai
 
 "Set  statusbar theme
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"⭤":""}',
-      \ },
-      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
-      \ }
-
-
-
-"Turnghtline = {
       \ 'colorscheme': 'landscape',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
@@ -85,8 +78,8 @@ let g:lightline = {
       \   'fileencoding': 'LightlineFileencoding',
       \   'mode': 'LightlineMode',
       \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
       \ }
 
 function! LightlineModified()
@@ -94,7 +87,26 @@ function! LightlineModified()
 endfunction
 
 function! LightlineReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '⭤' : ''
+  if &readonly
+    return "\ue0a2"
+  else
+    return ""
+  endif
+endfunction
+
+function! LightLineGitversion()
+  let fullname = expand('%')
+  let gitversion = ''
+  if fullname =~? 'fugitive://.*/\.git//0/.*'
+      let gitversion = 'git index'
+  elseif fullname =~? 'fugitive://.*/\.git//2/.*'
+      let gitversion = 'git target'
+  elseif fullname =~? 'fugitive://.*/\.git//3/.*'
+      let gitversion = 'git merge'
+  elseif &diff == 1
+      let gitversion = 'working copy'
+  endif
+  return gitversion
 endfunction
 
 function! LightlineFilename()
@@ -109,7 +121,7 @@ endfunction
 function! LightlineFugitive()
   if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
     let branch = fugitive#head()
-    return branch !=# '' ? '⭠ '.branch : ''
+    return branch !=# '' ? "\ue0a0 ".branch : ''
   endif
   return ''
 endfunction
@@ -128,7 +140,9 @@ endfunction
 
 function! LightlineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
-endfunction on syntax for hamlp
+endfunction
+
+" syntax for hamlpy
 au BufRead,BufNewFile *.hamlpy set ft=haml
 " Handlebar syntax
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
