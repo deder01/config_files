@@ -1,5 +1,6 @@
 .vim/.netrwhist
 .vim/bundle/*
+.vim/DS_Store
 !.vim/bundle/Vundle.vim/
 
 # Force add in sqrrl stuff
