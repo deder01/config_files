@@ -269,6 +269,11 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'passive' }
 
+" Set js checker
+let g:syntastic_javascript_checkers = ['jslint']
+" Set sass checker
+let g:syntastic_scss_checkers = ['sass_lint']
+
 " EasyAlign
 let g:easy_align_ignore_groups = ['Comment', 'String']
 xmap ga <Plug>(EasyAlign)
