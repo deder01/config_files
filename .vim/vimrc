@@ -33,6 +33,9 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 " CSS syntax and SCSS
 Plugin 'hail2u/vim-css3-syntax'
 
+" Easily align scss
+Plugin 'junegunn/vim-easy-align'
+
 " status bar
 Plugin 'itchyny/lightline.vim'
 
@@ -246,12 +249,16 @@ set pastetoggle=<F5>
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'passive' }
+
+" EasyAlign
+let g:easy_align_ignore_groups = ['Comment', 'String']
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 command! SC execute 'SyntasticCheck'
 nmap <F7> :SC<CR>
