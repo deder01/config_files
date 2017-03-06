@@ -280,7 +280,7 @@ nmap <F7> :SC<CR>
 " vim-fugitive
 " Keep current file open and show Ggrep results in quickfix list
 command! -nargs=+ S execute ':silent Ggrep!' <q-args> | cw | redraw!
-command! -nargs=+ Si execute ':silent Ggrep! -i' <q-args> | cw | redraw!
+"command! -nargs=+ Si execute ':silent Ggrep! -i ' . [<f-args>][0] . ' **/*.' . [<f-args>][1] | cw | redraw!
 command! -nargs=+ Ssp execute ':sp | silent Ggrep!' <q-args> | cw | redraw!
 command! -nargs=+ Sisp execute ':sp | silent Ggrep! -i' <q-args> | cw | redraw!
 map <silent> <C-k> :Sisp
