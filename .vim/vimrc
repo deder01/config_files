@@ -13,6 +13,12 @@ call vundle#begin()
 " let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
 
+" Better search
+Plugin 'henrik/vim-indexed-search'
+
+" Move through camelCase
+Plugin 'bkad/CamelCaseMotion'
+
 " nerdtree
 Plugin 'scrooloose/nerdtree'
 
@@ -42,6 +48,10 @@ Plugin 'junegunn/vim-easy-align'
 
 " status bar
 Plugin 'itchyny/lightline.vim'
+
+" Ctrp
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'kien/ctrlp.vim'
 
 " end of plugins
 call vundle#end()
@@ -274,13 +284,21 @@ let g:syntastic_javascript_checkers = ['jslint']
 " Set sass checker
 let g:syntastic_scss_checkers = ['sass_lint']
 
+command! SC execute 'SyntasticCheck'
+nmap <F7> :SC<CR>
+
 " EasyAlign
 let g:easy_align_ignore_groups = ['Comment', 'String']
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-command! SC execute 'SyntasticCheck'
-nmap <F7> :SC<CR>
+" CamelCaseMotion
+call camelcasemotion#CreateMotionMappings('<leader>')
+
+" CtrlpFunky
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
 " vim-fugitive
 " Keep current file open and show Ggrep results in quickfix list
