@@ -76,7 +76,8 @@ let g:lightline = {
       \ 'colorscheme': 'landscape',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
+      \   'right': [ [ 'lineinfo' ], [ 'percent' ], ['filetype' ] ]
       \ },
       \ 'component_function': {
       \   'modified': 'LightlineModified',
@@ -280,7 +281,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'passive' }
 
 " Set js checker
-let g:syntastic_javascript_checkers = ['jslint']
+let g:syntastic_javascript_checkers = ['jshint']
 " Set sass checker
 let g:syntastic_scss_checkers = ['sass_lint']
 
@@ -324,7 +325,8 @@ endwhile
 " or
 " `s{char}{char}{label}`
 " Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-overwin-f2)
+nmap s <Plug>(easymotion-overwin-f)
+nmap q <Plug>(easymotion-overwin-f2)
 
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
