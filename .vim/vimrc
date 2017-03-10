@@ -46,6 +46,10 @@ Plugin 'hail2u/vim-css3-syntax'
 " Easily align scss
 Plugin 'junegunn/vim-easy-align'
 
+" Easily close tags
+Plugin 'vim-scripts/closetag.vim'
+
+
 " status bar
 Plugin 'itchyny/lightline.vim'
 
@@ -76,8 +80,12 @@ let g:lightline = {
       \ 'colorscheme': 'landscape',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
+      \   'left': [ [ 'mode', 'paste' ], [ 'filename', 'gitversion' ] ],
       \   'right': [ [ 'lineinfo' ], [ 'percent' ], ['filetype' ] ]
+      \ },
+      \ 'inactive': {
+      \   'left': [ [ 'filename', 'gitversion' ] ],
+      \   'right': [ [ 'lineinfo' ], [ 'percent' ] ]
       \ },
       \ 'component_function': {
       \   'modified': 'LightlineModified',
@@ -87,6 +95,7 @@ let g:lightline = {
       \   'fileformat': 'LightlineFileformat',
       \   'filetype': 'LightlineFiletype',
       \   'fileencoding': 'LightlineFileencoding',
+      \   'gitversion': 'LightLineGitversion',
       \   'mode': 'LightlineMode',
       \ },
       \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
@@ -151,6 +160,21 @@ endfunction
 
 function! LightlineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+function! LightLineGitversion()
+  let fullname = expand('%')
+  let gitversion = ''
+  if fullname =~? 'fugitive://.*/\.git//0/.*'
+      let gitversion = 'git index'
+  elseif fullname =~? 'fugitive://.*/\.git//2/.*'
+      let gitversion = 'git target'
+  elseif fullname =~? 'fugitive://.*/\.git//3/.*'
+      let gitversion = 'git merge'
+  elseif &diff == 1
+      let gitversion = 'working copy'
+  endif
+  return gitversion
 endfunction
 
 " syntax for hamlpy
@@ -287,6 +311,10 @@ let g:syntastic_scss_checkers = ['sass_lint']
 
 command! SC execute 'SyntasticCheck'
 nmap <F7> :SC<CR>
+
+" closetag
+inoremap <C-t> <C-R>=GetCloseTag()<CR>
+map <C-_> a<C-_><ESC>
 
 " EasyAlign
 let g:easy_align_ignore_groups = ['Comment', 'String']
