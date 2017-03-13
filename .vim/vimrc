@@ -10,10 +10,14 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Color schemes
+Plugin 'crusoexia/vim-monokai'
+Plugin 'Lokaltog/vim-distinguished'
+
 " let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
 
-" Better search
+" Show x/n search matches
 Plugin 'henrik/vim-indexed-search'
 
 " Move through camelCase
@@ -36,7 +40,6 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
 " js syntax
-Plugin 'crusoexia/vim-monokai'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 
@@ -71,7 +74,7 @@ set hidden
 " Syntax
 syntax on
 set t_Co=256  " vim-monokai now only support 256 colours in terminal.
-colorscheme monokai
+colorscheme distinguished
 "Highlighting for folded lines 
 :hi folded ctermfg=blue
 
@@ -252,7 +255,7 @@ set hlsearch
 set gdefault
 
 " Jump to search as I type
-set incsearch
+" set incsearch
 
 " Case Stuff
 set ignorecase
@@ -306,6 +309,7 @@ let g:syntastic_mode_map = { 'mode': 'passive' }
 
 " Set js checker
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_jshint_args="--config ~/.jshintrc"
 " Set sass checker
 let g:syntastic_scss_checkers = ['sass_lint']
 
