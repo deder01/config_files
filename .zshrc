@@ -17,7 +17,6 @@ ZSH_CUSTOM=".zsh_custom"
 
 # Fast fzf searches
 alias f='vim $(fzf-tmux)'
-alias goto='fzf-tmux'
 
 
 # Set up sqrrl environment if at work
@@ -36,7 +35,7 @@ alias agi="ag -i"
 ##### fzf #####
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 # cdf - cd into the directory of the selected file
-cdf() {
+goto() {
    local file
    local dir
    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
