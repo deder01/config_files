@@ -10,12 +10,21 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" let Vundle manage Vundle
+Plugin 'VundleVim/Vundle.vim'
+
 " Color schemes
 Plugin 'crusoexia/vim-monokai'
 Plugin 'Lokaltog/vim-distinguished'
 
-" let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
+" Tern for vim
+Plugin 'ternjs/tern_for_vim'
+
+" As you type completions
+Plugin 'Valloric/YouCompleteMe'
+
+" Tab completion
+Plugin 'ervandew/supertab'
 
 " Show x/n search matches
 Plugin 'henrik/vim-indexed-search'
@@ -187,7 +196,7 @@ au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 
 
 "Nerdtree settings
-noremap <silent> <C-o> :NERDTreeToggle<CR>
+" noremap <silent> <C-o> :NERDTreeToggle<CR>
 
 "Show tabs as '>.' and make them dark grey
 set list
@@ -315,6 +324,16 @@ let g:syntastic_scss_checkers = ['sass_lint']
 
 command! SC execute 'SyntasticCheck'
 nmap <F7> :SC<CR>
+
+" tern
+noremap <C-g> :TernDefTab<CR>
+
+" YCM
+" Trigger css completions
+let g:ycm_semantic_triggers =  {
+    \   'scss': ['    ', ': '],
+    \   'css': ['    ', ': '],
+    \ }
 
 " closetag
 inoremap <C-t> <C-R>=GetCloseTag()<CR>
