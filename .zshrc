@@ -17,6 +17,7 @@ ZSH_CUSTOM=".zsh_custom"
 
 # Fast fzf searches
 alias f='vim $(fzf-tmux)'
+alias goto='fzf-tmux'
 
 
 # Set up sqrrl environment if at work
@@ -31,6 +32,16 @@ alias ctags="`brew --prefix`/bin/ctags"
 
 # Quick case-insensitive search
 alias agi="ag -i"
+
+##### fzf #####
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+# cdf - cd into the directory of the selected file
+cdf() {
+   local file
+   local dir
+   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+}
+##### end fzf #####
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -97,5 +108,4 @@ export LANG=en_US.UTF-8
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
