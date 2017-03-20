@@ -5,3 +5,30 @@
 
 # Force add in sqrrl stuff
 sqrrl/
+.atom/
+.bak/
+.cache/
+.config/
+.fop/
+.gem/
+.m2/
+.npm/
+.sqrrl/
+.ssh/
+.viminfo
+.zinc/
+.zsh_history
+Applications/
+Desktop/
+Documents/
+Downloads/
+Google Drive/
+Library/
+Movies/
+Music/
+Pictures/
+Public/
+bak/
+node_modules/
+repos/
+test/
