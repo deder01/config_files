@@ -52,12 +52,16 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>821 262 445 77 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>597 248 918 512 0 0 1440 877 </string>
+	<string>2080 534 1016 502 1920 -536 1200 1897 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>960 88 954 1089 0 0 1920 1177 </string>
+	<string>1920 -520 1193 1881 1920 -536 1200 1897 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>47 380 650 477 0 0 1920 1177 </string>
+	<string>1920 -520 1193 1881 1920 -536 1200 1897 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>1920 884 665 477 1920 -536 1200 1897 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1221,7 +1225,7 @@
 			<key>Normal Font</key>
 			<string>MesloLGMDZ-RegularForPowerline 13</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -1288,8 +1292,33 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>993462F8-D9B5-4C6B-B2FA-93A0F4EFF1C4</string>
+	<key>NoSyncLastTipTime</key>
+	<real>511451641.05410802</real>
+	<key>NoSyncPermissionToShowTip</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>509555570.868954</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
+		<string>0003</string>
+		<string>0004</string>
+		<string>0005</string>
+		<string>0006</string>
+		<string>0007</string>
+		<string>0008</string>
+		<string>0009</string>
+		<string>0010</string>
+		<string>0011</string>
+		<string>0012</string>
+		<string>0013</string>
+		<string>0014</string>
+	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>PointerActions</key>
@@ -1338,7 +1367,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-02-24T15:13:26Z</date>
+	<date>2017-03-20T13:49:12Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>WordCharacters</key>
