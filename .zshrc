@@ -15,10 +15,6 @@ ZSH_THEME="agnoster"
 # Set custom folder to something we can actually track
 ZSH_CUSTOM=".zsh_custom"
 
-# Fast fzf searches
-alias f='vim $(fzf-tmux)'
-
-
 # Set up sqrrl environment if at work
 if [[ -f $HOME/sqrrl/.zshrc_sqrrl ]]; then
   source $HOME/sqrrl/.zshrc_sqrrl
@@ -48,6 +44,10 @@ fd() {
                   -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir"
 }
+
+# Fast fzf searches
+alias f='vim $(fzf-tmux)'
+alias g='goto'
 ##### end fzf #####
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -116,3 +116,5 @@ export LANG=en_US.UTF-8
 
 # ssh
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
