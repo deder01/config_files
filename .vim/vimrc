@@ -1,93 +1,100 @@
-" Remap leader to comma
-let mapleader = ","
+"""""""""" Plugins  """"""""""
+" Use Vundle for package management
+set nocompatible | filetype off | set rtp+=~/.vim/bundle/Vundle.vim | call vundle#begin() | Plugin 'VundleVim/Vundle.vim'
 
-" Encoding for lightline
+""""" Color Schemes """""
+Plugin 'crusoexia/vim-monokai'
+Plugin 'Lokaltog/vim-distinguished'
+""""" /Color Schemes """"
+"
+""""" Front End """""
+"" Javascript ""
+Plugin 'bkad/CamelCaseMotion'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'ternjs/tern_for_vim'
+"" /Javascript ""
+
+"" HTML and Markup ""
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'vim-scripts/closetag.vim'
+"" /HTML and Markup ""
+""""" /Front End """"
+
+""""" Utilities """""
+"" Syntax and Auto-completions ""
+Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+"" /Syntax Auto-completions ""
+
+"" File Navigation ""
+Plugin 'easymotion/vim-easymotion'
+Plugin 'henrik/vim-indexed-search'
+Plugin 'kien/ctrlp.vim' " Only have ctrlp for ctrlp-funky
+Plugin 'tacahiroy/ctrlp-funky'
+"" /File navigation ""
+
+"" Codebase Navigation ""
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+"" /Codebase Navigation ""
+
+"" Statusbar ""
+Plugin 'itchyny/lightline.vim'
+"" /Statusbar ""
+""""" /Utilities """"
+
+call vundle#end() | filetype plugin indent on
+"""""""""" /Plugins  """"""""""
+
+"""""""""" The Essentials """"""""""
+set autoindent | set smartindent
+set hidden
+
+" Encoding necessary for lightline "
 set encoding=utf-8
 scriptencoding utf-8
 
-" Set up vundle
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+""""" Tabs """""
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set smarttab
 
-" let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
-
-" Color schemes
-Plugin 'crusoexia/vim-monokai'
-Plugin 'Lokaltog/vim-distinguished'
-
-" Tern for vim
-Plugin 'ternjs/tern_for_vim'
-
-" As you type completions
-Plugin 'Valloric/YouCompleteMe'
-
-" Tab completion
-Plugin 'ervandew/supertab'
-
-" Show x/n search matches
-Plugin 'henrik/vim-indexed-search'
-
-" Move through camelCase
-Plugin 'bkad/CamelCaseMotion'
-
-" nerdtree
-Plugin 'scrooloose/nerdtree'
-
-" fugitive (git) 
-Plugin 'tpope/vim-fugitive'
-
-" syntastic 
-Plugin 'vim-syntastic/syntastic'
-
-" easymotion
-Plugin 'easymotion/vim-easymotion'
-
-" fzf
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-
-" js syntax
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'othree/javascript-libraries-syntax.vim'
-
-" CSS syntax and SCSS
-Plugin 'hail2u/vim-css3-syntax'
-
-" Easily align scss
-Plugin 'junegunn/vim-easy-align'
-
-" Easily close tags
-Plugin 'vim-scripts/closetag.vim'
+"" Show tabs as '>.' and make them dark grey  ""
+set list
+set listchars=tab:\>.
+hi SpecialKey ctermfg=DarkGrey guifg=DarkGrey
+hi NonText ctermfg=DarkGrey guifg=DarkGrey
+"" /Grey Tabs  ""
+""""" /Tabs """""
 
 
-" status bar
-Plugin 'itchyny/lightline.vim'
-
-" Ctrp
-Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'kien/ctrlp.vim'
-
-" end of plugins
-call vundle#end()
-
-"The essentials
-filetype plugin indent on
-set nocompatible
-set autoindent
-set smartindent
-set hidden
-
-
-" Syntax
-syntax on
-set t_Co=256  " vim-monokai now only support 256 colours in terminal.
+""""" Preferences """""
+let mapleader = ","
+set t_Co=256
 colorscheme distinguished
-"Highlighting for folded lines 
+"""""""""" /The Essentials """"""""""
+
+
+"""""""""" Syntax """"""""""
+syntax on
+"
+" Highlighting for folded lines "
 :hi folded ctermfg=blue
 
-"Set  statusbar theme
+"" Strange Fletypes "" 
+au BufRead,BufNewFile *.hamlpy set ft=haml
+au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
+"" /Strange Fletypes "" 
+"""""""""" /Syntax """"""""""
+
+"""""""""" Plugin Settings """"""""""
+""""" Lightline """""
 let g:lightline = {
       \ 'colorscheme': 'landscape',
       \ 'mode_map': { 'c': 'NORMAL' },
@@ -188,27 +195,119 @@ function! LightLineGitversion()
   endif
   return gitversion
 endfunction
+""""" /Lightline """""
 
-" syntax for hamlpy
-au BufRead,BufNewFile *.hamlpy set ft=haml
-" Handlebar syntax
-au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
+""""" Syntastic """""
+"set statusline+=%{SyntasticStatuslineFlag()}
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = { 'mode': 'passive' }
+
+""" Syntax Checkers """
+"" JS Checkers ""
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_jshint_args="--config ~/.jshintrc"
+"" /JS checkers ""
+
+"" SASS Checkers ""
+let g:syntastic_scss_checkers = ['sass_lint']
+"" /SASS Checkers ""
+""" /Syntax Checkers """
+
+""" Shortcuts """
+command! SC execute 'SyntasticCheck'
+nmap <F7> :SC<CR>
+""""" /Syntastic """""
 
 
-"Nerdtree settings
+""""" Tern """""
+noremap <C-g> :TernDefTab<CR>
+""""" /Tern """""
+
+""""" YCM """""
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+""" CSS """
+let g:ycm_semantic_triggers =  {
+    \   'scss': ['    ', ': '],
+    \   'css': ['    ', ': '],
+    \ }
+""" /CSS """
+""""" /YCM """""
+
+""""" SuperTab """""
+let g:SuperTabClosePreviewOnPopupClose = 1
+""""" /SuperTab """""
+
+""""" CloseTag """""
+inoremap <C-t> <C-R>=GetCloseTag()<CR>
+map <C-_> a<C-_><ESC>
+""""" /CloseTag """""
+
+""""" EasyAlign """""
+let g:easy_align_ignore_groups = ['Comment', 'String']
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+""""" /EasyAlign """""
+
+""""" CamelCaseMotion """""
+call camelcasemotion#CreateMotionMappings('<leader>')
+""""" /CamelCaseMotion """""
+
+""""" CtrlPFunky """""
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+""""" /CtrlPFunky """""
+
+""""" Vim-fugitive """""
+" Keep current file open and show Ggrep results in quickfix list
+command! -nargs=+ S execute ':silent Ggrep!' <q-args> | cw | redraw!
+"command! -nargs=+ Si execute ':silent Ggrep! -i ' . [<f-args>][0] . ' **/*.' . [<f-args>][1] | cw | redraw!
+command! -nargs=+ Ssp execute ':sp | silent Ggrep!' <q-args> | cw | redraw!
+command! -nargs=+ Sisp execute ':sp | silent Ggrep! -i' <q-args> | cw | redraw!
+map <silent> <C-k> :Sisp
+""""" /Vim-fugitive """""
+
+""""" EasyMotion """""
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" nmap s <Plug>(easymotion-overwin-f)
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+""""" /EasyMotion """""
+
+""""" FZF """""
+map <silent> <C-h> :FZF<CR>
+map <silent> <C-j> :sp\|:FZF<CR>
+""""" /FZF """""
+
+""""" NerdTree """""
 " noremap <silent> <C-o> :NERDTreeToggle<CR>
+""""" /NerdTree """""
+"""""""""" /Plugin Settings """"""""""
 
-"Show tabs as '>.' and make them dark grey
-set list
-set listchars=tab:\>.
-hi SpecialKey ctermfg=DarkGrey guifg=DarkGrey
-hi NonText ctermfg=DarkGrey guifg=DarkGrey
-
-
-"End lines at 920 columns
+"""""""""" It's Personal """"""""""
+" End lines at 920 columns
 set textwidth=920
 
-"Make sure I ain't cheating with those arrow keys!
+" map <leader>i to move to tab i for 0-9
+let i = 1
+while i<=9
+  exec "nnoremap <Leader>".i." ".i."gt"
+  let i+=1
+endwhile
+
+
+" Make sure I ain't cheating with those arrow keys!
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
@@ -218,7 +317,7 @@ noremap <down> <nop>
 noremap <left> <nop>
 noremap <right> <nop>
 
-"Split buffer below
+" Split buffer below
 set splitbelow
 
 
@@ -233,20 +332,20 @@ noremap Y y$
 noremap <Space> 5
 
 inoremap ;; :
-"Map semicolon to end of line
+" Map semicolon to end of line
 noremap ;a ^
 noremap ;; $
 noremap % K
 noremap K %
 
-"Remap jj to escape, so we can move in and out of visual mode
+" Remap jj to escape, so we can move in and out of visual mode
 inoremap jj <Esc>
 noremap ff <Esc>
 
-"Remap lc to close lwindow
+" Remap lc to close lwindow
 :cmap lc lclose
 
-"And make sure I aint' cheating with no escape key!
+" And make sure I aint' cheating with no escape key!
 imap <Esc> <nop>
 
 " Better command-line completion
@@ -303,123 +402,7 @@ set notimeout ttimeout ttimeoutlen=200
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F5>
 
-"------------------------------------------------------------
-" Plugin settings
-
-" syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'mode': 'passive' }
-
-" Set js checker
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_javascript_jshint_args="--config ~/.jshintrc"
-" Set sass checker
-let g:syntastic_scss_checkers = ['sass_lint']
-
-command! SC execute 'SyntasticCheck'
-nmap <F7> :SC<CR>
-
-" tern
-noremap <C-g> :TernDefTab<CR>
-
-" YCM
-" Trigger css completions
-let g:ycm_semantic_triggers =  {
-    \   'scss': ['    ', ': '],
-    \   'css': ['    ', ': '],
-    \ }
-" Dont open scratch buffer
-let g:SuperTabClosePreviewOnPopupClose = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-
-" closetag
-inoremap <C-t> <C-R>=GetCloseTag()<CR>
-map <C-_> a<C-_><ESC>
-
-" EasyAlign
-let g:easy_align_ignore_groups = ['Comment', 'String']
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-
-" CamelCaseMotion
-call camelcasemotion#CreateMotionMappings('<leader>')
-
-" CtrlpFunky
-nnoremap <Leader>fu :CtrlPFunky<Cr>
-" narrow the list down with a word under cursor
-nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
-
-" vim-fugitive
-" Keep current file open and show Ggrep results in quickfix list
-command! -nargs=+ S execute ':silent Ggrep!' <q-args> | cw | redraw!
-"command! -nargs=+ Si execute ':silent Ggrep! -i ' . [<f-args>][0] . ' **/*.' . [<f-args>][1] | cw | redraw!
-command! -nargs=+ Ssp execute ':sp | silent Ggrep!' <q-args> | cw | redraw!
-command! -nargs=+ Sisp execute ':sp | silent Ggrep! -i' <q-args> | cw | redraw!
-map <silent> <C-k> :Sisp
-
-" easymotion
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-
-" map <leader>i to move to tab i for 0-9
-let i = 1
-while i<=9
-  exec "nnoremap <Leader>".i." ".i."gt"
-  let i+=1
-endwhile
-
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-" nmap s <Plug>(easymotion-overwin-f)
-" or
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-overwin-f)
-nmap q <Plug>(easymotion-overwin-f2)
-
-" Turn on case insensitive feature
-let g:EasyMotion_smartcase = 1
-
-" JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-
-" FZF
-map <silent> <C-h> :FZF<CR>
-map <silent> <C-j> :sp\|:FZF<CR>
-
-"------------------------------------------------------------
-" Indentation options {{{1
-"
-" Indentation settings according to personal preference.
-
-" Indentation settings for using 2 spaces instead of tabs.
-" Do not change 'tabstop' from its default value of 8 with this setup.
-"set softtabstop=2
-"set expandtab
-
-" Indentation settings for using hard tabs for indent. Display tabs as
-" two characters wide.
-" set expandtab
-set expandtab
-
-set tabstop=2
-set softtabstop=0
-set shiftwidth=2
-set smarttab
-
-
-"------------------------------------------------------------
-" Mappings {{{1
-"
-" Useful mappings
-"
-
+""""" Mappings """""
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
@@ -430,26 +413,29 @@ vmap <C-c> "+y
 vmap <C-x> "+x
 " CTRL-X to cut (visual mode)
 vmap <C-v> <esc>"+gP
+""""" /Mappings """""
 
-
+""""" Functions """""
 function! MarkWindowSwap()
-	let g:markedWinNum = winnr()
+  let g:markedWinNum = winnr()
 endfunction
 
 function! DoWindowSwap()
-	"Mark destination
-	let curNum = winnr()
-	let curBuf = bufnr( "%" )
-	exe g:markedWinNum . "wincmd w"
-	"Switch to source and shuffle dest->source
-	let markedBuf = bufnr( "%" )
-	"Hide and open so that we aren't prompted and keep history
-	exe 'hide buf' curBuf
-	"Switch to dest and shuffle source->dest
-	exe curNum . "wincmd w"
-	"Hide and open so that we aren't prompted and keep history
-	exe 'hide buf' markedBuf
+  "Mark destination
+  let curNum = winnr()
+  let curBuf = bufnr( "%" )
+  exe g:markedWinNum . "wincmd w"
+  "Switch to source and shuffle dest->source
+  let markedBuf = bufnr( "%" )
+  "Hide and open so that we aren't prompted and keep history
+  exe 'hide buf' curBuf
+  "Switch to dest and shuffle source->dest
+  exe curNum . "wincmd w"
+  "Hide and open so that we aren't prompted and keep history
+  exe 'hide buf' markedBuf
 endfunction
 
 noremap <silent> <leader>mw :call MarkWindowSwap()<CR>
 noremap <silent> <leader>pw :call DoWindowSwap()<CR>
+""""" /Functions """""
+"""""""""" /It's Personal """"""""""
