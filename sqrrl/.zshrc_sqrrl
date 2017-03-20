@@ -28,7 +28,7 @@ export YARN_HOME=$HADOOP_PREFIX
 export YARN_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 export HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 
-export PATH=$HADOOP_PREFIX/sbin:$HADOOP_PREFIX/bin:$ZOOKEEPER_HOME/bin:$SQRRL_HOME/bin:$PATH
+export PATH=$HADOOP_PREFIX/sbin:$HADOOP_PREFIX/bin:$ZOOKEEPER_HOME/bin:$SQRRL_HOME/analytics/bin:$PATH
 export ASSERTIONS_FLAG="-ea"
 
 export MAVEN_OPTS="-Xms512m -Xmx2g -XX:MaxPermSize=256m"
@@ -42,5 +42,9 @@ alias goweb="cd $WEB_HOME"
 
 # server
 alias setup-server="sudo bash $SQRRL_CONFIG/setup-server.sh"
-alias add-data="cd $SQRRL_HOME/systemtest && mvn verify -Dlocal -DdoDetectorGen"
+alias add-data="cd $SQRRL_HOME/systemtest && mvn verify -Dremote.ip=localhost -DdoDetectorGen"
 ###### end aliases ######
+
+# docker
+export DOCKER_HOST="tcp://${USER}-docker.sqrrl-lab.net:2375"
+###### end docker ######
