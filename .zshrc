@@ -1,5 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Set up sqrrl environment if at work
+if [[ -f $HOME/sqrrl/.zshrc_sqrrl ]]; then
+  source $HOME/sqrrl/.zshrc_sqrrl
+fi
+
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
@@ -15,10 +20,6 @@ ZSH_THEME="agnoster"
 # Set custom folder to something we can actually track
 ZSH_CUSTOM=".zsh_custom"
 
-# Set up sqrrl environment if at work
-if [[ -f $HOME/sqrrl/.zshrc_sqrrl ]]; then
-  source $HOME/sqrrl/.zshrc_sqrrl
-fi
 # Begin oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -49,6 +50,10 @@ fd() {
 alias f='vim $(fzf-tmux)'
 alias g='goto'
 ##### end fzf #####
+
+##### SSH to docker ####
+alias ssh-dev="ssh -i ${HOME}/.ssh/sqrrl-dev.pem"
+##### end SSH to docker ####
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -118,3 +123,5 @@ export LANG=en_US.UTF-8
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#
+
