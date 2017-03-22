@@ -219,6 +219,7 @@ let g:syntastic_scss_checkers = ['sass_lint']
 
 """ Shortcuts """
 command! SC execute 'SyntasticCheck'
+command! SR execute 'SyntasticReset'
 nmap <F7> :SC<CR>
 """"" /Syntastic """""
 
@@ -262,6 +263,7 @@ call camelcasemotion#CreateMotionMappings('<leader>')
 nnoremap <Leader>fu :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+let g:ctrlp_funky_nolim=1
 """"" /CtrlPFunky """""
 
 """"" Vim-fugitive """""
@@ -365,7 +367,7 @@ set hlsearch
 set gdefault
 
 " Jump to search as I type
-" set incsearch
+set incsearch
 
 " Case Stuff
 set ignorecase
