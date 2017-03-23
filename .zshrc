@@ -130,3 +130,6 @@ export LANG=en_US.UTF-8
 
 # Source fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Manage git config files
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
