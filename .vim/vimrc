@@ -228,6 +228,8 @@ nmap <F7> :SC<CR>
 """"" Tern """""
 command! Td execute 'TernDef'
 noremap <C-g> :TernDefTab<CR>
+nmap <silent> <leader>tr :TernRef<CR>
+nmap <silent> <leader>tn :TernRename<CR>
 """"" /Tern """""
 
 """"" YCM """""
@@ -327,8 +329,8 @@ set formatoptions-=or
 " which is the default
 noremap Y y$
 
-" Map space to for fast movement in visual mode
-noremap <Space> 5
+" Map f to 5 for fast movement in visual mode
+noremap f 5
 
 inoremap ;; :
 " Map semicolon to end of line
