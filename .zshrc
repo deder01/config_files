@@ -33,8 +33,7 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias agi="ag -i"
 
 ##### fzf #####
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-# cdf - cd into the directory of the selected file
+# goto - cd into the directory of the selected file
 goto() {
    local file
    local dir
