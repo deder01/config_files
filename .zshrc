@@ -20,6 +20,9 @@ ZSH_THEME="agnoster"
 # Set custom folder to something we can actually track
 ZSH_CUSTOM=".zsh_custom"
 
+# Manage git config files using config
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
 # Begin oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -130,6 +133,3 @@ export LANG=en_US.UTF-8
 
 # Source fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Manage git config files
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'

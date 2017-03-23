@@ -1,1 +1,7 @@
 .cfg
+.vim/.netrwhist
+.vim/bundle/*
+!.vim/bundle/Vundle.vim/
+
+# Force add sqrrl stuff
+sqrrl/
