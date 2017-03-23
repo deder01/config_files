@@ -46,6 +46,15 @@ fd() {
   cd "$dir"
 }
 
+# Accept history selection instead of putting it on
+# the command line
+fzf-history-widget-accept() {
+  fzf-history-widget
+  zle accept-line
+}
+zle     -N     fzf-history-widget-accept
+bindkey '^X^R' fzf-history-widget-accept
+
 # Fast fzf searches
 alias f='vim $(fzf-tmux)'
 alias g='goto'
@@ -119,9 +128,5 @@ export LANG=en_US.UTF-8
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-
-
+# Source fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-#
-
