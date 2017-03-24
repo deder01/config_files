@@ -1,6 +1,8 @@
 {
   "undef" : true,
   "unused" : true,
+  "devel" : true,
+  "jquery" : true,
   "globals" : {
     "define" : false
   }
