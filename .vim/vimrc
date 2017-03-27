@@ -28,6 +28,7 @@ Plugin 'vim-scripts/closetag.vim'
 Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'jiangmiao/auto-pairs'
 "" /Syntax Auto-completions ""
 
 "" File Navigation ""
@@ -286,8 +287,7 @@ map <Leader>k <Plug>(easymotion-k)
 """"" FZF """""
 noremap <silent> <C-a> :Ag<CR>
 noremap <silent> <C-j> :FZF<CR>
-noremap <silent> <C-h> :sp\|:FZF<CR>
-noremap <silent> <C-b> :Buffers<CR>
+noremap <silent> <C-h> :Buffers<CR>
 """"" /FZF """""
 
 """"" NerdTree """""
