@@ -288,6 +288,12 @@ map <Leader>k <Plug>(easymotion-k)
 noremap <silent> <C-a> :Ag<CR>
 noremap <silent> <C-j> :FZF<CR>
 noremap <silent> <C-h> :Buffers<CR>
+
+let g:fzf_action = {
+  \ 'ctrl-t' : 'tab split',
+  \ 'ctrl-h' : 'split',
+  \ 'ctrl-v' : 'vsplit'
+  \ }
 """"" /FZF """""
 
 """"" NerdTree """""
