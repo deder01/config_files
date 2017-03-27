@@ -59,7 +59,7 @@ bindkey '^X^R' fzf-history-widget-accept
 
 # Fast fzf searches
 alias f='vim $(fzf-tmux)'
-alias g='goto'
+alias g='git'
 ##### end fzf #####
 
 ##### SSH to docker ####
