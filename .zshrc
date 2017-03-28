@@ -57,9 +57,14 @@ fzf-history-widget-accept() {
 zle     -N     fzf-history-widget-accept
 bindkey '^X^R' fzf-history-widget-accept
 
-# Fast fzf searches
+##### fzf #####
 alias f='vim $(fzf-tmux)'
+##### end fzf #####
+
+##### fzf #####
 alias g='git'
+alias gd='git diff'
+alias gc='git commit' 
 ##### end fzf #####
 
 ##### SSH to docker ####
@@ -70,7 +75,7 @@ alias ssh-dev="ssh -i ${HOME}/.ssh/sqrrl-dev.pem"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions virtualenvwrapper)
 
 
 # Uncomment the following line to use case-sensitive completion.
