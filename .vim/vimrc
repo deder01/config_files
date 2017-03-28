@@ -305,6 +305,21 @@ let g:fzf_action = {
 " End lines at 920 columns
 set textwidth=920
 
+" My braces are not always on the first column
+" Taken directory from :h motion.txt
+:map [[ ?{<CR>w99[{
+:map ]] /}<CR>b99]}
+:map ]] j0[[%/{<CR>
+:map [] k$][%?}<CR>
+
+:map <leader>{ ?{<CR>n
+:map <leader>b{ /{<CR>n
+:map <leader>} /}<CR>n
+:map <leader>b} ?}<CR>n
+
+" But sometimes I just want to spam through braces
+
+
 """"" VIM tabs """""
 " map <leader>i to move to tab i for 0-9
 let i = 1
@@ -342,6 +357,8 @@ inoremap ;; :
 " Map semicolon to end of line
 noremap ;a ^
 noremap ;; $
+
+" Map K to match braces
 noremap % K
 noremap K %
 
