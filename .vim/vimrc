@@ -5,6 +5,8 @@ set nocompatible | filetype off | set rtp+=~/.vim/bundle/Vundle.vim | call vundl
 """"" Color Schemes """""
 Plugin 'crusoexia/vim-monokai'
 Plugin 'Lokaltog/vim-distinguished'
+Plugin 'deder01/vim-dots'
+Plugin 'nanotech/jellybeans.vim'
 """"" /Color Schemes """"
 "
 """"" Front End """""
@@ -29,6 +31,7 @@ Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'jiangmiao/auto-pairs'
+"Plugin 'wesQ3/vim-windowswap'
 "" /Syntax Auto-completions ""
 
 "" File Navigation ""
@@ -80,7 +83,7 @@ hi NonText ctermfg=DarkGrey guifg=DarkGrey
 """"" Preferences """""
 let mapleader = ","
 set t_Co=256
-colorscheme distinguished
+colorscheme dots
 """""""""" /The Essentials """"""""""
 
 
@@ -305,17 +308,16 @@ let g:fzf_action = {
 " End lines at 920 columns
 set textwidth=920
 
+" Easier indenting of blocks
+noremap <leader>; :><CR>
+noremap <leader>a :<<CR>
+
 " My braces are not always on the first column
 " Taken directory from :h motion.txt
-:map [[ ?{<CR>w99[{
-:map ]] /}<CR>b99]}
-:map ][ j0[[%/{<CR>
-:map [] k$][%?}<CR>
-
-:map <leader>{ ?{<CR>n
-:map <leader>b{ /{<CR>n
-:map <leader>} /}<CR>n
-:map <leader>b} ?}<CR>n
+noremap [[ ?{<CR>w99[{
+noremap ]] /}<CR>b99]}
+noremap ][ j0[[%/{<CR>
+noremap [] k$][%?}<CR>
 
 " But sometimes I just want to spam through braces
 
@@ -343,9 +345,6 @@ inoremap <right> <nop>
 set splitbelow
 
 
-" Turn off inserting comments just cuz the line before was one
-set formatoptions-=or
-
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
 noremap Y y$
@@ -366,9 +365,6 @@ noremap K %
 inoremap jj <Esc>
 noremap ff <Esc>
 
-" Remap lc to close lwindow
-:cmap lc lclose
-
 " And make sure I aint' cheating with no escape key!
 imap <Esc> <nop>
 
@@ -382,9 +378,6 @@ set showcmd
 " Highlight searches (use <C-L> to temporarily turn off highlighting; see the
 " mapping of <C-L> below)
 set hlsearch
-
-" Set g for search and replace
-set gdefault
 
 " Jump to search as I type
 set incsearch
@@ -438,28 +431,4 @@ vmap <C-x> "+x
 " CTRL-X to cut (visual mode)
 vmap <C-v> <esc>"+gP
 """"" /Mappings """""
-
-""""" Functions """""
-function! MarkWindowSwap()
-  let g:markedWinNum = winnr()
-endfunction
-
-function! DoWindowSwap()
-  "Mark destination
-  let curNum = winnr()
-  let curBuf = bufnr( "%" )
-  exe g:markedWinNum . "wincmd w"
-  "Switch to source and shuffle dest->source
-  let markedBuf = bufnr( "%" )
-  "Hide and open so that we aren't prompted and keep history
-  exe 'hide buf' curBuf
-  "Switch to dest and shuffle source->dest
-  exe curNum . "wincmd w"
-  "Hide and open so that we aren't prompted and keep history
-  exe 'hide buf' markedBuf
-endfunction
-
-noremap <silent> <leader>mw :call MarkWindowSwap()<CR>
-noremap <silent> <leader>pw :call DoWindowSwap()<CR>
-""""" /Functions """""
 """""""""" /It's Personal """"""""""
