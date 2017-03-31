@@ -336,6 +336,7 @@ noremap <C-p> :tabp<CR>
 """"" /VIM tabs """""
 
 
+
 " Make sure I ain't cheating with those arrow keys!
 inoremap <up> <nop>
 inoremap <down> <nop>
@@ -345,10 +346,6 @@ inoremap <right> <nop>
 " Split buffer below
 set splitbelow
 
-
-" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
-" which is the default
-noremap Y y$
 
 " Map f to 5 for fast movement in visual mode
 noremap f 5
@@ -372,10 +369,11 @@ imap <Esc> <nop>
 " Better command-line completion
 set wildmenu
 
-
 " Show partial commands in the last line of the screen
 set showcmd
 
+" Highlight current line
+set cursorline
 " Highlight searches (use <C-L> to temporarily turn off highlighting; see the
 " mapping of <C-L> below)
 set hlsearch
