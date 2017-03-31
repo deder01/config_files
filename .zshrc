@@ -23,6 +23,9 @@ ZSH_CUSTOM=".zsh_custom"
 # Manage git config files using config
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+# Show lost things on git gui 
+alias grecover="gitk --all $( git fsck --no-reflog | awk '/dangling commit/ {print $3}' )"
+
 # Begin oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -61,12 +64,6 @@ bindkey '^X^R' fzf-history-widget-accept
 alias f='vim $(fzf-tmux)'
 ##### end fzf #####
 
-##### fzf #####
-alias g='git'
-alias gd='git diff'
-alias gc='git commit' 
-##### end fzf #####
-
 ##### SSH to docker ####
 alias ssh-dev="ssh -i ${HOME}/.ssh/sqrrl-dev.pem"
 ##### end SSH to docker ####
@@ -75,7 +72,7 @@ alias ssh-dev="ssh -i ${HOME}/.ssh/sqrrl-dev.pem"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions virtualenvwrapper)
+plugins=(git zsh-autosuggestions virtualenvwrapper chucknorris)
 
 
 # Uncomment the following line to use case-sensitive completion.
