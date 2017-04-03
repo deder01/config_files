@@ -14,7 +14,7 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'mklabs/vim-backbone'
+"Plugin '1995eaton/vim-better-javascript-completion'
 Plugin 'ternjs/tern_for_vim'
 "" /Javascript ""
 
@@ -32,6 +32,7 @@ Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'wesQ3/vim-windowswap'
 "Plugin 'wesQ3/vim-windowswap'
 "" /Syntax Auto-completions ""
 
@@ -47,6 +48,7 @@ Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-fugitive'
 "" /Codebase Navigation ""
 
@@ -216,6 +218,10 @@ let g:syntastic_mode_map = { 'mode': 'passive' }
 "" JS Checkers ""
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_javascript_jshint_args="--config ~/.jshintrc"
+let g:used_javascript_libs = 'underscore,lo-dash,backbone,jquery,requirejs'
+let g:vimjs#casesensitive= 0
+let g:vimjs#smartcomplete = 1
+let g:vimjs#chromeapis = 1
 "" /JS checkers ""
 
 "" SASS Checkers ""
@@ -301,7 +307,8 @@ let g:fzf_action = {
 """"" /FZF """""
 
 """"" NerdTree """""
-" noremap <silent> <C-o> :NERDTreeToggle<CR>
+noremap <silent> <leader>nt :NERDTreeToggle<CR>
+noremap <silent> <leader>b :Bookmark
 """"" /NerdTree """""
 """""""""" /Plugin Settings """"""""""
 
