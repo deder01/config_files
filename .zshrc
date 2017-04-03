@@ -5,6 +5,16 @@ if [[ -f $HOME/sqrrl/.zshrc_sqrrl ]]; then
   source $HOME/sqrrl/.zshrc_sqrrl
 fi
 
+# Don't open vim if no file is passed
+vim() {
+    local args=("$@")
+
+    if [[ $# -eq 0 ]]; then
+      return 1
+    fi
+
+    command "vim" "$@"
+}
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
