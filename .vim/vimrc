@@ -14,7 +14,7 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
-"Plugin '1995eaton/vim-better-javascript-completion'
+Plugin '1995eaton/vim-better-javascript-completion'
 Plugin 'ternjs/tern_for_vim'
 "" /Javascript ""
 
@@ -31,9 +31,10 @@ Plugin 'vim-scripts/closetag.vim'
 Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'jiangmiao/auto-pairs'
+"Plugin 'jiangmiao/auto-pairs'
 Plugin 'wesQ3/vim-windowswap'
-"Plugin 'wesQ3/vim-windowswap'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdcommenter'
 "" /Syntax Auto-completions ""
 
 "" File Navigation ""
@@ -229,6 +230,10 @@ let g:syntastic_scss_checkers = ['sass_lint']
 "" /SASS Checkers ""
 """ /Syntax Checkers """
 
+"" HTML Checkers ""
+let g:syntastic_html_checkers = ['w3', 'tidy']
+"" /HTML Checkers ""
+
 """ Shortcuts """
 command! SC execute 'SyntasticCheck'
 command! SR execute 'SyntasticReset'
@@ -251,6 +256,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_semantic_triggers =  {
     \   'scss': ['    ', ': '],
     \   'css': ['    ', ': '],
+    \   'html': ['<', '"', '</', ' '],
     \ }
 """ /CSS """
 """"" /YCM """""
@@ -311,6 +317,14 @@ let g:fzf_action = {
 noremap <silent> <leader>nt :NERDTreeToggle<CR>
 noremap <silent> <leader>b :Bookmark
 """"" /NerdTree """""
+
+
+""""" NerdCommenter """""
+let g:NERDCustomDelimiters = { 
+  \ 'javascript': { 'leftAlt': '/**', 'rightAlt': '*/' },
+  \ 'javascript.jquery': { 'leftAlt': '/**', 'rightAlt': '*/' }
+\}
+""""" /NerdCommenter """""
 """""""""" /Plugin Settings """"""""""
 
 """""""""" It's Personal """"""""""
@@ -328,8 +342,8 @@ noremap ]] /}<CR>b99]}
 noremap ][ j0[[%/{<CR>
 noremap [] k$][%?}<CR>
 
-" But sometimes I just want to spam through braces
-
+" Don't insert comment after enter
+set formatoptions-=cro
 
 """"" VIM tabs """""
 " map <leader>i to move to tab i for 0-9
@@ -424,7 +438,7 @@ set number
 set notimeout ttimeout ttimeoutlen=200
 
 " Toggle between 'paste' and 'nopaste'
-set pastetoggle=<F5>
+set pastetoggle=<leader>p
 
 """"" Mappings """""
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
