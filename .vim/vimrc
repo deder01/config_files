@@ -21,7 +21,8 @@ Plugin 'ternjs/tern_for_vim'
 "" HTML and CSS ""
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'othree/html5.vim'
-Plugin 'junegunn/vim-easy-align'
+"Plugin 'junegunn/vim-easy-align'
+Plugin 'tommcdo/vim-lion'
 Plugin 'vim-scripts/closetag.vim'
 "" /HTML and CSS ""
 """"" /Front End """"
@@ -41,8 +42,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'kien/ctrlp.vim' " Only have ctrlp for ctrlp-funky
-Plugin 'Shougo/denite.nvim'
 Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'kshenoy/vim-signature'
 "" /File navigation ""
 
 "" Codebase Navigation ""
@@ -51,11 +52,17 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tommcdo/vim-fugitive-blame-ext'
 "" /Codebase Navigation ""
 
 "" Statusbar ""
 Plugin 'itchyny/lightline.vim'
 "" /Statusbar ""
+
+"" Random ""
+Plugin 'chip/vim-fat-finger'
+"" /Random ""
+
 """"" /Utilities """"
 
 call vundle#end() | filetype plugin indent on
@@ -99,7 +106,7 @@ syntax on
 
 "" Strange Fletypes "" 
 au BufRead,BufNewFile *.hamlpy set ft=haml
-au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
+"au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 "" /Strange Fletypes "" 
 """""""""" /Syntax """"""""""
 
@@ -316,6 +323,7 @@ let g:fzf_action = {
 """"" NerdTree """""
 noremap <silent> <leader>nt :NERDTreeToggle<CR>
 noremap <silent> <leader>b :Bookmark
+let g:NERDTreeMapMenu='M'
 """"" /NerdTree """""
 
 
