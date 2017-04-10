@@ -61,6 +61,7 @@ Plugin 'itchyny/lightline.vim'
 
 "" Random ""
 Plugin 'chip/vim-fat-finger'
+Plugin 'deder01/vim-abbrevs'
 "" /Random ""
 
 """"" /Utilities """"
@@ -256,6 +257,10 @@ nmap <silent> <leader>td :TernDef<CR>
 nmap <silent> <leader>tt :TernDefTab<CR>
 """"" /Tern """""
 
+""""" Vim-signature """""
+noremap <silent> <leader>mn ]`
+noremap <silent> <leader>mp [`
+""""" /Vim-signature """""
 """"" YCM """""
 let g:ycm_autoclose_preview_window_after_completion = 1
 
@@ -309,7 +314,7 @@ map <Leader>k <Plug>(easymotion-k)
 """"" /EasyMotion """""
 
 """"" FZF """""
-noremap <silent> <C-a> :Ag<CR>
+noremap <silent> <C-k> :Ag<CR>
 noremap <silent> <C-j> :FZF<CR>
 noremap <silent> <C-h> :Buffers<CR>
 
@@ -329,8 +334,8 @@ let g:NERDTreeMapMenu='M'
 
 """"" NerdCommenter """""
 let g:NERDCustomDelimiters = { 
-  \ 'javascript': { 'leftAlt': '/**', 'rightAlt': '*/' },
-  \ 'javascript.jquery': { 'leftAlt': '/**', 'rightAlt': '*/' }
+  \ 'javascript': { 'left': '//', 'leftAlt': '/**', 'rightAlt': '*/' },
+  \ 'javascript.jquery': { 'left': '//', 'leftAlt': '/**', 'rightAlt': '*/' }
 \}
 """"" /NerdCommenter """""
 """""""""" /Plugin Settings """"""""""
