@@ -1,3 +1,10 @@
+## Path to your oh-my-zsh installation.
+export ZSH=~/.oh-my-zsh
+
+
+# Begin oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Set up sqrrl environment if at work
@@ -16,9 +23,6 @@ vim() {
     command "vim" "$@"
 }
 
-# Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
-
 # max open files for yosemite
 # ulimit -n 65536
 
@@ -34,16 +38,23 @@ ZSH_CUSTOM=".zsh_custom"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Show lost things on git gui 
-alias grecover="gitk --all $( git fsck --no-reflog | awk '/dangling commit/ {print $3}' )"
+alias grecover="gitkb --all \$( git fsck --no-reflog | awk '/dangling commit/ {print $3}' )"
 
-# Begin oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+# Shortcut for git diff cached
+alias gdc="git diff --cached"
 
 # Use brew version of ctags
 alias ctags="`brew --prefix`/bin/ctags"
 
 # Quick case-insensitive search
 alias agi="ag -i"
+
+
+##### config #####
+alias cdiff="config diff"
+alias ccom="config commit"
+alias cpush="config push origin master"
+##### /config #####
 
 ##### fzf #####
 # goto - cd into the directory of the selected file
