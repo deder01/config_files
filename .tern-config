@@ -1,0 +1,18 @@
+{
+    "libs": [
+        "browser",
+        "underscore",
+        "jquery"
+    ],
+    "plugins": {
+      "node" : {},
+      "requirejs" : {
+        "override": {
+          "jquery": "=$",
+          "underscore": "=_"
+        }
+      }
+    },
+    "loadEagerly": [
+    ]
+}
