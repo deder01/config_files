@@ -1,7 +1,6 @@
 ## Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
-
 # Begin oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -11,6 +10,12 @@ source $ZSH/oh-my-zsh.sh
 if [[ -f $HOME/sqrrl/.zshrc_sqrrl ]]; then
   source $HOME/sqrrl/.zshrc_sqrrl
 fi
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git vi-mode zsh-autosuggestions virtualenvwrapper tmux tmuxinator)
 
 # Don't open vim if no file is passed
 vim() {
@@ -40,8 +45,13 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # Show lost things on git gui 
 alias grecover="gitkb --all \$( git fsck --no-reflog | awk '/dangling commit/ {print $3}' )"
 
-# Shortcut for git diff cached
+# More git shortcuts
 alias gdc="git diff --cached"
+alias gs="git stash"
+alias gsa="git stash apply"
+alias gsl="git stash list"
+alias gss="git stash save"
+alias gsp="git stash pop"
 
 # Use brew version of ctags
 alias ctags="`brew --prefix`/bin/ctags"
@@ -51,11 +61,15 @@ alias agi="ag -i"
 
 
 ##### config #####
-alias cdiff="config diff"
-alias ccom="config commit"
-alias cpush="config push origin master"
+alias cond="config diff"
+alias conc="config commit"
+alias conpush="config push origin master"
+alias conpull="config pull"
 ##### /config #####
 
+##### tmux #####
+alias mux='tmuxinator'
+##### /tmux #####
 ##### fzf #####
 # goto - cd into the directory of the selected file
 goto() {
@@ -89,11 +103,6 @@ alias f='vim $(fzf-tmux)'
 alias ssh-dev="ssh -i ${HOME}/.ssh/sqrrl-dev.pem"
 ##### end SSH to docker ####
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions virtualenvwrapper chucknorris)
 
 
 # Uncomment the following line to use case-sensitive completion.

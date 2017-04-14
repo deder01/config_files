@@ -444,6 +444,9 @@ set laststatus=2
 set statusline=
 set ruler
 
+" Close location list
+noremap <leader>l :lclose<CR>
+
 " Display line numbers on the left
 set number
 
