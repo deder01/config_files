@@ -15,7 +15,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode zsh-autosuggestions virtualenvwrapper tmux tmuxinator)
+plugins=(git vi-mode zsh-autosuggestions virtualenvwrapper tmuxinator)
 
 # Don't open vim if no file is passed
 vim() {
