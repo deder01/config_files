@@ -21,8 +21,7 @@ Plugin 'ternjs/tern_for_vim'
 "" HTML and CSS ""
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'othree/html5.vim'
-"Plugin 'junegunn/vim-easy-align'
-Plugin 'tommcdo/vim-lion'
+Plugin 'junegunn/vim-easy-align'
 Plugin 'vim-scripts/closetag.vim'
 "" /HTML and CSS ""
 """"" /Front End """"
@@ -226,11 +225,15 @@ let g:syntastic_mode_map = { 'mode': 'passive' }
 """ Syntax Checkers """
 "" JS Checkers ""
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_javascript_jshint_args="--config ~/.jshintrc"
 let g:used_javascript_libs = 'underscore,lo-dash,backbone,jquery,requirejs'
 let g:vimjs#casesensitive= 0
 let g:vimjs#smartcomplete = 1
 let g:vimjs#chromeapis = 1
+
+" Import sqrrl jshintrc if we are at work
+if !empty(glob("~/sqrrl/.vimrc_sqrrl.vim"))
+  source ~/sqrrl/.vimrc_sqrrl.vim
+endif
 "" /JS checkers ""
 
 "" SASS Checkers ""
@@ -286,6 +289,7 @@ map <C-_> a<C-_><ESC>
 let g:easy_align_ignore_groups = ['Comment', 'String']
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+xmap rga <Plug>(EasyAlign)<right>:
 """"" /EasyAlign """""
 
 """"" CamelCaseMotion """""
@@ -329,6 +333,7 @@ let g:fzf_action = {
 noremap <silent> <leader>nt :NERDTreeToggle<CR>
 noremap <silent> <leader>b :Bookmark
 let g:NERDTreeMapMenu='M'
+let g:NERDTreeShowBookmarks=1
 """"" /NerdTree """""
 
 
