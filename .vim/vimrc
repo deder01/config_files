@@ -20,11 +20,18 @@ Plugin 'ternjs/tern_for_vim'
 
 "" HTML and CSS ""
 Plugin 'hail2u/vim-css3-syntax'
+Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'othree/html5.vim'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'vim-scripts/closetag.vim'
+Plugin 'mustache/vim-mustache-handlebars'
 "" /HTML and CSS ""
 """"" /Front End """"
+
+
+""""" Back End """"
+"Plugin 'artur-shaik/vim-javacomplete2'
+""""" /Back End """"
 
 """"" Utilities """""
 "" Syntax and Auto-completions ""
@@ -106,7 +113,8 @@ syntax on
 
 "" Strange Fletypes "" 
 au BufRead,BufNewFile *.hamlpy set ft=haml
-"au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
+au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
+au BufRead,BufNewFile *.scss set ft=scss.css 
 "" /Strange Fletypes "" 
 """""""""" /Syntax """"""""""
 
@@ -251,6 +259,11 @@ command! SR execute 'SyntasticReset'
 nmap <F7> :SC<CR>
 """"" /Syntastic """""
 
+""""" Java """""
+"autocmd FileType java setlocal omnifunc=javacomplete#Complete
+"nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+"imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+""""" /Java """""
 
 """"" Tern """""
 noremap <C-g> :TernDefTab<CR>
@@ -289,7 +302,7 @@ map <C-_> a<C-_><ESC>
 let g:easy_align_ignore_groups = ['Comment', 'String']
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
-xmap rga <Plug>(EasyAlign)<right>:
+xmap <leader>ga <Plug>(EasyAlign)<right>:
 """"" /EasyAlign """""
 
 """"" CamelCaseMotion """""
@@ -331,7 +344,6 @@ let g:fzf_action = {
 
 """"" NerdTree """""
 noremap <silent> <leader>nt :NERDTreeToggle<CR>
-noremap <silent> <leader>b :Bookmark
 let g:NERDTreeMapMenu='M'
 let g:NERDTreeShowBookmarks=1
 """"" /NerdTree """""
@@ -350,8 +362,8 @@ let g:NERDCustomDelimiters = {
 set textwidth=920
 
 " Easier indenting of blocks
-noremap <leader>; :><CR>
-noremap <leader>a :<<CR>
+noremap <leader>; ><CR>
+noremap <leader>a <<CR>
 
 " My braces are not always on the first column
 " Taken directory from :h motion.txt
@@ -371,8 +383,8 @@ while i<=9
   let i+=1
 endwhile
 
-noremap <C-n> :tabn<CR>
-noremap <C-p> :tabp<CR>
+noremap <leader>n :tabn<CR>
+noremap <leader>p :tabp<CR>
 """"" /VIM tabs """""
 
 
@@ -459,7 +471,7 @@ set number
 set notimeout ttimeout ttimeoutlen=200
 
 " Toggle between 'paste' and 'nopaste'
-set pastetoggle=<leader>p
+set pastetoggle=<F5>
 
 """"" Mappings """""
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
