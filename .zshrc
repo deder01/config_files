@@ -43,7 +43,7 @@ ZSH_CUSTOM=".zsh_custom"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Show lost things on git gui 
-alias grecover="gitkb --all \$( git fsck --no-reflog | awk '/dangling commit/ {print $3}' )"
+alias grecover="gitk --all \$( git fsck --no-reflog | awk '/dangling commit/ {print $3}' )"
 
 # More git shortcuts
 alias gdc="git diff --cached"
