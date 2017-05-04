@@ -14,8 +14,9 @@ while (True):
         focusCall = "open focus://focus?minutes=" + str(pomodoroMins)
         subprocess.call(focusCall, shell="True")
         time.sleep(pomodoroMins * 60)
-        print "Finished round " + str(i) + " of pomodoro " + str(pomodoroCount) + " time for a short " + str(breakMins) + " min break"
-        time.sleep(breakMins * 60)
+        if (i < 4):
+            print "Finished round " + str(i) + " of pomodoro " + str(pomodoroCount) + " time for a short " + str(breakMins) + " min break"
+            time.sleep(breakMins * 60)
 
     print "Finished pomodoro " + str(pomodoroCount) + " time for a well earned " + str(longBreakMins) + " min break!"
     pomodoroCount += 1
