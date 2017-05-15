@@ -16,8 +16,12 @@ while (True):
         time.sleep(pomodoroMins * 60)
         if (i < 4):
             print "Finished round " + str(i) + " of pomodoro " + str(pomodoroCount) + " time for a short " + str(breakMins) + " min break"
-            time.sleep(breakMins * 60)
+            for j in range( 0, breakMins ):
+                print str(breakMins-j) + " mins left until the next round"
+                time.sleep(60)
 
     print "Finished pomodoro " + str(pomodoroCount) + " time for a well earned " + str(longBreakMins) + " min break!"
     pomodoroCount += 1
-    time.sleep(longBreakMins * 60)
+    for i in range( 0, longBreakMins ):
+        print str(longBreakMins-i) + " mins left until the next pomodoro"
+        time.sleep(60)
