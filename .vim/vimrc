@@ -29,13 +29,9 @@ Plugin 'vim-scripts/closetag.vim'
 "" /HTML and CSS ""
 """"" /Front End """"
 
-
-""""" Back End """"
-"Plugin 'artur-shaik/vim-javacomplete2'
-""""" /Back End """"
-
 """"" Utilities """""
 "" Syntax and Auto-completions ""
+Plugin 'majutsushi/tagbar'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
@@ -171,21 +167,6 @@ function! LightlineReadonly()
   endif
 endfunction
 
-function! LightLineGitversion()
-  let fullname = expand('%')
-  let gitversion = ''
-  if fullname =~? 'fugitive://.*/\.git//0/.*'
-      let gitversion = 'git index'
-  elseif fullname =~? 'fugitive://.*/\.git//2/.*'
-      let gitversion = 'git target'
-  elseif fullname =~? 'fugitive://.*/\.git//3/.*'
-      let gitversion = 'git merge'
-  elseif &diff == 1
-      let gitversion = 'working copy'
-  endif
-  return gitversion
-endfunction
-
 function! LightlineFilename()
   return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
         \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
@@ -228,6 +209,8 @@ function! LightLineGitversion()
       let gitversion = 'git target'
   elseif fullname =~? 'fugitive://.*/\.git//3/.*'
       let gitversion = 'git merge'
+  elseif fullname =~? 'fugitive://.*/\.git//.*'
+      let gitversion = 'previous version'
   elseif &diff == 1
       let gitversion = 'working copy'
   endif
@@ -251,7 +234,7 @@ nnoremap <leader>k :MtaJumpToOtherTag<cr>
 
 "" JS Checkers ""
 let g:syntastic_javascript_checkers = ['jshint']
-let g:used_javascript_libs = 'underscore,lo-dash,backbone,jquery,requirejs'
+let g:used_javascript_libs = 'underscore,backbone,jquery,requirejs'
 let g:vimjs#casesensitive= 0
 let g:vimjs#smartcomplete = 1
 let g:vimjs#chromeapis = 1
@@ -497,3 +480,4 @@ vmap <C-x> "+x
 vmap <C-v> <esc>"+gP
 """"" /Mappings """""
 """""""""" /It's Personal """"""""""
+nmap <F8> :TagbarToggle<CR>
