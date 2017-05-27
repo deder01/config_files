@@ -16,6 +16,7 @@ Plugin 'bkad/CamelCaseMotion'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'ternjs/tern_for_vim'
+Plugin 'mxw/vim-jsx'
 "" /Javascript ""
 
 "" HTML and CSS ""
@@ -37,8 +38,9 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'gcorne/vim-sass-lint'
 Plugin 'wesQ3/vim-windowswap'
-"Plugin 'jiangmiao/auto-pairs'
+Plugin 'jiangmiao/auto-pairs'
 "" /Syntax Auto-completions ""
 
 "" File Navigation ""
@@ -223,8 +225,9 @@ endfunction
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 let g:syntastic_mode_map = { 'mode': 'passive' }
+
 
 """ Syntax Checkers """
 "" HTML Checkers ""
@@ -233,8 +236,9 @@ nnoremap <leader>k :MtaJumpToOtherTag<cr>
 "" /HTML Checkers ""
 
 "" JS Checkers ""
-let g:syntastic_javascript_checkers = ['jshint']
-let g:used_javascript_libs = 'underscore,backbone,jquery,requirejs'
+let g:syntastic_javascript_checkers = ['jshint', 'jsxhint']
+let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+let g:used_javascript_libs = 'underscore,backbone,jquery,requirejs,react'
 let g:vimjs#casesensitive= 0
 let g:vimjs#smartcomplete = 1
 let g:vimjs#chromeapis = 1
@@ -246,7 +250,9 @@ endif
 "" /JS checkers ""
 
 "" SASS Checkers ""
-let g:syntastic_scss_checkers = ['sass_lint']
+let g:syntastic_scss_checkers = ['sasslint']
+let g:syntastic_sass_checkers = ['sasslint']
+let g:sass_lint_config = '~/sass-lint.yml'
 "" /SASS Checkers ""
 """ /Syntax Checkers """
 
@@ -271,7 +277,12 @@ nmap <silent> <leader>tt :TernDefTab<CR>
 noremap <C-g> :TernDefTab<CR>
 """"" /Tern """""
 
-""""" Vim-signature """""
+
+""""" JSX """""
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+""""" /JSX """""
+
+""""eVim-signature """""
 noremap <silent> <leader>mn ]`
 noremap <silent> <leader>mp [`
 """"" /Vim-signature """""
