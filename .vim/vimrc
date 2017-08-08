@@ -40,7 +40,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'gcorne/vim-sass-lint'
 Plugin 'wesQ3/vim-windowswap'
-Plugin 'jiangmiao/auto-pairs'
+"Plugin 'jiangmiao/auto-pairs'
 "" /Syntax Auto-completions ""
 
 "" File Navigation ""
@@ -82,6 +82,7 @@ set encoding=utf-8
 scriptencoding utf-8
 
 " Display line numbers on the left
+set relativenumber
 set number
 
 " Case Stuff
@@ -220,6 +221,11 @@ function! LightLineGitversion()
 endfunction
 """"" /Lightline """""
 
+
+""""" Fugitive """""
+nnoremap <leader>gd :Gvdiff<cr>
+""""" /Fugitive """""
+
 """"" Syntastic """""
 "set statusline+=%{SyntasticStatuslineFlag()}
 let g:syntastic_always_populate_loc_list = 1
@@ -250,9 +256,7 @@ endif
 "" /JS checkers ""
 
 "" SASS Checkers ""
-let g:syntastic_scss_checkers = ['sasslint']
-let g:syntastic_sass_checkers = ['sasslint']
-let g:sass_lint_config = '~/sass-lint.yml'
+let g:syntastic_scss_checkers = ['scss_lint']
 "" /SASS Checkers ""
 """ /Syntax Checkers """
 
