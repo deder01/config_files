@@ -58,6 +58,8 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tommcdo/vim-fugitive-blame-ext'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'christoomey/vim-tmux-navigator'
 "" /Codebase Navigation ""
 
 "" Statusbar ""
@@ -344,9 +346,9 @@ map <Leader>jk <Plug>(easymotion-k)
 """"" /EasyMotion """""
 
 """"" FZF """""
-noremap <silent> <C-k> :Ag<CR>
-noremap <silent> <C-j> :FZF<CR>
-noremap <silent> <C-h> :Buffers<CR>
+noremap <silent> <C-s> :Ag<CR>
+noremap <silent> <C-f> :FZF<CR>
+noremap <silent> <C-d> :Buffers<CR>
 
 let g:fzf_action = {
   \ 'ctrl-t' : 'tab split',
@@ -440,8 +442,8 @@ set showcmd
 
 " Highlight current line
 set cursorline
-" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
-" mapping of <C-L> below)
+" Highlight searches (use <C-s> to temporarily turn off highlighting; see the
+" mapping of <C-s> below)
 set hlsearch
 
 " Jump to search as I type
@@ -483,9 +485,9 @@ set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F5>
 
 """"" Mappings """""
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
+" Map <C-s> (redraw screen) to also turn off search highlighting until the
 " next search
-nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <C-s> :nohl<CR><C-s>
 
 " CTRL-C to copy (visual mode)
 vmap <C-c> "+y
