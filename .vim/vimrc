@@ -69,6 +69,7 @@ Plugin 'itchyny/lightline.vim'
 "" Random ""
 Plugin 'chip/vim-fat-finger'
 Plugin 'deder01/vim-abbrevs'
+Plugin 'nathanaelkane/vim-indent-guides'
 "" /Random ""
 """"" /Utilities """"
 
@@ -498,3 +499,6 @@ vmap <C-v> <esc>"+gP
 """"" /Mappings """""
 """""""""" /It's Personal """"""""""
 nmap <F8> :TagbarToggle<CR>
+
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 2
