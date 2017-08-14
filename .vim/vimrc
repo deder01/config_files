@@ -58,8 +58,6 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tommcdo/vim-fugitive-blame-ext'
 Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'christoomey/vim-tmux-navigator'
 "" /Codebase Navigation ""
 
 "" Statusbar ""
@@ -69,7 +67,6 @@ Plugin 'itchyny/lightline.vim'
 "" Random ""
 Plugin 'chip/vim-fat-finger'
 Plugin 'deder01/vim-abbrevs'
-Plugin 'nathanaelkane/vim-indent-guides'
 "" /Random ""
 """"" /Utilities """"
 
@@ -347,9 +344,9 @@ map <Leader>jk <Plug>(easymotion-k)
 """"" /EasyMotion """""
 
 """"" FZF """""
-noremap <silent> <C-s> :Ag<CR>
-noremap <silent> <C-f> :FZF<CR>
-noremap <silent> <C-d> :Buffers<CR>
+noremap <silent> <C-k> :Ag<CR>
+noremap <silent> <C-j> :FZF<CR>
+noremap <silent> <C-h> :Buffers<CR>
 
 let g:fzf_action = {
   \ 'ctrl-t' : 'tab split',
@@ -443,8 +440,8 @@ set showcmd
 
 " Highlight current line
 set cursorline
-" Highlight searches (use <C-s> to temporarily turn off highlighting; see the
-" mapping of <C-s> below)
+" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
+" mapping of <C-L> below)
 set hlsearch
 
 " Jump to search as I type
@@ -486,9 +483,9 @@ set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F5>
 
 """"" Mappings """""
-" Map <C-s> (redraw screen) to also turn off search highlighting until the
+" Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
-nnoremap <C-s> :nohl<CR><C-s>
+nnoremap <C-L> :nohl<CR><C-L>
 
 " CTRL-C to copy (visual mode)
 vmap <C-c> "+y
@@ -499,6 +496,3 @@ vmap <C-v> <esc>"+gP
 """"" /Mappings """""
 """""""""" /It's Personal """"""""""
 nmap <F8> :TagbarToggle<CR>
-
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 2
