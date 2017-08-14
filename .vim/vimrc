@@ -58,6 +58,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tommcdo/vim-fugitive-blame-ext'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 "" /Codebase Navigation ""
 
 "" Statusbar ""
