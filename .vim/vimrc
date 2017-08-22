@@ -243,7 +243,8 @@ nnoremap <leader>k :MtaJumpToOtherTag<cr>
 "" /HTML Checkers ""
 
 "" JS Checkers ""
-let g:syntastic_javascript_checkers = ['jshint', 'jsxhint']
+"let g:syntastic_javascript_checkers = ['jshint', 'jsxhint', 'eslint']
+let g:syntastic_javascript_checkers = ['jshint', 'eslint']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 let g:used_javascript_libs = 'underscore,backbone,jquery,requirejs,react'
 let g:vimjs#casesensitive= 0
