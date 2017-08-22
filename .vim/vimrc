@@ -31,6 +31,7 @@ Plugin 'vim-scripts/closetag.vim'
 
 """"" Utilities """""
 "" Syntax and Auto-completions ""
+Plugin 'craigemery/vim-autotag'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
