@@ -1,0 +1,73 @@
+#!/bin/bash
+if is-stuff-up.sh &>/dev/null; then 
+  echo 'Already started'
+  exit
+fi
+
+
+export HADOOP_PREFIX="${HADOOP_PREFIX:-$HADOOP_HOME}"
+if [ -z "$HADOOP_PREFIX" ]; then
+  echo 'HADOOP_PREFIX not set'
+  exit 1
+fi
+if [ -z "$SQRRL_HOME" ]; then
+  echo 'SQRRL_HOME not set'
+  exit 1
+fi
+
+ACCUMULO_ROOT_DIR=${ACCUMULO_ROOT_DIR:-/accumulo}
+
+stepHeader() {
+  HR=$(printf '=%.0s' $(seq $(tput cols)))
+  printf '\n%s\n%s\n' "$1" "$HR"
+}
+
+set -e
+
+stepHeader 'Making sure hadoop is up'
+./hadoop-start
+stepHeader 'Stopping old sqrrls'
+./sqrrlui-stop || true
+sqrrl stopAll --hard
+stepHeader 'Restarting hadoop'
+./hadoop-start restart
+
+if [[ -e $SQRRL_HOME/logs ]]; then
+  ROLL_BASE="$SQRRL_HOME/logs/old"
+  mkdir -p "$ROLL_BASE"
+  ROLL_TO="$ROLL_BASE/$(date '+%Y-%m-%d-T%H:%M:%S')"
+  mkdir -p "$ROLL_TO"
+  OLD_FILES=$(find $SQRRL_HOME/logs/ -type f -d 1)
+  if [ -n "$OLD_FILES" ]; then
+    mv $OLD_FILES "$ROLL_TO"
+    echo "Rolled logs to $ROLL_TO" 1>&2
+  else
+    echo "No logs to roll over" 1>&2
+  fi
+fi
+
+printf 'Starting hadoop\n'
+./hadoop-start
+
+printf 'Starting sqrrl:\n'
+PROFILE_AGENT=~/yourkit/libyjpagent.jnilib
+if [[ -e "$PROFILE_AGENT" ]] ; then
+  echo "Starting with profiler."
+  AGENT_OPTS="-agentpath:$PROFILE_AGENT"
+fi
+AGENT_OPTS="$AGENT_OPS -Xmx1G -Xms1G"
+export SQRRL_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5105 $AGENT_OPTS"
+export SQRRL_OPTS="$SQRRL_OPTS -DdebugPoint.dir=/tmp/sqrrl-debug"
+
+export ACCUMULO_MASTER_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=${MASTER_DEBUG_SUSPEND:-n},address=5106 $AGENT_OPTS"
+sqrrl startAll #--debug-port 5105
+
+printf '\nWaiting for sqrrl shell to connect...'
+
+while true; do
+  if sqrrl shell -u test -p test -zk localhost &> /dev/null <<< 'version'; then
+    break
+  fi
+done
+
+printf ' OK\n'

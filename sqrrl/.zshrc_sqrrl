@@ -1,8 +1,9 @@
 # sqrrl env
 export SQRRL_HOME=$HOME/repos/sqrrl
 export SQRRL_ANALYTICS=$SQRRL_HOME/analytics
-export SQRRL_UI=$SQRRL_WEB/ui/src/main/
+export SQRRL_UI=$SQRRL_WEB/ui/src/main
 export SQRRL_WEB=$SQRRL_HOME/web
+export SQRRL_BIN=$HOME/sqrrl/bin
 
 # sqrrl front-end aliases
 alias gocss="cd $SQRRL_UI/styles/scss"
@@ -38,7 +39,7 @@ export YARN_HOME=$HADOOP_PREFIX
 export YARN_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 export HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 
-export PATH=$HADOOP_PREFIX/sbin:$HADOOP_PREFIX/bin:$ZOOKEEPER_HOME/bin:$SQRRL_ANALYTICS/bin:$SQRRL_HOME/tools/useful-scripts:$PATH
+export PATH=$HADOOP_PREFIX/sbin:$HADOOP_PREFIX/bin:$ZOOKEEPER_HOME/bin:$SQRRL_BIN:$SQRRL_ANALYTICS/bin:$SQRRL_HOME/tools/useful-scripts:$PATH
 export ASSERTIONS_FLAG="-ea"
 
 export MAVEN_OPTS="-Xms512m -Xmx2g -XX:MaxPermSize=256m"
