@@ -32,7 +32,6 @@ Plugin 'vim-scripts/closetag.vim'
 
 """"" Utilities """""
 "" Syntax and Auto-completions ""
-Plugin 'majutsushi/tagbar'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
@@ -492,4 +491,3 @@ vmap <C-x> "+x
 vmap <C-v> <esc>"+gP
 """"" /Mappings """""
 """""""""" /It's Personal """"""""""
-nmap <F8> :TagbarToggle<CR>
