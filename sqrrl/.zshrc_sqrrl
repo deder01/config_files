@@ -13,7 +13,7 @@ alias goui="cd $SQRRL_UI"
 alias goweb="cd $SQRRL_WEB"
 
 # other aliases
-alias antrun="mvn clean anntrun:run"
+alias antrun="mvn clean antrun:run"
 alias gosqrrl="cd $SQRRL_HOME" 
 alias isu="is-stuff-up.sh"
 
