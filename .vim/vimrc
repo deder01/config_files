@@ -20,6 +20,7 @@ Plugin 'ternjs/tern_for_vim'
 
 "" HTML and CSS ""
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'mattn/emmet-vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'mustache/vim-mustache-handlebars'
