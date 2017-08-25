@@ -283,6 +283,12 @@ noremap <C-g> :TernDefTab<CR>
 """"" /Tern """""
 
 
+""""" JsDoc """""
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_input_description = 1
+""""" /JsDoc """""
+
+
 """"" YCM """""
 let g:ycm_autoclose_preview_window_after_completion = 1
 
