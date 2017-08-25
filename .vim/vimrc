@@ -16,6 +16,7 @@ Plugin 'bkad/CamelCaseMotion'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'ternjs/tern_for_vim'
+Plugin 'heavenshell/vim-jsdoc'
 "" /Javascript ""
 
 "" HTML and CSS ""
