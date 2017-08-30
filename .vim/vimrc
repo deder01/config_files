@@ -125,6 +125,7 @@ syntax on
 au BufRead,BufNewFile *.hamlpy set ft=haml
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 au BufRead,BufNewFile *.scss set ft=scss.css 
+autocmd filetype crontab setlocal nobackup nowritebackup
 "" /Strange Fletypes "" 
 
 "" Tag matching ""
