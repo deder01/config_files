@@ -128,6 +128,15 @@ au BufRead,BufNewFile *.scss set ft=scss.css
 
 "" Tag matching ""
 let g:mta_set_default_matchtag_color = 1
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'javascript.jsx' : 1,
+    \ 'jinja' : 1,
+    \ 'liquid' : 1,
+    \ 'markdown' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \}
 "" /Tag matching ""
 """""""""" /Syntax """"""""""
 
