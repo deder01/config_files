@@ -17,10 +17,12 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'mxw/vim-jsx'
+Plugin 'heavenshell/vim-jsdoc'
 "" /Javascript ""
 
 "" HTML and CSS ""
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'mattn/emmet-vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'mustache/vim-mustache-handlebars'
@@ -32,10 +34,11 @@ Plugin 'vim-scripts/closetag.vim'
 
 """"" Utilities """""
 "" Syntax and Auto-completions ""
-Plugin 'majutsushi/tagbar'
+Plugin 'craigemery/vim-autotag'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-obsession'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'gcorne/vim-sass-lint'
@@ -124,6 +127,7 @@ syntax on
 au BufRead,BufNewFile *.hamlpy set ft=haml
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 au BufRead,BufNewFile *.scss set ft=scss.css 
+autocmd filetype crontab setlocal nobackup nowritebackup
 "" /Strange Fletypes "" 
 
 "" Tag matching ""
@@ -295,6 +299,11 @@ noremap <C-g> :TernDefTab<CR>
 """"" JSX """""
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 """"" /JSX """""
+"
+""""" JsDoc """""
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_input_description = 1
+""""" /JsDoc """""
 
 """"" YCM """""
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -501,4 +510,3 @@ vmap <C-x> "+x
 vmap <C-v> <esc>"+gP
 """"" /Mappings """""
 """""""""" /It's Personal """"""""""
-nmap <F8> :TagbarToggle<CR>
