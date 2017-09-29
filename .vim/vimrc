@@ -17,6 +17,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'mxw/vim-jsx'
+Plugin 'heavenshell/vim-jsdoc'
 "" /Javascript ""
 
 "" HTML and CSS ""
@@ -37,6 +38,7 @@ Plugin 'craigemery/vim-autotag'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-obsession'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'gcorne/vim-sass-lint'
@@ -125,10 +127,20 @@ syntax on
 au BufRead,BufNewFile *.hamlpy set ft=haml
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 au BufRead,BufNewFile *.scss set ft=scss.css 
+autocmd filetype crontab setlocal nobackup nowritebackup
 "" /Strange Fletypes "" 
 
 "" Tag matching ""
 let g:mta_set_default_matchtag_color = 1
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'javascript.jsx' : 1,
+    \ 'jinja' : 1,
+    \ 'liquid' : 1,
+    \ 'markdown' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \}
 "" /Tag matching ""
 """""""""" /Syntax """"""""""
 
@@ -287,6 +299,11 @@ noremap <C-g> :TernDefTab<CR>
 """"" JSX """""
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 """"" /JSX """""
+"
+""""" JsDoc """""
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_input_description = 1
+""""" /JsDoc """""
 
 """"" YCM """""
 let g:ycm_autoclose_preview_window_after_completion = 1
