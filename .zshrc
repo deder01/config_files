@@ -58,9 +58,6 @@ alias gsl="git stash list"
 alias gss="git stash save"
 alias gsp="git stash pop"
 
-# Use brew version of ctags
-alias ctags="`brew --prefix`/bin/ctags"
-
 # Quick case-insensitive search
 alias agi="ag -i"
 
