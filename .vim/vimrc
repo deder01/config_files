@@ -247,7 +247,7 @@ nnoremap <leader>k :MtaJumpToOtherTag<cr>
 
 "" JS Checkers ""
 let g:syntastic_javascript_checkers = ['jshint', 'eslint']
-let g:used_javascript_libs = 'underscore,backbone,jquery,requirejs,react'
+let g:used_javascript_libs = 'underscore,backbone,jquery,requirejs,d3'
 let g:vimjs#casesensitive= 0
 let g:vimjs#smartcomplete = 1
 let g:vimjs#chromeapis = 1
