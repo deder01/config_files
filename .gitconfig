@@ -3,3 +3,5 @@
 [user]
 	name = David
 	email = david.eder26@gmail.com
+[push]
+	default = simple
