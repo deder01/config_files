@@ -50,6 +50,9 @@ DEFAULT_USER=$USER
 # Manage git config files using config
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+# Alias y to facebook's yarn
+alias y='yarnpkg'
+
 # Show lost things on git gui 
 alias grecover="gitk --all \$( git fsck --no-reflog | awk '/dangling commit/ {print $3}' )"
 
