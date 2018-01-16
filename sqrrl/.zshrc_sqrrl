@@ -1,13 +1,13 @@
 # sqrrl env
-export SQRRL_HOME=$HOME/repos/sqrrl
-export SQRRL_ANALYTICS=$SQRRL_HOME/analytics
+export SQRRL_ROOT=$HOME/repos/sqrrl
+export SQRRL_HOME=$SQRRL_ROOT/analytics
 export SQRRL_UI_MAIN=$SQRRL_WEB/ui/src/main
-export SQRRL_WEB=$SQRRL_HOME/web
+export SQRRL_WEB=$SQRRL_ROOT/web
 export SQRRL_BIN=$HOME/sqrrl/bin
 
 # sqrrl front-end aliases
 alias gocss="cd $SQRRL_UI_MAIN/styles/scss"
-alias golib="cd $SQRRL_UI/js/lib" 
+alias golib="cd $SQRRL_UI_MAIN/js/lib" 
 alias gotemplates="cd $SQRRL_UI_MAIN/js/templates"
 alias gomain="cd $SQRRL_UI_MAIN" 
 alias goweb="cd $SQRRL_WEB"
@@ -15,11 +15,12 @@ alias goui="cd $SQRRL_WEB/ui"
 
 # other aliases
 alias antrun="mvn clean antrun:run"
-alias gosqrrl="cd $SQRRL_HOME" 
+alias gosqrrl="cd $SQRRL_ROOT" 
+alias goanalytics="cd $SQRRL_HOME" 
 alias isu="is-stuff-up.sh"
 
 # always use my sqrrl .ignore file for silver searcher
-alias ag="ag --path-to-ignore $SQRRL_HOME/.ignore"
+alias ag="ag --path-to-ignore $SQRRL_ROOT/.ignore"
 
 # locale
 export LC_ALL=en_US.UTF-8
@@ -43,8 +44,9 @@ export YARN_HOME=$HADOOP_PREFIX
 export YARN_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 export HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 
-export PATH=$HADOOP_PREFIX/sbin:$HADOOP_PREFIX/bin:$ZOOKEEPER_HOME/bin:$SQRRL_BIN:$SQRRL_ANALYTICS/bin:$SQRRL_HOME/tools/useful-scripts:$PATH
+export PATH=$HADOOP_PREFIX/sbin:$HADOOP_PREFIX/bin:$ZOOKEEPER_HOME/bin:$SQRRL_BIN:$SQRRL_HOME/bin:$SQRRL_ROOT/tools/useful-scripts:$PATH
 export ASSERTIONS_FLAG="-ea"
 
 export MAVEN_OPTS="-Xms512m -Xmx2g -XX:MaxPermSize=256m"
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 # end sqrrl env
