@@ -42,6 +42,10 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'gcorne/vim-sass-lint'
 Plugin 'wesQ3/vim-windowswap'
+Plugin 'hushicai/tagbar-javascript.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
 "Plugin 'jiangmiao/auto-pairs'
 "" /Syntax Auto-completions ""
 
@@ -375,6 +379,15 @@ let g:NERDCustomDelimiters = {
 \}
 """"" /NerdCommenter """""
 
+
+""""" EasyTags """""
+let g:easytags_languages = {
+\   'javascript': {
+\     'cmd': 'ctags',
+\      'recurse_flag': '-R'
+\   }
+\}
+""""" /EasyTags """""
 
 """"" WindowSwap """""
 let g:windowswap_map_keys = 0
