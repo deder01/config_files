@@ -8,6 +8,8 @@
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
+	<key>AppleWindowTabbingMode</key>
+	<string>manual</string>
 	<key>Default Bookmark Guid</key>
 	<string>6463125B-33C8-453A-8D38-D59EE5737DB3</string>
 	<key>GlobalKeyMap</key>
@@ -139,7 +141,7 @@
 	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
 	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
 	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAczGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+	DIAIgAlRMSNAc7Gdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
 	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
 	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
 	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
@@ -163,19 +165,19 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>821 128 445 77 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>2210 803 620 392 1920 -325 1200 1897 </string>
+	<string>650 589 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>2189 -186 606 456 1920 -325 1200 1897 </string>
+	<string>2189 -318 606 469 1920 -457 1200 1897 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>60 796 918 381 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1920 -325 1194 1897 1920 -325 1200 1897 </string>
+	<string>1920 -457 1200 1897 1920 -457 1200 1897 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 11 1915 1166 0 0 1920 1177 </string>
+	<string>1920 -457 1200 1897 1920 -457 1200 1897 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 11 1915 1166 0 0 1920 1177 </string>
+	<string>1920 944 585 452 1920 -457 1200 1897 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>2081 -69 665 477 1920 -325 1200 1897 </string>
+	<string>0 4 1920 1173 0 0 1920 1177 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1439,6 +1441,8 @@
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>2</integer>
 	<key>PointerActions</key>
@@ -1476,8 +1480,12 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/deder/iterm2/profiles</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -1487,17 +1495,19 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-25T16:19:34Z</date>
+	<date>2017-12-01T15:14:37Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.15</string>
+	<string>3.1.5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
