@@ -324,6 +324,7 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 """"" CloseTag """""
 inoremap <C-t> <C-R>=GetCloseTag()<CR>
 map <C-_> a<C-_><ESC>
+let g:closetag_filenames = '*.xhtml,*.jsx,*.js'
 """"" /CloseTag """""
 
 """"" EasyAlign """""
