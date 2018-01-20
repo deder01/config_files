@@ -44,6 +44,9 @@ ZSH_THEME="agnoster"
 # Set custom folder to something we can actually track
 ZSH_CUSTOM=".zsh_custom"
 
+# Don't show user@computer-name in the comamand line
+DEFAULT_USER=$USER
+
 # Manage git config files using config
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
@@ -104,8 +107,6 @@ alias f='vim $(fzf-tmux)'
 ##### SSH to docker ####
 alias ssh-dev="ssh -i ${HOME}/.ssh/sqrrl-dev.pem"
 ##### end SSH to docker ####
-
-
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
