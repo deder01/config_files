@@ -20,7 +20,7 @@ alias goanalytics="cd $SQRRL_HOME"
 alias isu="is-stuff-up.sh"
 
 # always use my sqrrl .ignore file for silver searcher
-alias ag="ag --path-to-ignore $SQRRL_ROOT/.ignore"
+alias ag="ag --path-to-ignore $HOME/.ignore"
 
 # locale
 export LC_ALL=en_US.UTF-8
@@ -30,9 +30,6 @@ export LANGUAGE=en_US.UTF-8
 # zookeeper
 export ZOOKEEPER_HOME=/usr/local/lib/zookeeper-3.4.9
 export ZOO_LOG_DIR=/var/log/zookeeper/
-
-# java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 
 # hadoop
 export HADOOP_PREFIX=/usr/local/lib/hadoop-2.7.2
