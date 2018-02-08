@@ -16,6 +16,7 @@ Plugin 'bkad/CamelCaseMotion'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'ternjs/tern_for_vim'
+Plugin 'mxw/vim-jsx'
 Plugin 'heavenshell/vim-jsdoc'
 "" /Javascript ""
 
@@ -135,6 +136,15 @@ autocmd filetype crontab setlocal nobackup nowritebackup
 
 "" Tag matching ""
 let g:mta_set_default_matchtag_color = 1
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'javascript.jsx' : 1,
+    \ 'jinja' : 1,
+    \ 'liquid' : 1,
+    \ 'markdown' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \}
 "" /Tag matching ""
 """""""""" /Syntax """"""""""
 
@@ -250,8 +260,9 @@ nnoremap <leader>k :MtaJumpToOtherTag<cr>
 "" /HTML Checkers ""
 
 "" JS Checkers ""
-let g:syntastic_javascript_checkers = ['jshint', 'eslint']
-let g:used_javascript_libs = 'underscore,backbone,jquery,requirejs,d3'
+let g:syntastic_javascript_checkers = ['jsxhint', 'eslint']
+let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+let g:used_javascript_libs = 'underscore,backbone,jquery,requirejs,react,d3'
 let g:vimjs#casesensitive= 0
 let g:vimjs#smartcomplete = 1
 let g:vimjs#chromeapis = 1
@@ -319,6 +330,7 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 """"" CloseTag """""
 inoremap <C-t> <C-R>=GetCloseTag()<CR>
 map <C-_> a<C-_><ESC>
+let g:closetag_filenames = '*.xhtml,*.jsx,*.js'
 """"" /CloseTag """""
 
 """"" EasyAlign """""

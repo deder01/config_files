@@ -4,6 +4,7 @@ export SQRRL_HOME=$SQRRL_ROOT/analytics
 export SQRRL_UI_MAIN=$SQRRL_WEB/ui/src/main
 export SQRRL_WEB=$SQRRL_ROOT/web
 export SQRRL_BIN=$HOME/sqrrl/bin
+export SQRRL_ROOT_PASSWORD="secret"
 
 # sqrrl front-end aliases
 alias gocss="cd $SQRRL_UI_MAIN/styles/scss"
@@ -27,13 +28,16 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
+# java
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
 # zookeeper
-export ZOOKEEPER_HOME=/usr/local/lib/zookeeper-3.4.9
+export ZOOKEEPER_HOME=/usr/local/Cellar/zookeeper/3.4.10
 export ZOO_LOG_DIR=/var/log/zookeeper/
 
-# hadoop
-export HADOOP_PREFIX=/usr/local/lib/hadoop-2.7.2
-export HADOOP_HOME=/usr/local/lib/hadoop-2.7.2
+ #hadoop
+export HADOOP_PREFIX=/usr/local/lib/hadoop-2.7.5
+export HADOOP_HOME=/usr/local/lib/hadoop-2.7.5
 export HADOOP_MAPRED_HOME=$HADOOP_PREFIX
 export HADOOP_COMMON_HOME=$HADOOP_PREFIX
 export HADOOP_HDFS_HOME=$HADOOP_PREFIX
@@ -41,9 +45,10 @@ export YARN_HOME=$HADOOP_PREFIX
 export YARN_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 export HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 
-export PATH=$HADOOP_PREFIX/sbin:$HADOOP_PREFIX/bin:$ZOOKEEPER_HOME/bin:$SQRRL_BIN:$SQRRL_HOME/bin:$SQRRL_ROOT/tools/useful-scripts:$PATH
+export PATH=/usr/local/bin:$HADOOP_PREFIX/sbin:$HADOOP_PREFIX/bin:$ZOOKEEPER_HOME/bin:$SQRRL_BIN:$SQRRL_HOME/bin:$SQRRL_ROOT/tools/useful-scripts:$HOME/repos/dotfiles/yuval/bin:$PATH
 export ASSERTIONS_FLAG="-ea"
 
 export MAVEN_OPTS="-Xms512m -Xmx2g -XX:MaxPermSize=256m"
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 # end sqrrl env
+export PATH=$HOME/.toolbox/bin:$PATH
