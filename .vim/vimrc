@@ -46,8 +46,7 @@ Plugin 'wesQ3/vim-windowswap'
 Plugin 'hushicai/tagbar-javascript.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
-"Plugin 'jiangmiao/auto-pairs'
+"Plugin 'xolox/vim-easytags'
 "" /Syntax Auto-completions ""
 
 "" File Navigation ""
