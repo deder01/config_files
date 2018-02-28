@@ -21,18 +21,7 @@ export GREP_COLOR='1;33'
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode zsh-autosuggestions virtualenvwrapper tmuxinator)
-
-# Don't open vim if no file is passed
-vim() {
-    local args=("$@")
-
-    if [[ $# -eq 0 ]]; then
-      return 1
-    fi
-
-    command "vim" "$@"
-}
+plugins=(git vi-mode)
 
 # max open files for yosemite
 # ulimit -n 65536

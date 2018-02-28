@@ -1,5 +1,3 @@
-[core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
 [user]
 	name = David Eder
 	email = david.eder26@gmail.com

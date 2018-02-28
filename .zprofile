@@ -20,7 +20,8 @@ alias bp='source ~/.bash_profile'
 ##############################################
 # Use the vim version installed by brew
 ##############################################
-alias vim='/usr/local/bin/vim'
+alias vim='/apollo/env/envImprovement/bin/vim'
+export EDITOR=/apollo/env/envImprovement/bin/vim
 
 ##############################################
 # Use GNU version of ls
