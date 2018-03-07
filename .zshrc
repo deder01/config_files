@@ -160,3 +160,5 @@ export LANG=en_US.UTF-8
 
 # Source fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export JAVA_HOME=/apollo/env/JavaSE8/jdk1.8
+export PATH=$JAVA_HOME/bin:$PATH
