@@ -13,9 +13,9 @@ Plugin 'nanotech/jellybeans.vim'
 "" Javascript ""
 Plugin '1995eaton/vim-better-javascript-completion'
 Plugin 'bkad/CamelCaseMotion'
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'ternjs/tern_for_vim'
+Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'heavenshell/vim-jsdoc'
 "" /Javascript ""
@@ -40,7 +40,9 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-obsession'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'skywind3000/asyncrun.vim'
+"Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'gcorne/vim-sass-lint'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'hushicai/tagbar-javascript.vim'
@@ -248,7 +250,7 @@ nnoremap <leader>gd :Gvdiff<cr>
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'passive' }
 
 
@@ -283,6 +285,18 @@ nmap <F7> :SC<CR>
 """ /Shortcuts """
 """"" /Syntastic """""
 
+""""" ALE """""
+let g:alex_fixers = {
+      \ 'javascript': ['eslint']
+      \ }
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_enter = 0
+let g:ale_fix_on_save = 1
+let g:ale_linters = {'javascript': ['eslint']}
+""""" /ALE """""
+
+"autocmd BufWritePost *.js AsyncRun -post=checktime eslint --fix %
+
 """"" Java """""
 "autocmd FileType java setlocal omnifunc=javacomplete#Complete
 "nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
@@ -304,6 +318,7 @@ noremap <C-g> :TernDefTab<CR>
 
 """"" JSX """""
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+let g:javascript_plugin_flow = 1
 """"" /JSX """""
 
 """"" JsDoc """""
