@@ -19,6 +19,7 @@ alias antrun="mvn clean antrun:run"
 alias gosqrrl="cd $SQRRL_ROOT" 
 alias goanalytics="cd $SQRRL_HOME" 
 alias isu="is-stuff-up.sh"
+alias complexity_report="/usr/local/bin/cr"
 
 # always use my sqrrl .ignore file for silver searcher
 alias ag="ag --path-to-ignore $HOME/.ignore"
