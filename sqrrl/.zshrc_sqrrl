@@ -45,7 +45,7 @@ export YARN_HOME=$HADOOP_PREFIX
 export YARN_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 export HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 
-export PATH=$BRAZIL_CLI_BIN:/apollo/env/AmazonAwsCli/bin:/apollo/env/NodeJS/bin:/usr/local/bin:$HADOOP_PREFIX/sbin:$HADOOP_PREFIX/bin:$ZOOKEEPER_HOME/bin:$SQRRL_BIN:$SQRRL_HOME/bin:$SQRRL_ROOT/tools/useful-scripts:$HOME/repos/dotfiles/yuval/bin:$PATH
+export PATH=$HADOOP_PREFIX/sbin:$HADOOP_PREFIX/bin:$ZOOKEEPER_HOME/bin:$SQRRL_BIN:$SQRRL_HOME/bin:$SQRRL_ROOT/tools/useful-scripts:$HOME/repos/dotfiles/yuval/bin:$PATH
 export ASSERTIONS_FLAG="-ea"
 
 export MAVEN_OPTS="-Xms512m -Xmx2g -XX:MaxPermSize=256m"

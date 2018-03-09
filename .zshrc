@@ -75,6 +75,10 @@ path=(
        /apollo/bin
        /apollo/sbin
        /apollo/env/ApolloCommandLine/bin
+       $BRAZIL_CLI_BIN:/apollo/env/AmazonAwsCli/bin:
+       $HOME/node_modules/.bin/:$PATH
+       /apollo/env/NodeJS/bin
+       /usr/local/bin
      )
 
 ## Path to your oh-my-zsh installation.
@@ -87,7 +91,6 @@ export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # Use the node modules needed for js development
-export PATH=$HOME/node_modules/.bin/:$PATH
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
