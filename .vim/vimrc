@@ -293,6 +293,8 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 0
 let g:ale_fix_on_save = 1
 let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
 """"" /ALE """""
 
 "autocmd BufWritePost *.js AsyncRun -post=checktime eslint --fix %
@@ -404,6 +406,7 @@ let g:NERDCustomDelimiters = {
   \ 'javascript': { 'left': '//', 'leftAlt': '/**', 'rightAlt': '*/' },
   \ 'javascript.jquery': { 'left': '//', 'leftAlt': '/**', 'rightAlt': '*/' }
 \}
+let g:NERDSpaceDelims = 1
 """"" /NerdCommenter """""
 
 
