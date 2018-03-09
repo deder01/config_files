@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# Starts/stops hadoop
+# - invoke with no args to start hadoop
+# - invoke with "stop" to stop hadoop
+
+set -e
+
+export HADOOP_PREFIX="${HADOOP_PREFIX:-$HADOOP_HOME}"
+
+if [ -z "$HADOOP_PREFIX" ]; then
+  printf 'HADOOP_PREFIX not set' 1>&2
+  exit 1
+fi
+
+if [ -z "$ZOOKEEPER_HOME" ]; then
+  printf 'ZOOKEEPER_HOME not set' 1>&2
+  exit 1
+fi
+
+COMMAND="$1"
+if [ -z "$COMMAND" ]; then
+  COMMAND=start
+fi
+
+if [ "$COMMAND" = 'restart' ]; then
+  "$0" stop && "$0" start
+  exit
+fi
+
+if test "$COMMAND" == 'start' && (curl "http://$(hostname):50070" &> /dev/null); then
+  echo 'Already started' 1>&2
+  exit 0
+fi
+export HADOOP_OPTS="-Djava.library.path=$HADOOP_PREFIX/lib/native"
+
+"$HADOOP_PREFIX/sbin/$COMMAND-all.sh"
+"$HADOOP_PREFIX/sbin/mr-jobhistory-daemon.sh" "$COMMAND" historyserver
+$ZOOKEEPER_HOME/bin/zkServer.sh "$COMMAND"
+
+# # hue stuff. first create start.sh, then start or stop as needed
+# HUE_START="$HUE_HOME/start.sh"
+# if [[ -e "$HUE_HOME" ]] ; then
+#   if [[ ! -e "$HUE_START" ]]; then
+#     echo "Found $HUE_HOME, but no $HUE_START. Creating one."
+#     cat >"$HUE_START" <<'EOF'
+# #!/bin/bash
+# cd "$(dirname "$0")"
+# now=$(date +%Y%m%dT%H%M%S)
+# nohup ./build/env/bin/hue runserver >> logs/stdout.$now 2>> logs/stderr.$now &
+# started_as=$!
+# echo "Started hue as $started_as"
+# EOF
+#     chmod +x "$HUE_START"
+#   fi
+#   case "$COMMAND" in
+#     start)
+#       if pgrep -of 'hue runserver' 2>/dev/null ; then
+#         echo "Hue already running as $(pgrep -of 'hue runserver')"
+#       else
+#         "$HUE_START"
+#       fi
+#       ;;
+#     stop)
+#       echo "Killing hue"
+#       pkill -f 'hue runserver'
+#       ;;
+#     *)
+#       echo "Unknown command $COMMAND, so not touching hue"
+#       ;;
+#   esac
+# fi
