@@ -5,6 +5,9 @@ export ZSH=~/.oh-my-zsh
 # Begin oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+# Use the node modules needed for js development
+export PATH=$HOME/node_modules/.bin/:$PATH
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Set up sqrrl environment if at work
