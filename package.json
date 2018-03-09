@@ -1,0 +1,16 @@
+{
+  "name": "eder-dot-files",
+  "version": "1.0.0",
+  "description": "tools needed for my javascript vim set up",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deder01/config_files.git"
+  },
+  "author": "deder01",
+  "license": "ISC",
+  "homepage": "https://github.com/deder01/config_files#readme",
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "tern": "^0.21.0"
+  }
+}

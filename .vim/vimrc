@@ -108,8 +108,6 @@ set smarttab
 "" Show tabs as '>.' and make them dark grey  ""
 set list
 set listchars=tab:\>.
-"hi SpecialKey ctermfg=DarkGrey guifg=DarkGrey
-"hi NonText ctermfg=DarkGrey guifg=DarkGrey
 "" /Grey Tabs ""
 """"" /Tabs """""
 
@@ -124,7 +122,7 @@ colorscheme dots
 
 """""""""" Syntax """"""""""
 syntax on
-"
+
 " Highlighting for folded lines "
 :hi folded ctermfg=blue
 
@@ -245,47 +243,9 @@ endfunction
 nnoremap <leader>gd :Gvdiff<cr>
 """"" /Fugitive """""
 
-""""" Syntastic """""
-"set statusline+=%{SyntasticStatuslineFlag()}
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'mode': 'passive' }
-
-
-""" Syntax Checkers """
-"" HTML Checkers ""
-let g:syntastic_html_checkers = ['w3', 'tidy']
-nnoremap <leader>k :MtaJumpToOtherTag<cr>
-"" /HTML Checkers ""
-
-"" JS Checkers ""
-let g:syntastic_javascript_checkers = ['eslint']
-let g:used_javascript_libs = 'underscore,backbone,jquery,requirejs,react,d3'
-let g:vimjs#casesensitive= 0
-let g:vimjs#smartcomplete = 1
-let g:vimjs#chromeapis = 1
-
-" Import sqrrl jshintrc if we are at work
-if !empty(glob("~/sqrrl/.vimrc_sqrrl.vim"))
-  source ~/sqrrl/.vimrc_sqrrl.vim
-endif
-"" /JS checkers ""
-
-"" SASS Checkers ""
-let g:syntastic_scss_checkers = ['scss_lint']
-"" /SASS Checkers ""
-""" /Syntax Checkers """
-
-""" Shortcuts """
-command! SC execute 'SyntasticCheck'
-command! SR execute 'SyntasticReset'
-nmap <F7> :SC<CR>
-""" /Shortcuts """
-""""" /Syntastic """""
-
 """"" ALE """""
+" Autocheck when saved
+"autocmd BufWritePost *.js AsyncRun -post=checktime eslint --fix %
 let g:alex_fixers = {
       \ 'javascript': ['eslint']
       \ }
@@ -296,15 +256,6 @@ let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 """"" /ALE """""
-
-"autocmd BufWritePost *.js AsyncRun -post=checktime eslint --fix %
-
-""""" Java """""
-"autocmd FileType java setlocal omnifunc=javacomplete#Complete
-"nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-"imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-""""" /Java """""
-
 
 """"" Autotag  """""
 let g:autotagmaxTagsFileSize = 1024 * 1024 * 70
@@ -524,7 +475,6 @@ set ruler
 " Close location list
 noremap <leader>l :lclose<CR>
 
-
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
 
@@ -544,3 +494,40 @@ vmap <C-x> "+x
 vmap <C-v> <esc>"+gP
 """"" /Mappings """""
 """""""""" /It's Personal """"""""""
+
+"""""""""" Unused plugins """"""""""
+""""" Syntastic """""
+"set statusline+=%{SyntasticStatuslineFlag()}
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_mode_map = { 'mode': 'passive' }
+
+""" Syntax Checkers """
+
+""" Shortcuts """
+" command! SC execute 'SyntasticCheck'
+" command! SR execute 'SyntasticReset'
+" nmap <F7> :SC<CR>
+""" /Shortcuts """
+
+"" HTML Checkers ""
+" let g:syntastic_html_checkers = ['w3', 'tidy']
+" nnoremap <leader>k :MtaJumpToOtherTag<cr>
+"" /HTML Checkers ""
+
+"" JS Checkers ""
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:used_javascript_libs = 'underscore,backbone,jquery,requirejs,react,d3'
+" let g:vimjs#casesensitive= 0
+" let g:vimjs#smartcomplete = 1
+" let g:vimjs#chromeapis = 1
+"" /JS checkers ""
+
+"" SASS Checkers ""
+" let g:syntastic_scss_checkers = ['scss_lint']
+"" /SASS Checkers ""
+""" /Syntax Checkers """
+""""" /Syntastic """""
+"""""""""" /Unused plugins """"""""""
