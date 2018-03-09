@@ -1,6 +1,87 @@
-  zmodload zsh/zprof
+ENV_IMPROVEMENT_ROOT=/apollo/env/envImprovement
+# -*- shell-script -*-
+# ENV_IMPROVEMENT_ROOT will be set to the apollo root, this is done by
+# $ENV_IMPROVEMENT_ROOT/var/zshrc, which is in turn created by the
+# 200CreateZshrc function.  $ENV_IMPROVEMENT_ROOT/var/zshrc is where
+# this file should be sourced from
+
+# First we want to dispatch to the environment version of zsh, if available
+
+ZSH=$ENV_IMPROVEMENT_ROOT/var/bin/zsh
+
+if [[ $SHELL != $ZSH && -e $ZSH ]]
+then
+  SHELL=$ZSH
+  # The cryptic -$- passes all the options in effect for this current shell
+  # to the replacement shell we are exec'ing.  This ensures a login shell
+  # stays a login shell, etc.  See man zshparam, section "Parameters Set By
+  # The Shell".
+  exec $ZSH -$- "$@"
+fi
+
+## source shell-neutral config:
+#source "$ENV_IMPROVEMENT_ROOT/dotfiles/anyshrc"
+
+#################### important pre-external-hook vars ################
+# path where zsh searches for modules (such as zle, the zsh line editor)
+# you *want* this to work
+module_path=($ENV_IMPROVEMENT_ROOT/var/lib/zsh/$ZSH_VERSION/)
+\
+# search path for zsh functions  (fpath ==> function path)
+# Make sure the AmazonZshFunctions list comes second for overriding reasons
+fpath=(                                                             \
+        $ENV_IMPROVEMENT_ROOT/var/zsh/functions/$ZSH_VERSION        \
+        $ENV_IMPROVEMENT_ROOT/var/share/zsh/$ZSH_VERSION/functions  \
+      )
+
+################### external hooks ##################################
+#Since we don't load these /etc files because of the way we compiled zsh, load
+#them now.
+
+if [[ -e /etc/zshenv ]]
+then
+  source /etc/zshenv
+fi
+
+if [[ -o interactive && -e /etc/zshrc ]]
+then
+  source /etc/zshrc
+fi
+
+#################### important zsh vars & common env vars ############
+#
+# Notes on the PATH varaible:
+#   ENV_IMPROVEMENT_ROOT/bin should be early in the path, so that
+#   it can override the /opt/third-party/bin paths
+#
+#   Since BrazilTools is deployed with the env improvement environment, we need
+#   to put /apollo/env/SDETools/bin/ before the ROOT/bin since we want to pick
+#   up the devtools-deployed versions first
+#
+
+export PATH=
+path=(
+       ~/bin
+       ~/usr/bin
+       /usr/kerberos/bin
+       /apollo/env/SDETools/bin
+       $ENV_IMPROVEMENT_ROOT/bin
+       /usr/local/bin
+       /usr/bin
+       /bin
+       /usr/sbin
+       /sbin
+       /usr/local/sbin
+       /apollo/bin
+       /apollo/sbin
+       /apollo/env/ApolloCommandLine/bin
+     )
+
 ## Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+ DISABLE_AUTO_UPDATE="true"
 
 # Begin oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -21,7 +102,16 @@ export GREP_COLOR='1;33'
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode)
+# Don't open vim if no file is passed
+vim() {
+    if [[ $# -eq 0 ]]; then
+      return 1
+    fi
+
+    command "vim" "$@" 
+}
+
+plugins=(git vi-mode zsh-autosuggestions)
 
 # max open files for yosemite
 # ulimit -n 65536
@@ -107,9 +197,6 @@ alias ssh-dev="ssh -i ${HOME}/.ssh/sqrrl-dev.pem"
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13

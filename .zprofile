@@ -20,6 +20,7 @@ alias bp='source ~/.bash_profile'
 ##############################################
 # Use the vim version installed by brew
 ##############################################
+unsetopt nomatch
 alias vim='/apollo/env/envImprovement/bin/vim'
 export EDITOR=/apollo/env/envImprovement/bin/vim
 
