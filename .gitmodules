@@ -7,6 +7,3 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git
-[submodule "iterm2/fonts/powerline-repo"]
-	path = iterm2/fonts/powerline-repo
-	url = https://github.com/powerline/fonts

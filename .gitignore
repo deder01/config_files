@@ -3,3 +3,5 @@
 .vim/bundle/*
 .vim/sessions/*
 !.vim/bundle/Vundle.vim/
+node_modules/
+**/*/.DS_Store
