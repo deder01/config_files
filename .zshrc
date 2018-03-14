@@ -75,8 +75,9 @@ path=(
        /apollo/bin
        /apollo/sbin
        /apollo/env/ApolloCommandLine/bin
-       $BRAZIL_CLI_BIN:/apollo/env/AmazonAwsCli/bin:
-       $HOME/node_modules/.bin/:$PATH
+       $BRAZIL_CLI_BIN
+       /apollo/env/AmazonAwsCli/bin
+       $HOME/node_modules/.bin/
        /apollo/env/NodeJS/bin
        /usr/local/bin
      )
@@ -163,6 +164,12 @@ alias conpull="config pull"
 
 ##### tmux #####
 alias mux='tmuxinator'
+export LC_TMUX_SESSION_NAME=eder
+if [ -n "$LC_TMUX_SESSION_NAME" -a $TERM != "screen" ]; then
+    echo -ne "\033]0;"${USER}@${HOSTNAME}"\007"  # Set terminal title
+    session_name=$USER
+    tmux has-session -t $session_name && tmux attach-session -t $session_name || tmux new-session -s $session_name
+fi
 ##### /tmux #####
 ##### fzf #####
 # goto - cd into the directory of the selected file
@@ -254,4 +261,3 @@ export LANG=en_US.UTF-8
 # Source fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export JAVA_HOME=/apollo/env/JavaSE8/jdk1.8
-export PATH=$JAVA_HOME/bin:$PATH

@@ -29,9 +29,6 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-# java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-
 # zookeeper
 export ZOOKEEPER_HOME=/usr/local/Cellar/zookeeper/3.4.10
 export ZOO_LOG_DIR=/var/log/zookeeper/
@@ -46,7 +43,6 @@ export YARN_HOME=$HADOOP_PREFIX
 export YARN_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 export HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 
-export PATH=$HADOOP_PREFIX/sbin:$HADOOP_PREFIX/bin:$ZOOKEEPER_HOME/bin:$SQRRL_BIN:$SQRRL_HOME/bin:$SQRRL_ROOT/tools/useful-scripts
 export ASSERTIONS_FLAG="-ea"
 
 export MAVEN_OPTS="-Xms512m -Xmx2g -XX:MaxPermSize=256m"
