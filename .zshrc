@@ -61,10 +61,13 @@ fi
 
 export PATH=
 path=(
+       $HOME/.local/bin
+       $HOME/node_modules/.bin
+       /apollo/env
+       /apollo/env/NodeJS/bin
        ~/bin
        ~/usr/bin
        /usr/kerberos/bin
-       /apollo/env/SDETools/bin
        $ENV_IMPROVEMENT_ROOT/bin
        /usr/local/bin
        /usr/bin
@@ -76,9 +79,9 @@ path=(
        /apollo/sbin
        /apollo/env/ApolloCommandLine/bin
        $BRAZIL_CLI_BIN
+       /apollo/env/OctaneBrazilTools/bin
+       /apollo/env/MallomarDeveloperTools/bin
        /apollo/env/AmazonAwsCli/bin
-       $HOME/node_modules/.bin/
-       /apollo/env/NodeJS/bin
        /usr/local/bin
      )
 
@@ -200,8 +203,8 @@ bindkey '^X^R' fzf-history-widget-accept
 alias f='vim $(fzf-tmux)'
 ##### end fzf #####
 
-##### SSH to docker ####
-alias ssh-dev="ssh -i ${HOME}/.ssh/sqrrl-dev.pem"
+##### Use isenguard profile in aws cli ####
+alias aws="aws --profile dev"
 ##### end SSH to docker ####
 
 # Uncomment the following line to use case-sensitive completion.
@@ -261,3 +264,7 @@ export LANG=en_US.UTF-8
 # Source fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export JAVA_HOME=/apollo/env/JavaSE8/jdk1.8
+export PATH=$HOME/.local/bin:$PATH:$HOME/.local/python-3.6.3/bin
+
+# kerbos and midway authentication
+kinit -f && mwinit -o

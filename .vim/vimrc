@@ -35,6 +35,7 @@ Plugin 'vim-scripts/closetag.vim'
 """"" Utilities """""
 "" Syntax and Auto-completions ""
 Plugin 'craigemery/vim-autotag'
+Plugin 'chrisbra/NrrwRgn'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
@@ -43,6 +44,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'skywind3000/asyncrun.vim'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'w0rp/ale'
+Plugin 'ruanyl/vim-fixmyjs'
 Plugin 'gcorne/vim-sass-lint'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'hushicai/tagbar-javascript.vim'
@@ -256,6 +258,12 @@ let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 """"" /ALE """""
+
+
+""""" Fixmyjs """""
+let g:fixmyjs_engine='eslint'
+noremap <Leader><Leader>f :Fixmyjs<CR>
+""""" /Fixmyjs """""
 
 """"" Autotag  """""
 let g:autotagmaxTagsFileSize = 1024 * 1024 * 70

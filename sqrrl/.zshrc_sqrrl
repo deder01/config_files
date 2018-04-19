@@ -5,6 +5,7 @@ export SQRRL_UI_MAIN=$SQRRL_WEB/ui/src/main
 export SQRRL_WEB=$SQRRL_ROOT/web
 export SQRRL_BIN=$HOME/sqrrl/bin
 export SQRRL_ROOT_PASSWORD="secret"
+export WORKPLACE=/workplace/eder
 
 # sqrrl front-end aliases
 alias gocss="cd $SQRRL_UI_MAIN/styles/scss"
@@ -13,6 +14,7 @@ alias gotemplates="cd $SQRRL_UI_MAIN/js/templates"
 alias gomain="cd $SQRRL_UI_MAIN" 
 alias goweb="cd $SQRRL_WEB"
 alias goui="cd $SQRRL_WEB/ui"
+alias goworkplace="cd $WORKPLACE"
 
 # other aliases
 alias antrun="mvn clean antrun:run"
@@ -20,9 +22,6 @@ alias gosqrrl="cd $SQRRL_ROOT"
 alias goanalytics="cd $SQRRL_HOME" 
 alias isu="is-stuff-up.sh"
 alias complexity_report="/usr/local/bin/cr"
-
-# always use my sqrrl .ignore file for silver searcher
-alias ag="ag --path-to-ignore $HOME/.ignore"
 
 # locale
 export LC_ALL=en_US.UTF-8
@@ -49,3 +48,12 @@ export MAVEN_OPTS="-Xms512m -Xmx2g -XX:MaxPermSize=256m"
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 # end sqrrl env
 export PATH=$HOME/.toolbox/bin:$PATH
+
+#AWS/BONES env variables
+export GROUP_ARG="--posixGroup=awsmorocco-dev"
+export BINDLE_ID="amzn1.bindle.resource.fmzrmgpyueg3ybxwhftq"
+export POSIX_TEAM="awsmorocco-dev"
+export MAIL_LIST="eder@amazon.com"
+export PREFIX="MoroccoAccountManagement"
+export ORGANIZATION="aws"
+export ACCT_DATA_ARG="--account_id=556293316228"
