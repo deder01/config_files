@@ -8,13 +8,6 @@ source $ZSH/oh-my-zsh.sh
 # Use the node modules needed for js development
 export PATH=$HOME/node_modules/.bin/:$PATH
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-# Set up sqrrl environment if at work
-if [[ -f $HOME/sqrrl/.zshrc_sqrrl ]]; then
-  source $HOME/sqrrl/.zshrc_sqrrl
-fi
-
 # LS colors, made with http://geoff.greer.fm/lscolors/
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export LS_COLORS='di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
