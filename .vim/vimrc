@@ -15,6 +15,7 @@ Plugin '1995eaton/vim-better-javascript-completion'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'elmcast/elm-vim'
 Plugin 'Quramy/vim-js-pretty-template'
 Plugin 'jason0x43/vim-js-indent'
 Plugin 'Quramy/vim-dtsm'
@@ -291,6 +292,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 """ CSS """
 let g:ycm_semantic_triggers =  {
     \   'scss': [': '],
+    \   'elm' : ['.'],
     \   'css': [': '],
     \   'html': ['<', '"', '</', ' '],
     \ }
