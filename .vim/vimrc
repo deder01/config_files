@@ -12,6 +12,8 @@ Plugin 'nanotech/jellybeans.vim'
 """"" Front End """""
 "" Javascript ""
 Plugin '1995eaton/vim-better-javascript-completion'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'ternjs/tern_for_vim'
