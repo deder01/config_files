@@ -165,15 +165,6 @@ alias conpush="config push origin master"
 alias conpull="config pull"
 ##### /config #####
 
-##### tmux #####
-alias mux='tmuxinator'
-export LC_TMUX_SESSION_NAME=eder
-if [ -n "$LC_TMUX_SESSION_NAME" -a $TERM != "screen" ]; then
-    echo -ne "\033]0;"${USER}@${HOSTNAME}"\007"  # Set terminal title
-    session_name=$USER
-    tmux has-session -t $session_name && tmux attach-session -t $session_name || tmux new-session -s $session_name
-fi
-##### /tmux #####
 ##### fzf #####
 # goto - cd into the directory of the selected file
 goto() {
@@ -265,6 +256,3 @@ export LANG=en_US.UTF-8
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export JAVA_HOME=/apollo/env/JavaSE8/jdk1.8
 export PATH=$HOME/.local/bin:$PATH:$HOME/.local/python-3.6.3/bin
-
-# kerbos and midway authentication
-kinit -f && mwinit -o
