@@ -37,6 +37,7 @@ Plugin 'vim-scripts/closetag.vim'
 
 """"" Utilities """""
 "" Syntax and Auto-completions ""
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'craigemery/vim-autotag'
 Plugin 'chrisbra/NrrwRgn'
 " Plugin 'ervandew/supertab'
@@ -77,6 +78,10 @@ Plugin 'airblade/vim-gitgutter'
 "" Statusbar ""
 Plugin 'itchyny/lightline.vim'
 "" /Statusbar ""
+
+"" Whitespace ""
+nnoremap <leader>ss :StripWhitespace<cr>
+"" /Whitespace ""
 
 "" Random ""
 Plugin 'chip/vim-fat-finger'
