@@ -17,6 +17,7 @@ Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'ternjs/tern_for_vim'
+Plugin 'Quramy/tsuquyomi'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'heavenshell/vim-jsdoc'
@@ -38,11 +39,11 @@ Plugin 'vim-scripts/closetag.vim'
 "" Syntax and Auto-completions ""
 Plugin 'craigemery/vim-autotag'
 Plugin 'chrisbra/NrrwRgn'
-Plugin 'ervandew/supertab'
+" Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-obsession'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'skywind3000/asyncrun.vim'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'w0rp/ale'
@@ -290,16 +291,29 @@ let g:jsdoc_input_description = 1
 """"" /JsDoc """""
 
 """"" YCM """""
+let g:ycm_path_to_python_interpreter = '/home/eder/.local/bin/ycm-python'
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+            \ "\<lt>C-n>" :
+            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
 let g:ycm_autoclose_preview_window_after_completion = 1
-
-""" CSS """
 let g:ycm_semantic_triggers =  {
     \   'scss': [': '],
     \   'css': [': '],
     \   'html': ['<', '"', '</', ' '],
+    \   'typescript': ['.'],
     \ }
-""" /CSS """
 """"" /YCM """""
+
+""""" OmniComplete """""
+set completeopt=longest,menuone
+inoremap <C-Space> <C-x><C-o>
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+""""" /OmniComplete """""
 
 """"" SuperTab """""
 let g:SuperTabClosePreviewOnPopupClose = 1
