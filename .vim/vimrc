@@ -7,19 +7,20 @@ Plugin 'crusoexia/vim-monokai'
 Plugin 'deder01/vim-dots'
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'joshdick/onedark.vim'
 """"" /Color Schemes """"
 "
 """"" Front End """""
 "" Javascript ""
 Plugin '1995eaton/vim-better-javascript-completion'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'pangloss/vim-javascript'
+Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'Quramy/tsuquyomi'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+" Plugin 'mxw/vim-jsx'
 Plugin 'heavenshell/vim-jsdoc'
 "" /Javascript ""
 
@@ -80,7 +81,7 @@ Plugin 'itchyny/lightline.vim'
 "" /Statusbar ""
 
 "" Whitespace ""
-nnoremap <leader>ss :StripWhitespace<cr>
+nnoremap <leader>sq :StripWhitespace<cr>
 "" /Whitespace ""
 
 "" Random ""
@@ -136,12 +137,12 @@ syntax on
 " Highlighting for folded lines "
 :hi folded ctermfg=blue
 
-"" Strange Fletypes "" 
+"" Strange Fletypes ""
 au BufRead,BufNewFile *.hamlpy set ft=haml
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
-au BufRead,BufNewFile *.scss set ft=scss.css 
+au BufRead,BufNewFile *.scss set ft=scss.css
 autocmd filetype crontab setlocal nobackup nowritebackup
-"" /Strange Fletypes "" 
+"" /Strange Fletypes ""
 
 "" Tag matching ""
 let g:mta_set_default_matchtag_color = 1
@@ -257,14 +258,15 @@ nnoremap <leader>gd :Gvdiff<cr>
 " Autocheck when saved
 "autocmd BufWritePost *.js AsyncRun -post=checktime eslint --fix %
 let g:alex_fixers = {
-      \ 'javascript': ['eslint']
+      \ 'typescript': ['tslint']
       \ }
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 0
 let g:ale_fix_on_save = 1
-let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['tslint']}
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
+noremap <leader>li :ALELint<CR>
 """"" /ALE """""
 
 
@@ -277,13 +279,13 @@ noremap <Leader><Leader>f :Fixmyjs<CR>
 let g:autotagmaxTagsFileSize = 1024 * 1024 * 70
 """"" /Autotag  """""
 
-""""" Tern """""
-nmap <silent> <leader>td :TernDef<CR>
-nmap <silent> <leader>tn :TernRename<CR>
-nmap <silent> <leader>tr :TernRef<CR>
+""""" Tern/Tsuq """""
+nmap <silent> <leader>td :TsuDefinition<CR>
+nmap <silent> <leader>tn :TsuRenameSymbol<CR>
+nmap <silent> <leader>tr :TsuTypeDefinition<CR>
 nmap <silent> <leader>tt :TernDefTab<CR>
 noremap <C-g> :TernDefTab<CR>
-""""" /Tern """""
+""""" /Tern/Tsuq """""
 
 """"" JSX """""
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
@@ -382,7 +384,7 @@ let g:NERDTreeShowBookmarks=1
 
 
 """"" NerdCommenter """""
-let g:NERDCustomDelimiters = { 
+let g:NERDCustomDelimiters = {
   \ 'javascript': { 'left': '//', 'leftAlt': '/**', 'rightAlt': '*/' },
   \ 'javascript.jquery': { 'left': '//', 'leftAlt': '/**', 'rightAlt': '*/' }
 \}

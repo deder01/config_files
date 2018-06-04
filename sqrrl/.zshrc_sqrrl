@@ -6,20 +6,25 @@ export SQRRL_WEB=$SQRRL_ROOT/web
 export SQRRL_BIN=$HOME/sqrrl/bin
 export SQRRL_ROOT_PASSWORD="secret"
 export WORKPLACE=/workplace/eder
+export CONSOLE_HOME=$WORKPLACE/MoroccoConsole/
 
 # sqrrl front-end aliases
 alias gocss="cd $SQRRL_UI_MAIN/styles/scss"
-alias golib="cd $SQRRL_UI_MAIN/js/lib" 
+alias golib="cd $SQRRL_UI_MAIN/js/lib"
 alias gotemplates="cd $SQRRL_UI_MAIN/js/templates"
-alias gomain="cd $SQRRL_UI_MAIN" 
+alias gomain="cd $SQRRL_UI_MAIN"
 alias goweb="cd $SQRRL_WEB"
 alias goui="cd $SQRRL_WEB/ui"
+alias goworkplace="cd $WORKPLACE"
+alias console="cd $CONSOLE_HOME/src/"
+alias goassets="cd $CONSOLE_HOME/src/MoroccoConsole-Assets"
+alias goserver="cd $CONSOLE_HOME/src/MoroccoConsole-Server"
 alias goworkplace="cd $WORKPLACE"
 
 # other aliases
 alias antrun="mvn clean antrun:run"
-alias gosqrrl="cd $SQRRL_ROOT" 
-alias goanalytics="cd $SQRRL_HOME" 
+alias gosqrrl="cd $SQRRL_ROOT"
+alias goanalytics="cd $SQRRL_HOME"
 alias isu="is-stuff-up.sh"
 alias complexity_report="/usr/local/bin/cr"
 
