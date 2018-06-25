@@ -18,6 +18,8 @@ alias goui="cd $SQRRL_WEB/ui"
 alias goworkplace="cd $WORKPLACE"
 alias console="cd $CONSOLE_HOME/src/"
 alias goassets="cd $CONSOLE_HOME/src/MoroccoConsole-Assets"
+alias gosrc="cd $CONSOLE_HOME/src/MoroccoConsole-Assets/src/"
+alias gomodules="cd $CONSOLE_HOME/src/MoroccoConsole-Assets/src/modules"
 alias goserver="cd $CONSOLE_HOME/src/MoroccoConsole-Server"
 alias goworkplace="cd $WORKPLACE"
 

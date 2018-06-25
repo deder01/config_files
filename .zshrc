@@ -83,6 +83,8 @@ path=(
        /apollo/env/MallomarDeveloperTools/bin
        /apollo/env/AmazonAwsCli/bin
        /usr/local/bin
+       $HOME/.local/bin:$PATH:$HOME/.local/python-3.6.3/bin
+       $HOME/.toolbox/bin:$PATH
      )
 
 ## Path to your oh-my-zsh installation.
@@ -156,6 +158,7 @@ alias gsp="git stash pop"
 
 # Quick case-insensitive search
 alias agi="ag -i"
+alias ag="ag -p ~/.ignore"
 
 
 ##### config #####
@@ -255,4 +258,3 @@ export LANG=en_US.UTF-8
 # Source fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export JAVA_HOME=/apollo/env/JavaSE8/jdk1.8
-export PATH=$HOME/.local/bin:$PATH:$HOME/.local/python-3.6.3/bin
