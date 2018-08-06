@@ -315,6 +315,8 @@ let g:ycm_semantic_triggers =  {
 """"" /YCM """""
 
 """"" OmniComplete """""
+autocmd FileType typescript setlocal completeopt+=menu,preview
+
 set completeopt=longest,menuone
 inoremap <C-Space> <C-x><C-o>
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
