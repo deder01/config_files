@@ -82,6 +82,7 @@ path=(
        /apollo/env/OctaneBrazilTools/bin
        /apollo/env/MallomarDeveloperTools/bin
        /apollo/env/AmazonAwsCli/bin
+       /apollo/env/OdinTools/bin
        /usr/local/bin
        $HOME/.local/bin:$PATH:$HOME/.local/python-3.6.3/bin
        $HOME/.toolbox/bin:$PATH
@@ -258,5 +259,7 @@ export LANG=en_US.UTF-8
 # Source fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export JAVA_HOME=/apollo/env/JavaSE8/jdk1.8
+
+export PATH=$HOME/.toolbox/bin:$PATH
 
 export PATH=$HOME/.toolbox/bin:$PATH

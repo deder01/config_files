@@ -7,6 +7,8 @@ export SQRRL_BIN=$HOME/sqrrl/bin
 export SQRRL_ROOT_PASSWORD="secret"
 export WORKPLACE=/workplace/eder
 export CONSOLE_HOME=$WORKPLACE/MoroccoConsole/
+export SERVER_HOME=$WORKPLACE/MoroccoConsoleServer/
+export CANARIES_HOME=$WORKPLACE/canaries/src/MoroccoConsole-Canaries/
 
 # sqrrl front-end aliases
 alias gocss="cd $SQRRL_UI_MAIN/styles/scss"
@@ -20,7 +22,8 @@ alias console="cd $CONSOLE_HOME/src/"
 alias goassets="cd $CONSOLE_HOME/src/MoroccoConsole-Assets"
 alias gosrc="cd $CONSOLE_HOME/src/MoroccoConsole-Assets/src/"
 alias gomodules="cd $CONSOLE_HOME/src/MoroccoConsole-Assets/src/modules"
-alias goserver="cd $CONSOLE_HOME/src/MoroccoConsole-Server"
+alias goserver="cd $SERVER_HOME/src/MoroccoConsole-Server"
+alias gocanaries="cd $CANARIES_HOME"
 alias goworkplace="cd $WORKPLACE"
 
 # other aliases

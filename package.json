@@ -19,6 +19,7 @@
     "eslint-plugin-react": "^7.10.0"
   },
   "dependencies": {
-    "ternjs": "^0.22.0"
+    "ternjs": "^0.22.0",
+    "typescript": "^3.0.1"
   }
 }
