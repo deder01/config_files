@@ -255,7 +255,7 @@ nnoremap <leader>gd :Gvdiff<cr>
 """"" /Fugitive """""
 
 """"" Tsuquyomi """""
-let g:tsuquyomi_disable_quickfix=1
+" let g:tsuquyomi_disable_quickfix=1
 """"" /Tsuquyomi """""
 
 """"" ALE """""
@@ -495,9 +495,6 @@ set confirm
 " Turn off error bells
 set noerrorbells
 set novisualbell
-
-" Enable use of the mouse for all modes
-set mouse=a
 
 """" Statusline """"
 " Set the command window height to 2 lines, to avoid many cases of having to

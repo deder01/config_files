@@ -1,5 +1,5 @@
 .cfg
-.swp
+.*.swp
 .vim/.netrwhist
 .vim/bundle/*
 .vim/sessions/*
