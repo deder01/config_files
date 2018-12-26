@@ -1,43 +1,3 @@
-ENV_IMPROVEMENT_ROOT=/apollo/env/envImprovement
-# -*- shell-script -*-
-# ENV_IMPROVEMENT_ROOT will be set to the apollo root, this is done by
-# $ENV_IMPROVEMENT_ROOT/var/zshrc, which is in turn created by the
-# 200CreateZshrc function.  $ENV_IMPROVEMENT_ROOT/var/zshrc is where
-# this file should be sourced from
-
-# First we want to dispatch to the environment version of zsh, if available
-
-ZSH=$ENV_IMPROVEMENT_ROOT/var/bin/zsh
-
-if [[ $SHELL != $ZSH && -e $ZSH ]]
-then
-  SHELL=$ZSH
-  # The cryptic -$- passes all the options in effect for this current shell
-  # to the replacement shell we are exec'ing.  This ensures a login shell
-  # stays a login shell, etc.  See man zshparam, section "Parameters Set By
-  # The Shell".
-  exec $ZSH -$- "$@"
-fi
-
-## source shell-neutral config:
-#source "$ENV_IMPROVEMENT_ROOT/dotfiles/anyshrc"
-
-#################### important pre-external-hook vars ################
-# path where zsh searches for modules (such as zle, the zsh line editor)
-# you *want* this to work
-module_path=($ENV_IMPROVEMENT_ROOT/var/lib/zsh/$ZSH_VERSION/)
-\
-# search path for zsh functions  (fpath ==> function path)
-# Make sure the AmazonZshFunctions list comes second for overriding reasons
-fpath=(                                                             \
-        $ENV_IMPROVEMENT_ROOT/var/zsh/functions/$ZSH_VERSION        \
-        $ENV_IMPROVEMENT_ROOT/var/share/zsh/$ZSH_VERSION/functions  \
-      )
-
-################### external hooks ##################################
-#Since we don't load these /etc files because of the way we compiled zsh, load
-#them now.
-
 if [[ -e /etc/zshenv ]]
 then
   source /etc/zshenv
@@ -48,41 +8,19 @@ then
   source /etc/zshrc
 fi
 
-#################### important zsh vars & common env vars ############
-#
-# Notes on the PATH varaible:
-#   ENV_IMPROVEMENT_ROOT/bin should be early in the path, so that
-#   it can override the /opt/third-party/bin paths
-#
-#   Since BrazilTools is deployed with the env improvement environment, we need
-#   to put /apollo/env/SDETools/bin/ before the ROOT/bin since we want to pick
-#   up the devtools-deployed versions first
-#
-
 export PATH=
 path=(
        $HOME/.local/bin
        $HOME/node_modules/.bin
-       /apollo/env
-       /apollo/env/NodeJS/bin
        ~/bin
        ~/usr/bin
        /usr/kerberos/bin
-       $ENV_IMPROVEMENT_ROOT/bin
        /usr/local/bin
        /usr/bin
        /bin
        /usr/sbin
        /sbin
        /usr/local/sbin
-       /apollo/bin
-       /apollo/sbin
-       /apollo/env/ApolloCommandLine/bin
-       $BRAZIL_CLI_BIN
-       /apollo/env/OctaneBrazilTools/bin
-       /apollo/env/MallomarDeveloperTools/bin
-       /apollo/env/AmazonAwsCli/bin
-       /apollo/env/OdinTools/bin
        /usr/local/bin
        $HOME/.local/bin:$PATH:$HOME/.local/python-3.6.3/bin
        $HOME/.toolbox/bin:$PATH
@@ -252,7 +190,3 @@ export LANG=en_US.UTF-8
 # Source fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export JAVA_HOME=/apollo/env/JavaSE8/jdk1.8
-
-export PATH=$HOME/.toolbox/bin:$PATH
-
-export PATH=$HOME/.toolbox/bin:$PATH
