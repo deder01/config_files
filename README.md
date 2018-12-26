@@ -1,2 +1,2 @@
 All my config/dotfiles
-I probably need a better configuration but using a naive git setup is working for now.
+Vim is basically the only thing in mainline as it is the main thing shared between mac and linux, most other stuff is env specific
