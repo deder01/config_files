@@ -6,3 +6,5 @@
 	email = eder@amazon.com
 [push]
 	default = simple
+[alias]
+	conflicted = !vim +Conflicted
