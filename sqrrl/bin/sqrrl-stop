@@ -1,0 +1,4 @@
+stop-all.sh
+mr-jobhistory-daemon.sh stop historyserver
+zkServer.sh stop
+sqrrl stopAll
