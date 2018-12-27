@@ -1,0 +1,17 @@
+# Aliases for different workplaces
+export CONSOLE_HOME=$WORKPLACE/MoroccoConsole/
+export SERVER_HOME=$WORKPLACE/MoroccoConsoleServer/
+export CANARIES_HOME=$WORKPLACE/canaries/src/MoroccoConsole-Canaries/
+alias goworkplace="cd $WORKPLACE"
+alias golpt="cd $WORKPLACE/lpt/src/"
+alias console="cd $CONSOLE_HOME/src/"
+alias goassets="cd $CONSOLE_HOME/src/MoroccoConsole-Assets"
+alias gosrc="cd $CONSOLE_HOME/src/MoroccoConsole-Assets/src/"
+alias gomodules="cd $CONSOLE_HOME/src/MoroccoConsole-Assets/src/modules"
+alias goserver="cd $SERVER_HOME/src/MoroccoConsole-Server"
+alias gocanaries="cd $CANARIES_HOME"
+
+# locale
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8

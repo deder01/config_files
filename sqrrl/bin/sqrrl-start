@@ -1,6 +1,0 @@
-#!/bin/bash
-
-start-all.sh
-mr-jobhistory-daemon.sh start historyserver
-zkServer.sh start
-sqrrl startAll
