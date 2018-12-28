@@ -1,4 +1,5 @@
 # Aliases for different workplaces
+export WORKPLACE=/workplace/eder
 export CONSOLE_HOME=$WORKPLACE/MoroccoConsole/
 export SERVER_HOME=$WORKPLACE/MoroccoConsoleServer/
 export CANARIES_HOME=$WORKPLACE/canaries/src/MoroccoConsole-Canaries/
