@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Set up morocco environment if at work
-if [[ -f $HOME/morocco/.zshrc_sqrrl ]]; then
+if [[ -f $HOME/morocco/.zshrc_morocco ]]; then
   source $HOME/morocco/.zshrc_sqrrl
 fi
 
