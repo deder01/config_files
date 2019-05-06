@@ -116,7 +116,7 @@ export GREP_COLOR='1;33'
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # Don't open vim if no file is passed
-vim() {
+function vim() {
     if [[ $# -eq 0 ]]; then
       return 1
     fi

@@ -1,3 +1,5 @@
+export AWS_CREDENTIAL_PROFILES_FILE=/etc/turtle/credentials
+
 # Aliases for different workplaces
 export WORKPLACE=/workplace/eder
 export CONSOLE_HOME=$WORKPLACE/MoroccoConsole/
