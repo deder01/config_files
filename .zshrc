@@ -116,7 +116,7 @@ export GREP_COLOR='1;33'
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # Don't open vim if no file is passed
-function vim() {
+function vimm() {
     if [[ $# -eq 0 ]]; then
       return 1
     fi
@@ -195,7 +195,7 @@ zle     -N     fzf-history-widget-accept
 bindkey '^X^R' fzf-history-widget-accept
 
 ##### fzf #####
-alias f='vim $(fzf-tmux)'
+alias f='vimm $(fzf-tmux)'
 ##### end fzf #####
 
 ##### Use isenguard profile in aws cli ####
