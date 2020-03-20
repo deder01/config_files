@@ -127,11 +127,12 @@ bindkey '^X^R' fzf-history-widget-accept
 
 ##### fzf #####
 alias f='vim $(fzf-tmux)'
-##### end fzf #####
 
 ##### Use isenguard profile in aws cli ####
 alias aws="aws --profile dev"
-##### end SSH to docker ####
+
+##### Use isenguard profile in aws cli ####
+alias goworkspaces="cd $HOME/workspaces"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -189,4 +190,4 @@ export LANG=en_US.UTF-8
 
 # Source fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export JAVA_HOME=/apollo/env/JavaSE8/jdk1.8
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
