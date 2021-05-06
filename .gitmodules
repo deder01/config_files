@@ -10,3 +10,6 @@
 [submodule ".fzf"]
 	path = .fzf
 	url = https://github.com/junegunn/fzf
+[submodule "diff-so-fancy"]
+	path = diff-so-fancy
+	url = https://github.com/so-fancy/diff-so-fancy
