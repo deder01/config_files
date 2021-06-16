@@ -63,6 +63,7 @@ export PATH=
 path=(
        $HOME/.local/bin
        $HOME/node_modules/.bin
+       $HOME/diff-so-fancy
        /apollo/env
        /apollo/env/NodeJS/bin
        ~/bin
@@ -168,6 +169,9 @@ alias conc="config commit"
 alias conpush="config push origin master"
 alias conpull="config pull"
 ##### /config #####
+alias g2s2sbx="/apollo/env/G2S2CommandTools/bin/g2s2 -u https://g2s2-author.integ.amazon.com"
+alias g2s2prod="/apollo/env/G2S2CommandTools/bin/g2s2 -u https://g2s2-author.amazon.com"
+alias g2s2-post-review="/apollo/env/G2S2CommandTools/bin/g2s2-post-review"
 
 ##### fzf #####
 # goto - cd into the directory of the selected file
