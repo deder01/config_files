@@ -10,8 +10,8 @@ fi
 
 export PATH=
 path=(
+       /usr/local/lib/ruby/gems/3.0.0/bin/
        $HOME/.local/bin
-       $HOME/node_modules/.bin
        ~/bin
        ~/usr/bin
        /usr/kerberos/bin
@@ -22,6 +22,7 @@ path=(
        /sbin
        /usr/local/sbin
        /usr/local/bin
+       $HOME/node_modules/.bin
        $HOME/.local/bin:$PATH:$HOME/.local/python-3.6.3/bin
        $HOME/.toolbox/bin:$PATH
      )
@@ -191,3 +192,13 @@ export LANG=en_US.UTF-8
 # Source fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
+
+# NVM for node management
+export NVM_DIR="$HOME/.nvm"
+source $(brew --prefix nvm)/nvm.sh
+
+alias nvm_start='[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" &&
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'  # This loads nvm
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
