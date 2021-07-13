@@ -155,6 +155,7 @@ alias gdc="git diff --cached"
 alias gs="git stash"
 alias gsa="git stash apply"
 alias gsl="git stash list"
+alias gsa="git stash apply"
 alias gss="git stash save"
 alias gsp="git stash pop"
 
@@ -205,6 +206,8 @@ alias f='vimm $(fzf-tmux)'
 ##### Use isenguard profile in aws cli ####
 alias aws="aws --profile dev"
 ##### end SSH to docker ####
+
+alias goworkspaces="cd ~/workspaces"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -263,3 +266,11 @@ export LANG=en_US.UTF-8
 # Source fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export JAVA_HOME=/apollo/env/JavaSE8/jdk1.8
+
+# NVM for node management
+export NVM_DIR="$HOME/.nvm"
+alias nvm_start='[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" &&
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'  # This loads nvm
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
