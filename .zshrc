@@ -132,8 +132,11 @@ alias f='vim $(fzf-tmux)'
 ##### Use isenguard profile in aws cli ####
 alias aws="aws --profile dev"
 
-##### Use isenguard profile in aws cli ####
+##### go to workspaces
 alias goworkspaces="cd $HOME/workspaces"
+
+###
+alias gocms="cd $HOME/workspaces/cms_react_app/src"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
