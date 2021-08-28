@@ -10,3 +10,6 @@
 [submodule ".fzf"]
 	path = .fzf
 	url = https://github.com/junegunn/fzf
+[submodule ".solarized"]
+	path = .solarized
+	url = git://github.com/sigurdga/gnome-terminal-colors-solarized.git

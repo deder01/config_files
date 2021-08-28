@@ -31,10 +31,7 @@ path=(
 export ZSH=~/.oh-my-zsh
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
- DISABLE_AUTO_UPDATE="true"
-
-# Begin oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+DISABLE_AUTO_UPDATE="true"
 
 # Use the node modules needed for js development
 
@@ -56,7 +53,6 @@ vim() {
     command "vim" "$@" 
 }
 
-plugins=(git vi-mode zsh-autosuggestions)
 
 # max open files for yosemite
 # ulimit -n 65536
@@ -183,25 +179,30 @@ alias gocms="cd $HOME/workspaces/cms_react_app/src"
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='vim'
+ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Source fzf keybindings
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
 
 # NVM for node management
 export NVM_DIR="$HOME/.nvm"
-source $(brew --prefix nvm)/nvm.sh
 
 alias nvm_start='[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" &&
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'  # This loads nvm
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+plugins=(git vi-mode zsh-autosuggestions)
+
+# Begin oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
+# Source fzf keybindings
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -3,8 +3,7 @@ Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = [
   \ 'coc-tsserver'
   \ ]
-let g:coc_node_path = "/Users/eder/.nvm/versions/node/v13.14.0/bin/node"
-
+let g:coc_node_path = "$HOME/.nvm/versions/node/v13.14.0/bin/node"
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
