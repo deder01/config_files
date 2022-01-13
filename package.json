@@ -10,7 +10,7 @@
   "license": "ISC",
   "homepage": "https://github.com/deder01/config_files#readme",
   "devDependencies": {
-    "diff-so-fancy": "^1.2.0"
+    "diff-so-fancy": "^1.4.3"
   },
   "dependencies": {
     "nvm": "^0.0.4",
