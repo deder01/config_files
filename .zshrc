@@ -1,3 +1,4 @@
+cd ~
 if [[ -e /etc/zshenv ]]
 then
   source /etc/zshenv
@@ -206,4 +207,3 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 ## set colors for LS_COLORS
 eval `dircolors ~/.dircolors`
-
