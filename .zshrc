@@ -29,12 +29,12 @@ path=(
 
 ## Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
+export ZSH_CUSTOM=$ZSH/custom
+
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
  DISABLE_AUTO_UPDATE="true"
 
-# Begin oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 
 # Use the node modules needed for js development
 
@@ -56,7 +56,12 @@ vim() {
     command "vim" "$@" 
 }
 
-plugins=(git vi-mode zsh-autosuggestions)
+# Begin oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+plugins=(git
+  vi-mode
+  zsh-autosuggestions
+)
 
 # max open files for yosemite
 # ulimit -n 65536
@@ -65,9 +70,6 @@ plugins=(git vi-mode zsh-autosuggestions)
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
-
-# Set custom folder to something we can actually track
-ZSH_CUSTOM=".zsh_custom"
 
 # Don't show user@computer-name in the comamand line
 DEFAULT_USER=$USER
@@ -125,6 +127,9 @@ fzf-history-widget-accept() {
 }
 zle     -N     fzf-history-widget-accept
 bindkey '^X^R' fzf-history-widget-accept
+bindkey '^[[Z' autosuggest-accept
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ffffff"
+
 
 ##### fzf #####
 alias f='vim $(fzf-tmux)'
@@ -135,8 +140,8 @@ alias aws="aws --profile dev"
 ##### go to workspaces
 alias goworkspaces="cd $HOME/workspaces"
 
-###
-alias gocms="cd $HOME/workspaces/cms_react_app/src"
+alias chrome="open -a 'Google Chrome'"
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -194,13 +199,14 @@ export LANG=en_US.UTF-8
 
 # Source fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
 
 # NVM for node management
 export NVM_DIR="$HOME/.nvm"
 
 alias nvm_start='[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" &&
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'  # This loads nvm
+nvm_start
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
