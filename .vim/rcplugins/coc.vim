@@ -3,7 +3,7 @@ Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = [
   \ 'coc-tsserver'
   \ ]
-let g:coc_node_path = "/Users/eder/.nvm/versions/node/v13.14.0/bin/node"
+let g:coc_node_path = "/Users/eder/.nvm/versions/node/v16.15.0/bin/node"
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
@@ -42,7 +42,10 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+
+inoremap <expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
+inoremap <expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -58,8 +61,8 @@ endif
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
