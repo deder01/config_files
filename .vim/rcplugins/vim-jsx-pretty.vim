@@ -1,2 +1,2 @@
 " Syntax highlighting and indenting for jsx/react
-" Plugin 'MaxMEllon/vim-jsx-pretty'
+" Plug 'MaxMEllon/vim-jsx-pretty'

@@ -1,5 +1,5 @@
 " Light and configurable statusline
-Plugin 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 
 let g:lightline = {
       \ 'colorscheme': 'landscape',

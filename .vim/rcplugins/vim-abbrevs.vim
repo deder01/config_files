@@ -1,2 +1,2 @@
 " My common fat finger mistakes
-Plugin 'deder01/vim-abbrevs'
+Plug 'deder01/vim-abbrevs'

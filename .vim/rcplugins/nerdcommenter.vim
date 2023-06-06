@@ -1,5 +1,5 @@
 " Shortcuts for good commenting
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
 let g:NERDCustomDelimiters = {
   \ 'javascript': { 'left': '//', 'leftAlt': '/**', 'rightAlt': '*/' },

@@ -1,2 +1,2 @@
 " Correct common fat finger mistakes
-Plugin 'chip/vim-fat-finger'
+Plug 'chip/vim-fat-finger'

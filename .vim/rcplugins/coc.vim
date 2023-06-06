@@ -1,4 +1,4 @@
-Plugin 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim'
 
 " May need for Vim (not Neovim) since coc.nvim calculates byte offset by count
 " utf-8 byte sequence

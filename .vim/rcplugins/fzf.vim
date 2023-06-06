@@ -1,6 +1,6 @@
 " Enable the fzf fuzzy finder in vim
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 noremap <silent> <C-k> :Ag<CR>
 noremap <silent> <C-j> :FZF<CR>

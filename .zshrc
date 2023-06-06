@@ -1,3 +1,4 @@
+cd ~
 if [[ -e /etc/zshenv ]]
 then
   source /etc/zshenv
@@ -10,6 +11,7 @@ fi
 
 export PATH=
 path=(
+       $PATH
        /usr/local/lib/ruby/gems/3.0.0/bin/
        $HOME/.local/bin
        ~/bin
@@ -207,3 +209,5 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 ## set colors for LS_COLORS
 eval `dircolors ~/.dircolors`
 nvm_start && nvm use v18
+
+alias code="/mnt/c/Users/david/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
