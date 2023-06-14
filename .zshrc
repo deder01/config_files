@@ -211,3 +211,4 @@ eval `dircolors ~/.dircolors`
 nvm_start && nvm use v18
 
 alias code="/mnt/c/Users/david/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
+alias gorepos="cd repos"
