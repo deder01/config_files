@@ -60,15 +60,6 @@ let g:mta_filetypes = {
     \}
 "" /Tag matching ""
 
-""""" OmniComplete """""
-autocmd FileType typescript setlocal completeopt+=menu
-let g:tsuquyomi_completion_detail = 1
-imap <C-Space> <C-x><C-o>
-imap <C-@> <C-Space>
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-""""" /OmniComplete """""
 " End lines at 920 columns
 set textwidth=920
 
