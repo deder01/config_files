@@ -1,3 +1,4 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
 if [[ -e /etc/zshenv ]]
 then
   source /etc/zshenv
@@ -10,7 +11,7 @@ fi
 
 export PATH=
 path=(
-       /usr/local/lib/ruby/gems/3.0.0/bin/
+       /opt/homebrew/bin
        $HOME/.local/bin
        ~/bin
        ~/usr/bin
@@ -49,11 +50,11 @@ export GREP_COLOR='1;33'
 # Add wisely, as too many plugins slow down shell startup.
 # Don't open vim if no file is passed
 vim() {
-    if [[ $# -eq 0 ]]; then
-      return 1
-    fi
+   if [[ $# -eq 0 ]]; then
+     return 1
+   fi
 
-    command "vim" "$@" 
+   command "vim" "$@" 
 }
 
 plugins=(git vi-mode zsh-autosuggestions)
@@ -102,6 +103,7 @@ alias conpull="config pull"
 ##### /config #####
 
 ##### fzf #####
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # goto - cd into the directory of the selected file
 goto() {
    local file
@@ -192,10 +194,6 @@ export LANG=en_US.UTF-8
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Source fzf keybindings
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
-
 # NVM for node management
 export NVM_DIR="$HOME/.nvm"
 
@@ -204,3 +202,4 @@ alias nvm_start='[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" &&
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
