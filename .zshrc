@@ -202,4 +202,4 @@ alias nvm_start='[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" &&
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
+nvm_start
