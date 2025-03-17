@@ -23,9 +23,9 @@ path=(
        /sbin
        /usr/local/sbin
        /usr/local/bin
+       /Applications/IntelliJ IDEA CE.app/Contents/MacOS
        $HOME/node_modules/.bin
        $HOME/.local/bin:$PATH:$HOME/.local/python-3.6.3/bin
-       $HOME/.toolbox/bin:$PATH
      )
 
 ## Path to your oh-my-zsh installation.
@@ -131,14 +131,11 @@ bindkey '^X^R' fzf-history-widget-accept
 ##### fzf #####
 alias f='vim $(fzf-tmux)'
 
-##### Use isenguard profile in aws cli ####
-alias aws="aws --profile dev"
+### Alias brew to pyenv
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
-##### go to workspaces
-alias goworkspaces="cd $HOME/workspaces"
+alias goprojects="cd $HOME/Projects/"
 
-###
-alias gocms="cd $HOME/workspaces/cms_react_app/src"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -202,4 +199,15 @@ alias nvm_start='[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" &&
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
 nvm_start
