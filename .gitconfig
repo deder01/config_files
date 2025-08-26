@@ -5,8 +5,10 @@
 	whitespace = cr-at-eol
 [user]
 	name = David Eder
-	email = eder@amazon.com
+	email = david.eder@doordash.com
 [push]
 	default = simple
 [alias]
 	conflicted = !vim +Conflicted
+[credential]
+	helper = osxkeychain

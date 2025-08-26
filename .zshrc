@@ -1,14 +1,3 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
-if [[ -e /etc/zshenv ]]
-then
-  source /etc/zshenv
-fi
-
-if [[ -o interactive && -e /etc/zshrc ]]
-then
-  source /etc/zshrc
-fi
-
 export PATH=
 path=(
        /opt/homebrew/bin
@@ -23,19 +12,26 @@ path=(
        /sbin
        /usr/local/sbin
        /usr/local/bin
-       /Applications/IntelliJ IDEA CE.app/Contents/MacOS
+       '/Applications/IntelliJ IDEA.app/Contents/MacOS'
        $HOME/node_modules/.bin
        $HOME/.local/bin:$PATH:$HOME/.local/python-3.6.3/bin
      )
 
 ## Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
+#
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
  DISABLE_AUTO_UPDATE="true"
 
 # Begin oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
+plugins=(git vi-mode zsh-autosuggestions)
 
 # Use the node modules needed for js development
 
@@ -56,16 +52,6 @@ vim() {
 
    command "vim" "$@" 
 }
-
-plugins=(git vi-mode zsh-autosuggestions)
-
-# max open files for yosemite
-# ulimit -n 65536
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
 
 # Set custom folder to something we can actually track
 ZSH_CUSTOM=".zsh_custom"
@@ -133,6 +119,7 @@ alias f='vim $(fzf-tmux)'
 
 ### Alias brew to pyenv
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+alias brew='arch -arm64 brew'
 
 alias goprojects="cd $HOME/Projects/"
 
@@ -181,6 +168,8 @@ alias goprojects="cd $HOME/Projects/"
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
+alias bp='source ~/.bash_profile'
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -210,4 +199,7 @@ esac
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 nvm_start
+nvm use v18
