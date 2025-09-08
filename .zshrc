@@ -28,10 +28,13 @@ ZSH_THEME="agnoster"
 # Uncomment the following line to disable bi-weekly auto-update checks.
  DISABLE_AUTO_UPDATE="true"
 
+# Set custom folder to something we can actually track
+
+ZSH_CUSTOM=".zsh_custom"
+plugins=(git vi-mode zsh-autosuggestions)
+
 # Begin oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-
-plugins=(git vi-mode zsh-autosuggestions)
 
 # Use the node modules needed for js development
 
@@ -53,8 +56,6 @@ vim() {
    command "vim" "$@" 
 }
 
-# Set custom folder to something we can actually track
-ZSH_CUSTOM=".zsh_custom"
 
 # Don't show user@computer-name in the comamand line
 DEFAULT_USER=$USER
