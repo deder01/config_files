@@ -17,6 +17,4 @@ export PS1='\[\e[1;31m\]\u@\h:\[\e[1;34m\]\w\[\e[1;26m\]\$\[\e[0;1m\] '
 ##############################################
 alias bp='source ~/.bash_profile'
 
-source ~/.zshrc
-
 eval "$(/opt/homebrew/bin/brew shellenv)"

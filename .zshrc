@@ -32,35 +32,7 @@ path=(
 export ZSH=~/.oh-my-zsh
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
- DISABLE_AUTO_UPDATE="true"
-
-# Begin oh-my-zsh
-source $ZSH/oh-my-zsh.sh
-
-# Use the node modules needed for js development
-
-# LS colors, made with http://geoff.greer.fm/lscolors/
-export LSCOLORS="exfxcxdxbxegedabagacad"
-export LS_COLORS='di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
-export GREP_COLOR='1;33'
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-# Don't open vim if no file is passed
-vim() {
-    if [[ $# -eq 0 ]]; then
-      return 1
-    fi
-
-    command "vim" "$@" 
-}
-
-plugins=(git vi-mode zsh-autosuggestions)
-
-# max open files for yosemite
-# ulimit -n 65536
+DISABLE_AUTO_UPDATE="true"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -72,6 +44,34 @@ ZSH_CUSTOM=".zsh_custom"
 
 # Don't show user@computer-name in the comamand line
 DEFAULT_USER=$USER
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git vi-mode zsh-autosuggestions)
+
+# Begin oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
+# Use the node modules needed for js development
+
+# LS colors, made with http://geoff.greer.fm/lscolors/
+export LSCOLORS="exfxcxdxbxegedabagacad"
+export LS_COLORS='di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
+export GREP_COLOR='1;33'
+
+# Don't open vim if no file is passed
+vim() {
+    if [[ $# -eq 0 ]]; then
+      return 1
+    fi
+
+    command "vim" "$@"
+}
+
+# max open files for yosemite
+# ulimit -n 65536
 
 # Manage git config files using config
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
