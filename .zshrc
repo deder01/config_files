@@ -1,3 +1,4 @@
+unset GREP_OPTIONS
 cd ~
 if [[ -e /etc/zshenv ]]
 then
@@ -209,6 +210,15 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 ## set colors for LS_COLORS
 eval `dircolors ~/.dircolors`
 nvm_start && nvm use v18
+#
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
 
 alias code="/mnt/c/Users/david/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
 alias gorepos="cd repos"
+
+# Cursor 
+export PATH="$PATH:/mnt/c/Users/david/AppData/Local/Programs/cursor/resources/app/bin"
+
