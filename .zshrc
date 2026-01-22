@@ -13,6 +13,7 @@ path=(
        /usr/local/sbin
        /usr/local/bin
        '/Applications/IntelliJ IDEA.app/Contents/MacOS'
+       $GOPATH/bin
        $HOME/node_modules/.bin
        $HOME/.local/bin:$PATH:$HOME/.local/python-3.6.3/bin
      )
@@ -204,3 +205,4 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 nvm_start
 nvm use v18
+export PATH="$(go env GOPATH)/bin:$PATH"
