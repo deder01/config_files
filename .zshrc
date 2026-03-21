@@ -39,7 +39,7 @@ DISABLE_AUTO_UPDATE="true"
 ZSH_THEME="agnoster"
 
 # Set custom folder to something we can actually track
-ZSH_CUSTOM=".zsh_custom"
+ZSH_CUSTOM="$HOME/.zsh_custom"
 
 # Don't show user@computer-name in the comamand line
 DEFAULT_USER=$USER
