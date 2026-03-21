@@ -1,0 +1,3 @@
+# Mac-specific config
+path=(/opt/homebrew/bin $path)
+nvm use v20

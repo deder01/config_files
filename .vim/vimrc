@@ -1,6 +1,11 @@
 let mapleader = ","
 
-" Taken from https://github.com/christoomey/dotfiles/blob/master/vim/vimrc
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 function! s:SourceConfigFilesIn(directory)
   let directory_splat = '~/.vim/' . a:directory . '/*'
   for config_file in split(glob(directory_splat), '\n')
@@ -9,13 +14,14 @@ function! s:SourceConfigFilesIn(directory)
     endif
   endfor
 endfunction
-"""""""""" Plugins  """"""""""
-" Use Vundle for package management
-set nocompatible | filetype off | set rtp+=~/.vim/bundle/Vundle.vim | call vundle#begin() | Plugin 'VundleVim/Vundle.vim'
-call s:SourceConfigFilesIn('rcplugins')
-call vundle#end() | filetype plugin indent on
 
-" Cannot call this until after vundle is done
+"""""""""" Plugins  """"""""""
+" Use vim-plug for package management
+call plug#begin('~/.vim/bundle')
+  call s:SourceConfigFilesIn('rcplugins')
+call plug#end()
+
+" Cannot call this until after vim-plug is done
 call camelcasemotion#CreateMotionMappings('<leader>')
 
 call s:SourceConfigFilesIn('rcfiles')

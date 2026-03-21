@@ -1,2 +1,2 @@
 " Always matching html tags
-Plugin 'Valloric/MatchTagAlways'
+Plug 'Valloric/MatchTagAlways'

@@ -1,5 +1,5 @@
 " The famous nerdtree file tree/navigator
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 noremap <silent> <leader>nt :NERDTreeToggle<CR>
 let g:NERDTreeMapMenu='M'

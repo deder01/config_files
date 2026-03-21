@@ -1,0 +1,8 @@
+# WSL-specific config
+cd ~
+path=($PATH $path)
+eval `dircolors ~/.dircolors`
+nvm use v18
+
+alias code="/mnt/c/Users/david/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
+alias gorepos="cd repos"

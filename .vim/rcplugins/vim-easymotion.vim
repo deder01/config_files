@@ -1,5 +1,5 @@
 " Type chars on screen to move to them
-Plugin 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 

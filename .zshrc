@@ -10,7 +10,6 @@ fi
 
 export PATH=
 path=(
-       /opt/homebrew/bin
        /usr/local/lib/ruby/gems/3.0.0/bin/
        $HOME/.local/bin
        ~/bin
@@ -206,4 +205,6 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 nvm_start
-nvm use v20
+
+# Machine-specific config (PATH overrides, nvm version, etc.)
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local

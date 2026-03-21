@@ -1,2 +1,2 @@
 " Better typescript syntax
-Plugin 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'

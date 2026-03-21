@@ -1,2 +1,2 @@
 " Show x/n when searching for strings
-Plugin 'henrik/vim-indexed-search'
+Plug 'henrik/vim-indexed-search'

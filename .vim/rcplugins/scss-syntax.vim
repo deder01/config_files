@@ -1,2 +1,2 @@
 " Syntax highlighting for sass files
-Plugin 'cakebaker/scss-syntax.vim'
+Plug 'cakebaker/scss-syntax.vim'

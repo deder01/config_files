@@ -3,6 +3,6 @@
 .vim/.netrwhist
 .vim/bundle/*
 .vim/sessions/*
-!.vim/bundle/Vundle.vim/
 node_modules/
+.zshrc.local
 **/*/.DS_Store

@@ -1,6 +1,6 @@
 " The best git wrapper for vim
-Plugin 'tpope/vim-fugitive'
-Plugin 'tommcdo/vim-fugitive-blame-ext'
-Plugin 'christoomey/vim-conflicted'
+Plug 'tpope/vim-fugitive'
+Plug 'tommcdo/vim-fugitive-blame-ext'
+Plug 'christoomey/vim-conflicted'
 
 nnoremap <leader>gd :Gvdiff<cr>
