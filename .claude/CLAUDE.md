@@ -14,6 +14,11 @@ This file provides guidance to Claude Code (claude.ai/code) as a user-level conf
 - Default to TypeScript for new projects
 - Prefer modern ES syntax (const, arrow functions, async/await)
 
+## Dotfiles
+
+- My home directory (`~`) is a dotfiles repo using a bare git repo at `~/.cfg/`
+- The alias `config` maps to `git --git-dir=$HOME/.cfg/ --work-tree=$HOME` — use this instead of plain `git` when operating on dotfiles in `~`
+
 ## Git rules
 
 - Never push to a git remote without asking me first — this applies every time, even if I approved a push earlier in the conversation
