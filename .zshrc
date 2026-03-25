@@ -94,6 +94,11 @@ alias agi="ag -i"
 alias ag="ag -p ~/.ignore"
 
 
+##### openclaw #####
+alias brewbird-off='openclaw agent --message "Send a goodbye message to WhatsApp group 120363371396004878@g.us in your Brewbird voice. Say you'\''re logging off for now and you'\''ll catch up on anything when you'\''re back. Keep it to 1-2 sentences, end with your signature." --deliver --reply-channel whatsapp --reply-to "120363371396004878@g.us"'
+alias brewbird-stop='brewbird-off && openclaw gateway stop'
+##### /openclaw #####
+
 ##### config #####
 alias cond="config diff"
 alias conc="config commit"
