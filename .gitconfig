@@ -4,8 +4,8 @@
 	autocrlf = input
 	whitespace = cr-at-eol
 [user]
-	name = David Eder
-	email = eder@amazon.com
+	name = deder01
+	email = david.eder26@gmail.com
 [push]
 	default = simple
 [alias]
