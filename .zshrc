@@ -208,3 +208,6 @@ nvm_start
 
 # Machine-specific config (PATH overrides, nvm version, etc.)
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+# OpenClaw Completion
+source "/home/deder/.openclaw/completions/openclaw.zsh"
