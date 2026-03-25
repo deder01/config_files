@@ -1,0 +1,301 @@
+2026-03-08T15:10:10.924Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-08T15:10:10.925Z [DEBUG] MDM settings load completed in 1ms
+2026-03-08T15:10:10.939Z [DEBUG] [init] configureGlobalMTLS starting
+2026-03-08T15:10:10.939Z [DEBUG] [init] configureGlobalMTLS complete
+2026-03-08T15:10:10.939Z [DEBUG] [init] configureGlobalAgents starting
+2026-03-08T15:10:10.939Z [DEBUG] [init] configureGlobalAgents complete
+2026-03-08T15:10:10.945Z [DEBUG] Applying permission update: Adding 4 allow rule(s) to destination 'localSettings': ["Bash(/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME show 6878dba)","Bash(/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME fetch origin mac)","Bash(/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME show origin/mac:6878dba)","Bash(/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME log origin/mac --oneline -20)"]
+2026-03-08T15:10:10.945Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-03-08T15:10:10.947Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-03-08T15:10:10.947Z [DEBUG] [STARTUP] Running setup()...
+2026-03-08T15:10:10.949Z [DEBUG] Git remote URL: null
+2026-03-08T15:10:10.949Z [DEBUG] No git remote URL found
+2026-03-08T15:10:10.950Z [DEBUG] Loading skills from: managed=/etc/claude-code/.claude/skills, user=/home/deder/.claude/skills, project=[]
+2026-03-08T15:10:10.950Z [DEBUG] Error log sink initialized
+2026-03-08T15:10:10.977Z [DEBUG] Loaded 0 installed plugins from /home/deder/.claude/plugins/installed_plugins.json
+2026-03-08T15:10:10.977Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2026-03-08T15:10:10.977Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2026-03-08T15:10:10.977Z [DEBUG] Total plugin skills loaded: 0
+2026-03-08T15:10:10.977Z [DEBUG] Total plugin commands loaded: 0
+2026-03-08T15:10:10.977Z [DEBUG] Registered 0 hooks from 0 plugins
+2026-03-08T15:10:10.978Z [DEBUG] Loaded 0 unique skills (0 unconditional, 0 conditional, managed: 0, user: 0, project: 0, additional: 0, legacy commands: 0)
+2026-03-08T15:10:10.978Z [DEBUG] getSkills returning: 0 skill dir commands, 0 plugin skills, 5 bundled skills
+2026-03-08T15:10:10.983Z [DEBUG] Acquired PID lock for 2.1.68 (PID 634)
+2026-03-08T15:10:10.983Z [DEBUG] Acquired PID lock on running version: /home/deder/.local/share/claude/versions/2.1.68
+2026-03-08T15:10:10.984Z [DEBUG] [STARTUP] setup() completed in 37ms
+2026-03-08T15:10:10.984Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-03-08T15:10:10.984Z [DEBUG] Total plugin agents loaded: 0
+2026-03-08T15:10:10.985Z [DEBUG] [STARTUP] Commands and agents loaded in 1ms
+2026-03-08T15:10:10.990Z [DEBUG] [STARTUP] Running showSetupScreens()...
+2026-03-08T15:10:10.992Z [DEBUG] [keybindings] KeybindingSetup initialized with 104 bindings, 0 warnings
+2026-03-08T15:10:11.026Z [DEBUG] [keybindings] Watching for changes to /home/deder/.claude/keybindings.json
+2026-03-08T15:10:11.030Z [DEBUG] [Claude in Chrome] Extension not found in any browser
+2026-03-08T15:10:11.496Z [DEBUG] Writing to temp file: /home/deder/.claude.json.tmp.634.1772982611496
+2026-03-08T15:10:11.496Z [DEBUG] Preserving file permissions: 100600
+2026-03-08T15:10:11.735Z [DEBUG] Temp file written successfully, size: 16985 bytes
+2026-03-08T15:10:11.735Z [DEBUG] Applied original permissions to temp file
+2026-03-08T15:10:11.735Z [DEBUG] Renaming /home/deder/.claude.json.tmp.634.1772982611496 to /home/deder/.claude.json
+2026-03-08T15:10:11.735Z [DEBUG] File /home/deder/.claude.json written atomically
+2026-03-08T15:10:12.187Z [DEBUG] Grove: Cache stale, returning cached data and refreshing in background
+2026-03-08T15:10:12.200Z [DEBUG] Not in a GitHub repository, skipping path mapping update
+2026-03-08T15:10:12.200Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-03-08T15:10:12.200Z [DEBUG] [3P telemetry] isTelemetryEnabled=false (CLAUDE_CODE_ENABLE_TELEMETRY=undefined)
+2026-03-08T15:10:12.450Z [DEBUG] Writing to temp file: /home/deder/.claude.json.tmp.634.1772982612450
+2026-03-08T15:10:12.450Z [DEBUG] Preserving file permissions: 100600
+2026-03-08T15:10:12.453Z [DEBUG] Temp file written successfully, size: 16985 bytes
+2026-03-08T15:10:12.453Z [DEBUG] Applied original permissions to temp file
+2026-03-08T15:10:12.453Z [DEBUG] Renaming /home/deder/.claude.json.tmp.634.1772982612450 to /home/deder/.claude.json
+2026-03-08T15:10:12.453Z [DEBUG] File /home/deder/.claude.json written atomically
+2026-03-08T15:10:12.453Z [DEBUG] [STARTUP] showSetupScreens() completed in 1463ms
+2026-03-08T15:10:12.453Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-03-08T15:10:12.453Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-03-08T15:10:12.453Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-03-08T15:10:12.454Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-08T15:10:12.454Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-08T15:10:12.455Z [DEBUG] Total LSP servers loaded: 0
+2026-03-08T15:10:12.455Z [DEBUG] [STARTUP] MCP configs loaded in 1510ms
+2026-03-08T15:10:12.464Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-03-08T15:10:12.464Z [DEBUG] LSP manager initialized with 0 servers
+2026-03-08T15:10:12.464Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-08T15:10:12.465Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2026-03-08T15:10:12.465Z [DEBUG] Found 0 hook matchers in settings
+2026-03-08T15:10:12.465Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+2026-03-08T15:10:12.465Z [DEBUG] Initialized versioned plugins system with 0 plugins
+2026-03-08T15:10:12.465Z [DEBUG] LSP server manager initialized successfully
+2026-03-08T15:10:12.465Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-03-08T15:10:12.467Z [DEBUG] [Reconnection] computeInitialTeamContext: No teammate context set (not a teammate)
+2026-03-08T15:10:12.468Z [DEBUG] Writing to temp file: /home/deder/.claude.json.tmp.634.1772982612468
+2026-03-08T15:10:12.468Z [DEBUG] Preserving file permissions: 100600
+2026-03-08T15:10:12.470Z [DEBUG] Temp file written successfully, size: 16985 bytes
+2026-03-08T15:10:12.470Z [DEBUG] Applied original permissions to temp file
+2026-03-08T15:10:12.470Z [DEBUG] Renaming /home/deder/.claude.json.tmp.634.1772982612468 to /home/deder/.claude.json
+2026-03-08T15:10:12.471Z [DEBUG] File /home/deder/.claude.json written atomically
+2026-03-08T15:10:12.572Z [DEBUG] [keybindings] KeybindingSetup initialized with 104 bindings, 0 warnings
+2026-03-08T15:10:12.594Z [DEBUG] [REPL:mount] REPL mounted, disabled=false
+2026-03-08T15:10:12.595Z [DEBUG] Official marketplace auto-install skipped: already_attempted
+2026-03-08T15:10:12.595Z [DEBUG] performStartupChecks called
+2026-03-08T15:10:12.595Z [DEBUG] Starting background plugin installations
+2026-03-08T15:10:12.596Z [DEBUG] No CLAUDE.md/rules files found
+2026-03-08T15:10:12.598Z [DEBUG] performBackgroundPluginInstallations called
+2026-03-08T15:10:12.602Z [DEBUG] Writing to temp file: /home/deder/.claude.json.tmp.634.1772982612602
+2026-03-08T15:10:12.602Z [DEBUG] Preserving file permissions: 100600
+2026-03-08T15:10:12.605Z [DEBUG] Temp file written successfully, size: 16986 bytes
+2026-03-08T15:10:12.605Z [DEBUG] Applied original permissions to temp file
+2026-03-08T15:10:12.605Z [DEBUG] Renaming /home/deder/.claude.json.tmp.634.1772982612602 to /home/deder/.claude.json
+2026-03-08T15:10:12.605Z [DEBUG] File /home/deder/.claude.json written atomically
+2026-03-08T15:10:12.606Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-03-08T15:10:12.606Z [DEBUG] [claudeai-mcp] Gate returned: true
+2026-03-08T15:10:12.606Z [DEBUG] [claudeai-mcp] Fetching from https://api.anthropic.com/v1/mcp_servers?limit=1000
+2026-03-08T15:10:12.608Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2026-03-08T15:10:12.619Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2026-03-08T15:10:12.621Z [DEBUG] Fetching plugin security messages from https://raw.githubusercontent.com/anthropics/claude-plugins-official/refs/heads/security/security.json
+2026-03-08T15:10:12.623Z [DEBUG] Org fast mode: enabled
+2026-03-08T15:10:12.623Z [DEBUG] Watching for changes in setting files /home/deder/.claude/settings.json, /home/deder/.claude/settings.local.json...
+2026-03-08T15:10:12.689Z [DEBUG] [claudeai-mcp] Fetched 2 servers
+2026-03-08T15:10:12.691Z [DEBUG] CLAUDE_CODE_WEBSOCKET_AUTH_FILE_DESCRIPTOR not set, no file descriptor token available
+2026-03-08T15:10:12.691Z [DEBUG] MCP server "claude.ai Google Calendar": Initializing claude.ai proxy transport for server mcpsrv_01CKzuXKFhUjc6WLv9jejuyf
+2026-03-08T15:10:12.691Z [DEBUG] MCP server "claude.ai Google Calendar": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01CKzuXKFhUjc6WLv9jejuyf
+2026-03-08T15:10:12.691Z [DEBUG] MCP server "claude.ai Google Calendar": claude.ai proxy transport created successfully
+2026-03-08T15:10:12.693Z [DEBUG] MCP server "claude.ai Google Calendar": Starting connection with timeout of 30000ms
+2026-03-08T15:10:12.694Z [DEBUG] MCP server "claude.ai Gmail": Initializing claude.ai proxy transport for server mcpsrv_01G8wZ227ALWiQCpoZYdHU94
+2026-03-08T15:10:12.694Z [DEBUG] MCP server "claude.ai Gmail": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01G8wZ227ALWiQCpoZYdHU94
+2026-03-08T15:10:12.694Z [DEBUG] MCP server "claude.ai Gmail": claude.ai proxy transport created successfully
+2026-03-08T15:10:12.695Z [DEBUG] MCP server "claude.ai Gmail": Starting connection with timeout of 30000ms
+2026-03-08T15:10:12.712Z [DEBUG] Security messages saved successfully
+2026-03-08T15:10:12.726Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2026-03-08T15:10:12.783Z [DEBUG] Checking for native installer update to version 2.1.71
+2026-03-08T15:10:12.785Z [DEBUG] Downloading native installer version 2.1.71
+2026-03-08T15:10:12.939Z [DEBUG] MCP server "claude.ai Google Calendar": claude.ai proxy connection failed after 248ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYqppyP5zSxUaDDCEV2fh"}
+2026-03-08T15:10:12.939Z [ERROR] MCP server "claude.ai Google Calendar" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYqppyP5zSxUaDDCEV2fh"}
+2026-03-08T15:10:12.939Z [DEBUG] MCP server "claude.ai Google Calendar": Authentication required for claude.ai proxy server
+2026-03-08T15:10:12.967Z [DEBUG] MCP server "claude.ai Gmail": claude.ai proxy connection failed after 273ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYqppyPLSFTGaiGxz7ioL"}
+2026-03-08T15:10:12.967Z [ERROR] MCP server "claude.ai Gmail" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYqppyPLSFTGaiGxz7ioL"}
+2026-03-08T15:10:12.967Z [DEBUG] MCP server "claude.ai Gmail": Authentication required for claude.ai proxy server
+2026-03-08T15:10:20.049Z [DEBUG] Atomically installed binary to /home/deder/.local/share/claude/versions/2.1.71
+2026-03-08T15:10:20.099Z [DEBUG] Created directory /home/deder/.local/bin for symlink
+2026-03-08T15:10:20.099Z [DEBUG] Atomically updated symlink /home/deder/.local/bin/claude -> /home/deder/.local/share/claude/versions/2.1.71
+2026-03-08T15:10:20.100Z [DEBUG] Successfully updated to version 2.1.71
+2026-03-08T15:10:22.918Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-08T15:10:22.918Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-08T15:10:22.918Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-08T15:10:22.918Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-08T15:10:22.919Z [DEBUG] Sending 3 skills via attachment (initial, 3 total sent)
+2026-03-08T15:10:22.919Z [WARN] [3P telemetry] Event dropped (no event logger initialized): user_prompt
+2026-03-08T15:10:22.920Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-08T15:10:22.920Z [DEBUG] Found 0 hook matchers in settings
+2026-03-08T15:10:22.920Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-08T15:10:22.920Z [DEBUG] FileHistory: Added snapshot for 14fadd2a-04e9-4592-8259-cb92adcef3f6, tracking 0 files
+2026-03-08T15:10:22.921Z [DEBUG] [useDeferredValue] Messages deferred by 2 (0→2)
+2026-03-08T15:10:22.937Z [DEBUG] Total plugin output styles loaded: 0
+2026-03-08T15:10:22.939Z [DEBUG] Writing to temp file: /home/deder/.claude.json.tmp.634.1772982622939
+2026-03-08T15:10:22.939Z [DEBUG] Preserving file permissions: 100600
+2026-03-08T15:10:22.943Z [DEBUG] Temp file written successfully, size: 16985 bytes
+2026-03-08T15:10:22.943Z [DEBUG] Applied original permissions to temp file
+2026-03-08T15:10:22.943Z [DEBUG] Renaming /home/deder/.claude.json.tmp.634.1772982622939 to /home/deder/.claude.json
+2026-03-08T15:10:22.943Z [DEBUG] File /home/deder/.claude.json written atomically
+2026-03-08T15:10:22.944Z [DEBUG] autocompact: tokens=208 threshold=167000 effectiveWindow=180000
+2026-03-08T15:10:22.945Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-08T15:10:22.949Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.68.1fc; cc_entrypoint=cli; cch=00000;
+2026-03-08T15:10:22.950Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-08T15:10:22.950Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-08T15:10:22.951Z [DEBUG] Writing to temp file: /home/deder/.claude.json.tmp.634.1772982622951
+2026-03-08T15:10:22.951Z [DEBUG] Preserving file permissions: 100600
+2026-03-08T15:10:22.953Z [DEBUG] Temp file written successfully, size: 17006 bytes
+2026-03-08T15:10:22.953Z [DEBUG] Applied original permissions to temp file
+2026-03-08T15:10:22.953Z [DEBUG] Renaming /home/deder/.claude.json.tmp.634.1772982622951 to /home/deder/.claude.json
+2026-03-08T15:10:22.954Z [DEBUG] File /home/deder/.claude.json written atomically
+2026-03-08T15:10:22.954Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-08T15:10:22.970Z [DEBUG] [useDeferredValue] Messages deferred by 2 (0→2)
+2026-03-08T15:10:23.455Z [DEBUG] SSH config check: code=1 configured=true
+2026-03-08T15:10:23.458Z [DEBUG] git pull: cwd=/home/deder/.claude/plugins/marketplaces/claude-plugins-official ref=default
+2026-03-08T15:10:24.147Z [DEBUG] Successfully refreshed marketplace: claude-plugins-official
+2026-03-08T15:10:24.147Z [DEBUG] Plugin autoupdate: checking installed plugins
+2026-03-08T15:10:24.720Z [DEBUG] Stream started - received first chunk
+2026-03-08T15:10:25.536Z [DEBUG] [useDeferredValue] Messages deferred by 1 (2→3)
+2026-03-08T15:10:25.542Z [DEBUG] High write ratio: blit=0, write=1032 (100.0% writes), screen=23x120
+2026-03-08T15:10:25.543Z [DEBUG] [useDeferredValue] Messages deferred by 1 (2→3)
+2026-03-08T15:10:25.550Z [DEBUG] executePreToolHooks called for tool: Glob
+2026-03-08T15:10:25.550Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2026-03-08T15:10:25.550Z [DEBUG] Found 0 hook matchers in settings
+2026-03-08T15:10:25.550Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2026-03-08T15:10:25.556Z [DEBUG] [useDeferredValue] Messages deferred by 1 (3→4)
+2026-03-08T15:10:25.573Z [DEBUG] [useDeferredValue] Messages deferred by 1 (3→4)
+2026-03-08T15:10:25.600Z [DEBUG] High write ratio: blit=0, write=1072 (100.0% writes), screen=24x120
+2026-03-08T15:10:25.741Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/home/deder/.local/share/claude/versions/2.1.68)
+2026-03-08T15:10:25.788Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2026-03-08T15:10:25.788Z [DEBUG] Found 5 hook matchers in settings
+2026-03-08T15:10:25.788Z [DEBUG] Matched 1 unique hooks for query "Glob" (1 before deduplication)
+2026-03-08T15:10:25.789Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-08T15:10:25.789Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-08T15:10:25.789Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-08T15:10:25.789Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-08T15:10:25.789Z [DEBUG] autocompact: tokens=20259 threshold=167000 effectiveWindow=180000
+2026-03-08T15:10:25.790Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-08T15:10:25.792Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.68.1fc; cc_entrypoint=cli; cch=00000;
+2026-03-08T15:10:25.792Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-08T15:10:25.792Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-08T15:10:25.792Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-08T15:10:25.794Z [DEBUG] [useDeferredValue] Messages deferred by 3 (4→7)
+2026-03-08T15:10:25.799Z [DEBUG] High write ratio: blit=0, write=1072 (100.0% writes), screen=24x120
+2026-03-08T15:10:25.815Z [DEBUG] High write ratio: blit=0, write=1072 (100.0% writes), screen=24x120
+2026-03-08T15:10:27.632Z [DEBUG] Stream started - received first chunk
+2026-03-08T15:10:27.638Z [DEBUG] High write ratio: blit=0, write=1088 (100.0% writes), screen=24x120
+2026-03-08T15:10:28.007Z [DEBUG] executePreToolHooks called for tool: Read
+2026-03-08T15:10:28.007Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-03-08T15:10:28.007Z [DEBUG] Found 0 hook matchers in settings
+2026-03-08T15:10:28.007Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-03-08T15:10:28.009Z [DEBUG] [useDeferredValue] Messages deferred by 1 (7→8)
+2026-03-08T15:10:28.016Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-03-08T15:10:28.016Z [DEBUG] Found 5 hook matchers in settings
+2026-03-08T15:10:28.016Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-03-08T15:10:28.018Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-08T15:10:28.018Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-08T15:10:28.018Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-08T15:10:28.018Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-08T15:10:28.019Z [DEBUG] autocompact: tokens=20425 threshold=167000 effectiveWindow=180000
+2026-03-08T15:10:28.019Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-08T15:10:28.020Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.68.1fc; cc_entrypoint=cli; cch=00000;
+2026-03-08T15:10:28.021Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-08T15:10:28.021Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-08T15:10:28.021Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-08T15:10:28.022Z [DEBUG] [useDeferredValue] Messages deferred by 3 (8→11)
+2026-03-08T15:10:28.027Z [DEBUG] High write ratio: blit=0, write=1074 (100.0% writes), screen=24x120
+2026-03-08T15:10:28.043Z [DEBUG] High write ratio: blit=0, write=1074 (100.0% writes), screen=24x120
+2026-03-08T15:10:29.732Z [DEBUG] Stream started - received first chunk
+2026-03-08T15:10:29.739Z [DEBUG] High write ratio: blit=0, write=1074 (100.0% writes), screen=24x120
+2026-03-08T15:10:30.327Z [DEBUG] [useDeferredValue] Messages deferred by 1 (11→12)
+2026-03-08T15:10:30.334Z [DEBUG] executePreToolHooks called for tool: Write
+2026-03-08T15:10:30.334Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2026-03-08T15:10:30.334Z [DEBUG] Found 0 hook matchers in settings
+2026-03-08T15:10:30.334Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2026-03-08T15:10:30.335Z [DEBUG] Permission suggestions for Write: [
+  {
+    "type": "setMode",
+    "mode": "acceptEdits",
+    "destination": "session"
+  }
+]
+2026-03-08T15:10:30.335Z [DEBUG] executePermissionRequestHooks called for tool: Write
+2026-03-08T15:10:30.335Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Write
+2026-03-08T15:10:30.335Z [DEBUG] Found 0 hook matchers in settings
+2026-03-08T15:10:30.335Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2026-03-08T15:10:30.336Z [DEBUG] [useDeferredValue] Messages deferred by 1 (11→12)
+2026-03-08T15:10:30.348Z [DEBUG] High write ratio: blit=0, write=1805 (100.0% writes), screen=33x120
+2026-03-08T15:10:30.350Z [DEBUG] [useDeferredValue] Messages deferred by 1 (11→12)
+2026-03-08T15:10:30.364Z [DEBUG] High write ratio: blit=0, write=1834 (100.0% writes), screen=35x120
+2026-03-08T15:10:30.385Z [DEBUG] High write ratio: blit=0, write=1803 (100.0% writes), screen=34x120
+2026-03-08T15:10:37.231Z [DEBUG] Applying permission update: Adding 1 allow rule(s) to destination 'session': ["Edit(~/.claude/**)"]
+2026-03-08T15:10:37.236Z [DEBUG] FileHistory: Tracked file modification for /home/deder/.claude/settings.json
+2026-03-08T15:10:37.236Z [DEBUG] Writing to temp file: /home/deder/.claude/settings.json.tmp.634.1772982637236
+2026-03-08T15:10:37.236Z [DEBUG] Preserving file permissions: 100600
+2026-03-08T15:10:37.238Z [DEBUG] Temp file written successfully, size: 33 bytes
+2026-03-08T15:10:37.238Z [DEBUG] Applied original permissions to temp file
+2026-03-08T15:10:37.238Z [DEBUG] Renaming /home/deder/.claude/settings.json.tmp.634.1772982637236 to /home/deder/.claude/settings.json
+2026-03-08T15:10:37.238Z [DEBUG] File /home/deder/.claude/settings.json written atomically
+2026-03-08T15:10:37.240Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2026-03-08T15:10:37.240Z [DEBUG] Found 5 hook matchers in settings
+2026-03-08T15:10:37.240Z [DEBUG] Matched 1 unique hooks for query "Write" (1 before deduplication)
+2026-03-08T15:10:37.241Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-08T15:10:37.241Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-08T15:10:37.241Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-08T15:10:37.241Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-08T15:10:37.241Z [DEBUG] autocompact: tokens=20551 threshold=167000 effectiveWindow=180000
+2026-03-08T15:10:37.242Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-08T15:10:37.244Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.68.1fc; cc_entrypoint=cli; cch=00000;
+2026-03-08T15:10:37.244Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-08T15:10:37.244Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-08T15:10:37.244Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-08T15:10:37.248Z [DEBUG] [useDeferredValue] Messages deferred by 3 (12→15)
+2026-03-08T15:10:37.256Z [DEBUG] High write ratio: blit=0, write=1060 (100.0% writes), screen=25x120
+2026-03-08T15:10:37.256Z [DEBUG] Full reset (shrink->below): prevHeight=34, nextHeight=25, viewport=30
+2026-03-08T15:10:37.258Z [DEBUG] [lspRecommendation] Looking for LSP plugins for .json
+2026-03-08T15:10:37.259Z [DEBUG] [useDeferredValue] Messages deferred by 3 (12→15)
+2026-03-08T15:10:37.260Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2026-03-08T15:10:37.268Z [DEBUG] [useDeferredValue] Messages deferred by 3 (12→15)
+2026-03-08T15:10:37.290Z [DEBUG] High write ratio: blit=0, write=1546 (100.0% writes), screen=30x120
+2026-03-08T15:10:37.363Z [DEBUG] Checking for native installer update to version 2.1.71
+2026-03-08T15:10:37.364Z [DEBUG] Version 2.1.71 already installed, updating symlink
+2026-03-08T15:10:37.364Z [DEBUG] Created directory /home/deder/.local/bin for symlink
+2026-03-08T15:10:37.365Z [DEBUG] Successfully updated to version 2.1.71
+2026-03-08T15:10:37.918Z [DEBUG] Stream started - received first chunk
+2026-03-08T15:10:38.247Z [DEBUG] Detected change to /home/deder/.claude/settings.json
+2026-03-08T15:10:38.247Z [DEBUG] Getting matching hook commands for ConfigChange with query: user_settings
+2026-03-08T15:10:38.247Z [DEBUG] Found 0 hook matchers in settings
+2026-03-08T15:10:38.247Z [DEBUG] Matched 0 unique hooks for query "user_settings" (0 before deduplication)
+2026-03-08T15:10:38.250Z [DEBUG] Settings changed from userSettings, updating app state
+2026-03-08T15:10:38.251Z [DEBUG] Replacing all allow rules for destination 'userSettings' with 0 rule(s): []
+2026-03-08T15:10:38.251Z [DEBUG] Replacing all deny rules for destination 'userSettings' with 0 rule(s): []
+2026-03-08T15:10:38.251Z [DEBUG] Replacing all ask rules for destination 'userSettings' with 0 rule(s): []
+2026-03-08T15:10:38.251Z [DEBUG] Replacing all allow rules for destination 'projectSettings' with 0 rule(s): []
+2026-03-08T15:10:38.251Z [DEBUG] Replacing all deny rules for destination 'projectSettings' with 0 rule(s): []
+2026-03-08T15:10:38.251Z [DEBUG] Replacing all ask rules for destination 'projectSettings' with 0 rule(s): []
+2026-03-08T15:10:38.251Z [DEBUG] Replacing all allow rules for destination 'localSettings' with 0 rule(s): []
+2026-03-08T15:10:38.251Z [DEBUG] Replacing all deny rules for destination 'localSettings' with 0 rule(s): []
+2026-03-08T15:10:38.251Z [DEBUG] Replacing all ask rules for destination 'localSettings' with 0 rule(s): []
+2026-03-08T15:10:38.251Z [DEBUG] Replacing all allow rules for destination 'localSettings' with 4 rule(s): ["Bash(/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME show 6878dba)","Bash(/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME fetch origin mac)","Bash(/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME show origin/mac:6878dba)","Bash(/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME log origin/mac --oneline -20)"]
+2026-03-08T15:10:38.257Z [DEBUG] High write ratio: blit=0, write=1528 (100.0% writes), screen=30x120
+2026-03-08T15:10:38.340Z [DEBUG] Writing to temp file: /home/deder/.claude.json.tmp.634.1772982638340
+2026-03-08T15:10:38.340Z [DEBUG] Preserving file permissions: 100600
+2026-03-08T15:10:38.343Z [DEBUG] Temp file written successfully, size: 17081 bytes
+2026-03-08T15:10:38.343Z [DEBUG] Applied original permissions to temp file
+2026-03-08T15:10:38.343Z [DEBUG] Renaming /home/deder/.claude.json.tmp.634.1772982638340 to /home/deder/.claude.json
+2026-03-08T15:10:38.343Z [DEBUG] File /home/deder/.claude.json written atomically
+2026-03-08T15:10:38.575Z [DEBUG] [useDeferredValue] Messages deferred by 1 (15→16)
+2026-03-08T15:10:38.600Z [DEBUG] High write ratio: blit=0, write=1609 (100.0% writes), screen=32x120
+2026-03-08T15:10:38.736Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-08T15:10:38.736Z [DEBUG] Found 0 hook matchers in settings
+2026-03-08T15:10:38.736Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-08T15:10:38.749Z [DEBUG] High write ratio: blit=0, write=1596 (100.0% writes), screen=30x120
+2026-03-08T15:10:38.749Z [DEBUG] Full reset (shrink->below): prevHeight=32, nextHeight=30, viewport=30
+2026-03-08T15:10:38.758Z [DEBUG] Writing to temp file: /home/deder/.claude.json.tmp.634.1772982638758
+2026-03-08T15:10:38.758Z [DEBUG] Preserving file permissions: 100600
+2026-03-08T15:10:38.761Z [DEBUG] Temp file written successfully, size: 17082 bytes
+2026-03-08T15:10:38.761Z [DEBUG] Applied original permissions to temp file
+2026-03-08T15:10:38.761Z [DEBUG] Renaming /home/deder/.claude.json.tmp.634.1772982638758 to /home/deder/.claude.json
+2026-03-08T15:10:38.761Z [DEBUG] File /home/deder/.claude.json written atomically
+2026-03-08T15:10:38.762Z [DEBUG] Writing to temp file: /home/deder/.claude.json.tmp.634.1772982638762
+2026-03-08T15:10:38.762Z [DEBUG] Preserving file permissions: 100600
+2026-03-08T15:10:38.764Z [DEBUG] Temp file written successfully, size: 17082 bytes
+2026-03-08T15:10:38.764Z [DEBUG] Applied original permissions to temp file
+2026-03-08T15:10:38.764Z [DEBUG] Renaming /home/deder/.claude.json.tmp.634.1772982638762 to /home/deder/.claude.json
+2026-03-08T15:10:38.764Z [DEBUG] File /home/deder/.claude.json written atomically

@@ -1,6 +1,4 @@
 {
-  "model": "opus",
-  "effortLevel": "high",
   "permissions": {
     "allow": [
       "Read",
@@ -49,5 +47,7 @@
       "Bash(date*)",
       "Bash(wc*)"
     ]
-  }
+  },
+  "model": "opus",
+  "effortLevel": "high"
 }

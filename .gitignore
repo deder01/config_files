@@ -9,3 +9,6 @@ node_modules/
 .fzf
 .oh-my-zsh
 .zsh_custom/plugins/zsh-autosuggestions
+.claude/*
+!.claude/settings.json
+!.claude/CLAUDE.md

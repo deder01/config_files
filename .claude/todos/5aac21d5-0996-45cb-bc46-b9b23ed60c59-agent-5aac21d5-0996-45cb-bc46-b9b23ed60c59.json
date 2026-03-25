@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Build QIF parser in Python",
+    "status": "in_progress",
+    "activeForm": "Building QIF parser in Python"
+  },
+  {
+    "content": "Create SQLite database with schema",
+    "status": "pending",
+    "activeForm": "Creating SQLite database with schema"
+  },
+  {
+    "content": "Import Quicken export into database",
+    "status": "pending",
+    "activeForm": "Importing Quicken export into database"
+  },
+  {
+    "content": "Run validation queries to verify data integrity",
+    "status": "pending",
+    "activeForm": "Running validation queries"
+  }
+]
