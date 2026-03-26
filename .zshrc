@@ -95,7 +95,7 @@ alias ag="ag -p ~/.ignore"
 
 
 ##### openclaw #####
-alias brewbird-off='openclaw agent --message "Send a goodbye message to WhatsApp group 120363371396004878@g.us in your Brewbird voice. Say you'\''re logging off for now and you'\''ll catch up on anything when you'\''re back. Keep it to 1-2 sentences, end with your signature." --deliver --reply-channel whatsapp --reply-to "120363371396004878@g.us"'
+alias brewbird-off='openclaw agent --agent main --message "You are logging off for the night. Write a short goodbye message in your Brewbird voice letting everyone know you'\''re done for now and will catch up when you'\''re back online. 1-2 sentences, end with your signature. Your reply will be delivered directly to the group — just write the message, nothing else." --deliver --reply-channel whatsapp --reply-to "120363371396004878@g.us"'
 alias brewbird-stop='brewbird-off && openclaw gateway stop'
 ##### /openclaw #####
 
