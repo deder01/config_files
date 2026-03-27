@@ -19,6 +19,10 @@ This file provides guidance to Claude Code (claude.ai/code) as a user-level conf
 - My home directory (`~`) is a dotfiles repo using a bare git repo at `~/.cfg/`
 - The alias `config` maps to `git --git-dir=$HOME/.cfg/ --work-tree=$HOME` — use this instead of plain `git` when operating on dotfiles in `~`
 
+## Context saving
+
+- When wrapping up significant work (finishing a feature, reaching a milestone, or if I mention stopping/closing), remind me to run `/save-context` to save a snapshot before ending the session
+
 ## Git rules
 
 - Never push to a git remote without asking me first — this applies every time, even if I approved a push earlier in the conversation

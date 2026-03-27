@@ -45,9 +45,14 @@
       "Bash(whoami*)",
       "Bash(hostname*)",
       "Bash(date*)",
-      "Bash(wc*)"
+      "Bash(wc*)",
+      "Bash(cat*)"
     ]
   },
   "model": "opus",
-  "effortLevel": "high"
+  "effortLevel": "high",
+  "statusLine": {
+    "type": "command",
+    "command": "bash /home/deder/.claude/statusline.sh"
+  }
 }
