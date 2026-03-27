@@ -14,3 +14,5 @@ node_modules/
 !.claude/CLAUDE.md
 .openclaw/
 .config/systemd/
+package.json
+package-lock.json
