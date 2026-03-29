@@ -1,8 +1,9 @@
 # WSL-specific config
 cd ~
-path=($PATH $path)
+path=("${(@s/:/)PATH}" $path)
 eval `dircolors ~/.dircolors`
-nvm use v18
+nvm use v24
 
-alias code="/mnt/c/Users/david/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
+export PATH="$PATH:/mnt/c/Users/david/AppData/Local/Programs/Microsoft VS Code/bin"
+
 alias gorepos="cd repos"
