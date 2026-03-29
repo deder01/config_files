@@ -51,6 +51,7 @@
   },
   "model": "opus",
   "effortLevel": "high",
+  "showClearContextOnPlanAccept": true,
   "statusLine": {
     "type": "command",
     "command": "bash /home/deder/.claude/statusline.sh"
