@@ -14,6 +14,10 @@ This file provides guidance to Claude Code (claude.ai/code) as a user-level conf
 - Default to TypeScript for new projects
 - Prefer modern ES syntax (const, arrow functions, async/await)
 
+## Python
+
+- Before running Python scripts, check for a `.venv` directory in the project and activate it (`source .venv/bin/activate`) — system Python often lacks required packages
+
 ## Dotfiles
 
 - My home directory (`~`) is a dotfiles repo using a bare git repo at `~/.cfg/`
