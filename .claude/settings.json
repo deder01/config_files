@@ -50,7 +50,7 @@
     ]
   },
   "model": "opus",
-  "effortLevel": "high",
+  "effortLevel": "medium",
   "showClearContextOnPlanAccept": true,
   "statusLine": {
     "type": "command",
