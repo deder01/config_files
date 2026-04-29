@@ -12,6 +12,7 @@ node_modules/
 .claude/*
 !.claude/settings.json
 !.claude/CLAUDE.md
+!.claude/skills/
 .openclaw/
 .config/systemd/
 package.json
