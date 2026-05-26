@@ -46,14 +46,39 @@
       "Bash(hostname*)",
       "Bash(date*)",
       "Bash(wc*)",
-      "Bash(cat*)"
-    ]
+      "Bash(cat*)",
+      "Bash(gws auth status*)",
+      "Bash(gws schema*)",
+      "Bash(gws gmail users messages list*)",
+      "Bash(gws gmail users messages get*)",
+      "Bash(gws gmail users threads list*)",
+      "Bash(gws gmail users threads get*)",
+      "Bash(gws gmail users labels list*)",
+      "Bash(gws gmail users labels get*)",
+      "Bash(gws gmail users drafts list*)",
+      "Bash(gws gmail users drafts get*)",
+      "Bash(gws gmail +read*)",
+      "Bash(gws gmail +triage*)",
+      "Bash(gws drive files list*)",
+      "Bash(gws drive files get*)",
+      "Bash(gws sheets spreadsheets get*)",
+      "Bash(gws sheets spreadsheets values get*)",
+      "Bash(gws calendar events list*)",
+      "Bash(gws calendar events get*)",
+      "Bash(gws calendar calendars get*)",
+      "Bash(gws calendar calendarList list*)",
+      "Bash(gws calendar +agenda*)",
+      "Bash(gws docs documents get*)"
+    ],
+    "defaultMode": "auto"
   },
-  "model": "opus",
-  "effortLevel": "medium",
-  "showClearContextOnPlanAccept": true,
   "statusLine": {
     "type": "command",
-    "command": "bash /home/deder/.claude/statusline.sh"
-  }
+    "command": "~/.claude/statusline/statusline.sh"
+  },
+  "model": "claude-opus-4-6",
+  "effortLevel": "xhigh",
+  "showClearContextOnPlanAccept": true,
+  "skipAutoPermissionPrompt": true,
+  "skipDangerousModePermissionPrompt": true
 }
