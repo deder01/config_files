@@ -27,16 +27,24 @@ This file provides guidance to Claude Code (claude.ai/code) as a user-level conf
 
 - When wrapping up significant work (finishing a feature, reaching a milestone, or if I mention stopping/closing), remind me to run `/save-context` to save a snapshot before ending the session
 
-## MCP servers
+## Google Workspace (gws CLI)
 
-- For Gmail, always use the npm `gmail` MCP server (`@gongrzhe/server-gmail-autoauth-mcp`), NOT the built-in `claude.ai Gmail` — the built-in one has persistent auth issues. If both are available, prefer the npm server's tools.
-- Install: `claude mcp add gmail -s user -- npx -y @gongrzhe/server-gmail-autoauth-mcp`
+- For all Google Workspace services — Gmail, Drive, Sheets, Calendar, Docs — use the `gws` CLI (`@googleworkspace/cli`) via Bash. Do NOT use the `claude.ai` MCP connectors; they've been removed because their Gmail connector lacks the `gmail.modify` scope, so archive/label/write operations fail with "insufficient authentication scopes".
+- OAuth2 is already configured (`gws auth status` to verify); credentials live in `~/.config/gws/`. Granted scopes: drive, spreadsheets, gmail.modify, calendar, documents.
+- Command shape: `gws <service> <resource> [sub-resource] <method> --params '<JSON>' [--json '<body>'] --format json`
+  - Read mail: `gws gmail users messages list --params '{"userId":"me","maxResults":10}'`
+  - Read sheet: `gws sheets spreadsheets values get --params '{"spreadsheetId":"ID","range":"A1:D20"}'`
+  - Write sheet: `gws sheets spreadsheets values update --params '{"spreadsheetId":"ID","range":"A1","valueInputOption":"USER_ENTERED"}' --json '{"values":[["x"]]}'`
+- Gmail has ergonomic `+` helpers: `+triage` (unread summary), `+read`, `+send`, `+reply`, `+reply-all`, `+forward`.
+- gws prints `Using keyring backend: keyring` to stderr — redirect `2>/dev/null` when parsing JSON from stdout.
 
 ## Email rules
 
-- Never send an email without explicit user approval — drafting is fine, sending requires confirmation every time
-- Always use `htmlBody` with `mimeType: "text/html"` when drafting or sending emails — plain text mode causes hard line breaks at ~76 characters (RFC 2822 wrapping), creating ugly mid-sentence breaks in delivered emails
-- Wrap each paragraph in `<p>` tags; do not use `<br>` for paragraph spacing
+- Never send an email without explicit user approval — drafting is fine, sending requires confirmation every time. Use `--draft` to draft; omit it to send.
+- Send/reply via the gws Gmail helpers with `--html` so the body renders as HTML (plain text causes hard line breaks at ~76 characters / RFC 2822 wrapping, creating ugly mid-sentence breaks):
+  - New: `gws gmail +send --to a@b.com --subject '...' --body '<p>...</p>' --html [--draft]`
+  - Reply (auto-threads): `gws gmail +reply --message-id <ID> --body '<p>...</p>' --html [--draft]`
+- Wrap each paragraph in `<p>` tags; do not use `<br>` for paragraph spacing. With `--html`, use fragment tags only — no `<html>`/`<body>` wrapper.
 
 ## Git rules
 
