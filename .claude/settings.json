@@ -80,5 +80,15 @@
   "effortLevel": "xhigh",
   "showClearContextOnPlanAccept": true,
   "skipAutoPermissionPrompt": true,
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "bash \"$HOME/.claude/hooks/gws-write-guard.sh\"" }
+        ]
+      }
+    ]
+  }
 }

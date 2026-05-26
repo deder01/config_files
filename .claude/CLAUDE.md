@@ -30,6 +30,7 @@ This file provides guidance to Claude Code (claude.ai/code) as a user-level conf
 ## Google Workspace (gws CLI)
 
 - For all Google Workspace services — Gmail, Drive, Sheets, Calendar, Docs — use the `gws` CLI (`@googleworkspace/cli`) via Bash. Do NOT use the `claude.ai` MCP connectors; they've been removed because their Gmail connector lacks the `gmail.modify` scope, so archive/label/write operations fail with "insufficient authentication scopes".
+- ⚠️ WRITE OPERATIONS ALWAYS REQUIRE MY EXPLICIT CONFIRMATION FIRST. Before running ANY gws command that creates, sends, modifies, or deletes data — including `send`, `insert`, `create`, `update`, `patch`, `delete`, `trash`, `untrash`, `modify`, `batchUpdate`, `append`, `clear`, `copy`, `move`, and the `+send`/`+reply`/`+reply-all`/`+forward`/`+insert` helpers — across Gmail, Drive, Sheets, Calendar, or Docs, you MUST state exactly what you are about to do and WAIT for my explicit go-ahead. This applies EVEN WHEN I requested the action in the same message — ask first, every time. Read-only commands (`list`, `get`, `+read`, `+triage`, `+agenda`) need NO confirmation.
 - OAuth2 is already configured (`gws auth status` to verify); credentials live in `~/.config/gws/`. Granted scopes: drive, spreadsheets, gmail.modify, calendar, documents.
 - Command shape: `gws <service> <resource> [sub-resource] <method> --params '<JSON>' [--json '<body>'] --format json`
   - Read mail: `gws gmail users messages list --params '{"userId":"me","maxResults":10}'`
