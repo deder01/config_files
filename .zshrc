@@ -215,4 +215,4 @@ nvm_start
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 # OpenClaw Completion
-source "/home/deder/.openclaw/completions/openclaw.zsh"
+[ -f "$HOME/.openclaw/completions/openclaw.zsh" ] && source "$HOME/.openclaw/completions/openclaw.zsh"
